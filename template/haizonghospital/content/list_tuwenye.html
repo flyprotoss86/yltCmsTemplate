@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}927/common.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../css/tuwenye.css"/>-->
+		<style type="text/css">
+			.tw_box {
+				width: 100%;
+			}
+			
+			header {
+				width: 100%;
+				height: 3.9rem;
+				line-height: 3.9rem;
+				text-align: center;
+				font-size: 1rem;
+				color: #333333;
+			}
+			
+			.tw_main {
+				width: 93.75%;
+				margin: 0 auto;
+			}
+			
+			.tw_list li {
+				width: 14.8%;
+				float: left;
+				margin: 0 0.5rem 1rem;
+			}
+			
+			.tw_list li a {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.tw_list li a span {
+			    display: block;
+				width: 100%;
+				height: 11.15rem;
+				border: 2px solid #e3e3e3;
+			}
+			
+			.tw_list li a p {
+				line-height: 2.4rem;
+				text-align: center;
+				font-size: 0.9rem;
+				color: #666666;
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+				width: 80%;
+			}
+			
+			.tw_list li a p i{
+				display: block;
+				width: 0.5rem;
+				height: 0.5rem;
+				border-radius: 50%;
+				background: #00BFFF;
+				margin: 1rem;
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+	<script>
+		function myOnclick(){
+			var url = document.getElementById("1218").getAttribute('content');
+			var title = document.getElementById("1218").getAttribute('title');
+		　　//调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+		　　//myObj.callAndroid(title,url);
+			Medical.playVideo(title,url);
+			//console.log(title,url);
+		}
+
+	</script>
+		<div class="tw_box">
+			<header>{$CATEGORYS[$catid][catname]}</header>
+			<div class="tw_main">
+			
+			
+			{pc:content action="lists" catid="$catid" num="25" moreinfo="1" order="inputtime DESC" page="$page"}	
+				<ul class="tw_list">
+				{loop $data $r}
+					<li>
+					{if $r['v_static'] == 1}
+					
+						<a onclick="myOnclick()" content="{$r['content']}" title="{$r['title']}" id="1218">
+					{else}
+					<a href="{$r['url']}">
+					{/if}
+						
+							<span><img src="{$r['thumb']}"/></span>
+						<p>{$r['title']}</p>
+						</a>
+					</li>
+					
+				{/loop}	
+				</ul>
+			{/pc}
+			</div>
+		</div>
+	</body>
+</html>

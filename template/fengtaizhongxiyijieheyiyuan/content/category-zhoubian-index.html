@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0424/css/common.css" />
+		<script type="text/javascript" src="{CSS_PATH}0424/js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=oxPscHlXTd0xvtGyRilOmAEpu5N8VeAy"></script>
+		<style type="text/css">
+			.container {
+				height: 682px;
+				background: url({CSS_PATH}0424/img/img-bj.png) no-repeat;
+				background-size: 100% 100%;
+				overflow: hidden;
+			}
+			
+			.map {
+				width: 96%;
+				height: 100%;
+				background: #fff;
+				border: 1px solid #cccccc;
+				margin: 0 auto;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.map-box {
+				width: 57.5%;
+				height: 100%;
+				float: left;
+				margin: 0 0.6rem;
+			}
+			
+			.map-box h1 {
+				width: 100%;
+				height: 3.2rem;
+				line-height: 3.2rem;
+			}
+			
+			.map-box h1 span {
+				display: block;
+				width: 1.2rem;
+				height: 1.2rem;
+				float: left;
+				margin: 1rem 0.6rem 0 0;
+			}
+			
+			#allmap {
+				width: 100%;
+				height: 88%;
+				overflow: hidden;
+				margin: 0;
+			}
+			
+			.tab {
+				width: 37%;
+				height: 34.5rem;
+				-moz-box-shadow: 6px 5px 5px #d3d3d3;
+				/* 老的 Firefox */
+				box-shadow: 6px 5px 5px #d3d3d3;
+				float: left;
+				margin: 0 0.6rem 0.5rem;
+			}
+			
+			.nav {
+				width: 100%;
+				height: 3.2rem;
+				overflow: hidden;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-justify-content: space-between;
+				justify-content: space-between;
+			}
+			
+			.nav li {
+				width: 3rem;
+				height: 1.3rem;
+				line-height: 1.3rem;
+				font-size: 0.6rem;
+				text-align: center;
+				margin-top: 1rem;
+				border: 1px solid #d2d2d2;
+				color: #666666;
+				float: left;
+				background: #fff;
+				border-radius: 1.5rem;
+			}
+			
+			.nav li.active {
+				background: #ac82d1;
+				color: #fff;
+			}
+			
+			.tablea {
+				width: 100%;
+			}
+			
+			.box {
+				margin: 10px;
+				display: none
+			}
+			
+			.box ul {
+				width: 100%;
+				height: 30rem;
+				overflow: hidden;
+				overflow-y: auto;
+			}
+			
+			.box ul li {
+				width: 100%;
+				height: 6rem;
+			}
+			
+			.box ul li .shop-list {
+				width: 70%;
+				height: 100%;
+				float: left;
+			}
+			
+			.box ul li .shop-list p {
+				font-size: 0.7rem;
+				color: #666666;
+			}
+			
+			.box ul li .shop-list p:first-child {
+				line-height: 2.4rem;
+				padding-left: 0.4rem;
+				box-sizing: border-box;
+			}
+			
+			.box ul li .shop-list p:first-child a {
+				color: #5e81c6;
+			}
+			
+			.box ul li .shop-list p:nth-child(2) {
+				padding-left: 1.5rem;
+				box-sizing: border-box;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+			}
+			
+			.box ul li .shop-list p:nth-child(3) {
+				padding-left: 1.5rem;
+				box-sizing: border-box;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+			}
+			
+			.box ul li span {
+				display: block;
+				width: 4.1rem;
+				height: 3.4rem;
+				float: right;
+				position: relative;
+				margin: 1.6rem 0.8rem 0 0;
+			}
+			
+			.box ul li span i {
+				display: block;
+				width: 100%;
+				line-height: 1rem;
+				text-align: center;
+				color: #fff;
+				background: rgba(0, 0, 0, 0.5);
+				position: absolute;
+				bottom: 0;
+				font-size: 0.7rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="map">
+				<!--地图-->
+				<div class="map-box" id="container">
+					<h1><span><img src="{CSS_PATH}0424/img/pic2-3.png"/></span>周边服务</h1>
+					<div class="map" id="allmap"></div>
+				</div>
+
+				<!--列表-->
+				<div class="tab">
+					<ul class="nav">
+						<li class="active">{$CATEGORYS[974][catname]}</li>
+							<li>{$CATEGORYS[975][catname]}</li>
+							<li>{$CATEGORYS[976][catname]}</li>
+							<li>{$CATEGORYS[977][catname]}</li>
+							<li>{$CATEGORYS[978][catname]}</li>
+							<li>{$CATEGORYS[979][catname]}</li>
+					</ul>
+					
+					<div id="tablea" class="tablea">
+					{pc:content action="lists" catid="974" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="ab{$n}" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="ab{$n}" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+						{pc:content action="lists" catid="975" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="bc{$n}" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="bc{$n}" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+						{pc:content action="lists" catid="976" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="cd{$n}" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="cd{$n}" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+						{pc:content action="lists" catid="977" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="de{$n}" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="de{$n}" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+						{pc:content action="lists" catid="978" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="ef{$n}" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="ef{$n}" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+						
+						{pc:content action="lists" catid="979" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="fg{$n}" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="fg{$n}" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+						
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var map;
+		var bounds;
+		var circle;
+		var local;
+		//指定位置的经度纬度可以到百度定位拾取系统去拿 http://api.map.baidu.com/lbsapi/getpoint/index.html  
+		var lng = '116.215666';
+		var lat = '39.82656'; 
+		map = new BMap.Map("allmap"); // 创建Map实例
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lng = position.coords.longitude;
+			lat = position.coords.latitude;
+		});
+		var mPoint = new BMap.Point(lng, lat);
+		map.enableScrollWheelZoom();
+		map.centerAndZoom(mPoint, 11);
+
+
+		//搜索
+		var city = new BMap.LocalSearch(map, {
+			renderOptions: {
+				map: map,
+				autoViewport: true
+			}
+		}); //地图显示到查询结果处
+		$("#aa").click();
+
+		function search(obj) {
+			console.log(obj);
+
+			var name = obj.attributes["data_Id"].nodeValue;
+			var s = document.getElementById(name).attributes["value"].nodeValue;
+			console.log(s);
+			city.setSearchCompleteCallback(onSearchComplete); // 设置检索结束后的回调函数。参数： results: LocalResult 或  Array<LocalResult> ,如果是多关键字检索，回调    // 函数参数为LocalResult 的数组，数组中的结果顺序和检索中多关键字数组中顺序一致。 
+			city.search(s); //查找城市
+		}
+
+		function onSearchComplete(result) {
+			var n = result.getNumPois(); // 返回搜索结果数
+		}
+
+		//点击选项列表
+		var mOption = {
+			poiRadius: 1000, //半径为1000米内的POI,默认100米
+			numPois: 1 //列举出50个POI,默认10个
+		}
+		var myGeo = new BMap.Geocoder();
+
+		$(".tablea").find(".box:first").show(); //为每个BOX的第一个元素显示  
+		$('.nav li').each(function(index) {
+			$(this).click(function() {
+				var index = $(this).index(); //获取当前a标签的个数  
+				$(this).parent().next().find(".box").hide().eq(index).show(); //返回上一层，在下面查找css名为box隐藏，然后选中的显示  
+				$(this).addClass("hover").siblings().removeClass("hover"); //a标签显示，同辈元素隐藏  
+
+			});
+		});
+
+		$(".nav li").click(function() {
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active")
+		})
+		
+	</script>
+
+</html>

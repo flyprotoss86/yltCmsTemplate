@@ -1,0 +1,118 @@
+{template "content","header"}
+	
+			<!--**合作医院**-->
+			<div class="row weishop">
+				<h1>合作医院</h1>
+				<ul>
+					<li class="col-xs-3">
+						<a href="http://119.90.88.62:83">
+							<span><img src="{IMG_PATH}1020/yiyuan-img.png"/></span>
+							<p>右安门医院</p>
+						</a>
+					</li>
+					<li class="col-xs-3">
+						<a href="http://119.90.88.62:84">
+							<span><img src="{IMG_PATH}1020/yiyuan-img.png"/></span>
+							<p>小庄医院</p>
+						</a>
+					</li>
+					<li class="col-xs-3">
+						<a href="http://119.90.88.62:85/">
+							<span><img src="{IMG_PATH}1020/yiyuan-img.png"/></span>
+							<p>华信医院</p>
+						</a>
+					</li>
+					<li class="col-xs-3">
+						<a href="http://119.90.88.62:89/">
+							<span><img src="{IMG_PATH}1020/yiyuan-img.png"/></span>
+							<p>垂杨柳医院</p>
+						</a>
+					</li>
+					<li class="col-xs-3">
+						<a href="http://119.90.88.62:90/">
+							<span><img src="{IMG_PATH}1020/yiyuan-img.png"/></span>
+							<p>丰台中西医</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--**微商城**-->
+			<div class="row weishop">
+				<h1>微商城 
+				<!-- <a href="#">更多</a> -->
+				</h1>
+				<ul>
+					<li class="col-xs-4">
+						<a href="#">
+							<span><img src="{IMG_PATH}1020/shop-img.png"/></span>
+							<p>全场低至3折</p>
+						</a>
+					</li>
+					<li class="col-xs-4">
+						<a href="#">
+							<span><img src="{IMG_PATH}1020/shop-img.png"/></span>
+							<p>全场低至3折</p>
+						</a>
+					</li>
+					<li class="col-xs-4">
+						<a href="#">
+							<span><img src="{IMG_PATH}1020/shop-img.png"/></span>
+							<p>全场低至3折</p>
+						</a>
+					</li>
+					<li class="col-xs-4">
+						<a href="#">
+							<span><img src="{IMG_PATH}1020/shop-img.png"/></span>
+							<p>全场低至3折</p>
+						</a>
+					</li>
+					<li class="col-xs-4">
+						<a href="#">
+							<span><img src="{IMG_PATH}1020/shop-img.png"/></span>
+							<p>全场低至3折</p>
+						</a>
+					</li>
+					<li class="col-xs-4">
+						<a href="#">
+							<span><img src="{IMG_PATH}1020/shop-img.png"/></span>
+							<p>全场低至3折</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--**就诊须知**-->
+
+			<div class="row notice">
+				<h1>就诊须知
+					<!-- <a href="{$CATEGORYS[214][url]}">更多</a> -->
+				</h1>
+				{pc:get sql="select catid,catname,url from v9_category where parentid=214 order by catid asc" return="data"}
+				
+					<ul>
+					
+					{loop $data $r}
+						<li class="col-xs-12">
+							<span><img src="{IMG_PATH}1020/notice-img.png"/></span>
+						
+							{pc:content action="lists" catid="$r['catid']" num="5" order="id DESC" page="$page" return="dat" }
+								
+							<ol>
+								<h2><a href="{$r['url']}">{$r['catname']}</a></h2>
+								{loop $dat $rr}
+								<li><a href="{$rr['url']}">{$rr['title']}</a></li>
+								{/loop}
+							</ol>
+							{/pc}
+						</li>
+					{/loop}	
+					</ul>
+				{/pc}
+			</div>
+			<!--**底部**-->
+			<footer>2017医汇联  版权所有</footer>
+			
+		</div>
+	</body>
+	
+
+</html>

@@ -1,0 +1,7 @@
+<?php $cid=intval($_GET['cid']); $isql="select p.title,p.content,p.updatetime,c.catname,c.image,c.description,c.url from v9_category c left join v9_page p on p.catid=c.catid where c.catid=".$cid; ?>
+{pc:get sql="$isql" cache="3600" num="1" return="data"}
+{/pc}
+<?php
+header('Content-type: application/json');
+$cnt=json_encode($data);
+?>aa({$cnt})

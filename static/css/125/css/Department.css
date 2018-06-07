@@ -1,0 +1,350 @@
+header{
+	width: 100%;
+	height: 3.9rem;
+	background-size: 100% 100%;
+}
+.top{
+	width: 95.6%;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.top span{
+    display: block;
+    width: 4rem;
+    height: 100%;
+    color: #333333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 3.9rem;
+}
+.top span a{
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    float: left;
+    margin-top: 1.3rem;
+    margin-right: 0.5rem;
+}
+/*============================*/
+.On_logo{
+	width: 18.7%;
+	height: 2.4rem;
+	margin: 0.85rem 0 0 5rem;
+	float: left;
+}
+.nav_list{
+	width: 49%;
+	height: 61%;
+	margin: 0.8rem 0 0 3rem;
+	float: left;
+	/*position: absolute;
+	top: 0.8rem;
+	left: 33%;*/
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.nav_list li{
+	width: 15%;
+	font-size: 0.7rem;
+	line-height: 2.3rem;
+}
+.nav_list li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #333333;
+	text-align: center;
+}
+.action{
+	border-bottom: 0.1rem solid #3191cc;
+	color: #3191cc;
+}
+.nav_list .action a{
+	color: #3191cc;
+}
+.banner{
+	width: 100%;
+	height: 8.5rem;
+}
+/*------------------------*/
+.hos_main{
+	width: 95.6%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.left_nav{
+	width: 15%;
+	margin-top: 1rem;
+	float: left;
+}
+.list_top{
+	width: 100%;
+	height: 2.2rem;
+	margin-bottom: 0.25rem;
+	color: #fff;
+	font-size: 0.8rem;
+	line-height: 2.2rem;
+}
+.list_top span{
+	display: block;
+	float: left;
+	width: 0.9rem;
+	height: 0.7rem;
+	margin: 0.75rem 0.75rem 0 1.5rem;
+}
+.left_nav ul{
+	border-top: 0.05rem solid #c5c3c3;
+}
+.left_nav ul li{
+	width: 100%;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	position: relative;
+	border-bottom: 0.05rem solid #c5c3c3;
+}
+.left_nav ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 0.7rem;
+	color: #666666;
+	padding-left: 14%;
+	box-sizing: border-box;
+}
+.left_nav ul li a span{
+	display: block;
+	width: 0.4rem;
+	height: 0.7rem;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0.75rem;
+	right: 1.05rem;
+}
+.left_nav ul li.check a{
+	color: #fff;
+	background-color: #409de5;
+	border: none;
+	
+}
+.weizhi{
+	width: 80%;
+	height: 7.2rem;
+	background-size: 100% 100%;
+	float: right;
+	margin-right: 1.4rem;
+}
+.weizhi span{
+	display: block;
+	height: 1.25rem;
+	font-size: 0.7rem;
+	color: #333333;
+	line-height: 1.25rem;
+	margin-top: 4rem;
+	margin-left: 0.9rem;
+}
+.weizhi span a{
+	color: #333333;
+}
+
+
+.hos_box{
+	width: 80%;
+	float: right;
+	margin-right: 1.4rem;
+}
+.news_left_top{
+	width: 100%;
+	height: 2.5rem;
+	border-bottom: 0.1rem solid #e2d3cd;
+}
+.left_bt{
+	width: 5.7rem;
+	height: 2.6rem;
+	border-bottom: 0.1rem solid #3ab9f0;
+	position: relative;
+	font-size: 0.8rem;
+	color: #3ab9f0;
+	padding-left: 1.5rem;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 2.5rem;
+	float: left;
+}
+.left_bt span{
+	display: block;
+	width: 0.55rem;
+	height: 0.55rem;
+	position: absolute;
+	top: 1rem;
+	left: 0.85rem;
+}
+.hos_content1{
+	width: 100%;
+	color: #333333;
+	font-size: 0.7rem;
+	line-height: 1.25rem;
+	overflow: hidden;
+/*	display: none;*/
+}
+/*--------科室------*/
+.depa{
+	width: 100%;
+	float: left;
+}
+.depa_list{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.depa_list li{
+	width: 11%;
+	border: 0.05rem solid #e0dcda;
+	float: left;
+	margin: 1.5rem 0 1.5rem 2.7%;
+}
+.depa_list li span{
+	display: block;
+	width: 62.8%;
+	height: 4.15rem;
+	margin: 20% auto 0;
+}
+.depa_list li p{
+	color: #666666;
+	font-size: 0.7rem;
+	line-height: 1.75rem;
+	text-align: center;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/*-----------------护理团队---------------------------------*/
+.hos_content2{
+	width: 100%;
+	color: #333333;
+	font-size: 0.7rem;
+	line-height: 1.25rem;
+	overflow: hidden;
+	display: none;
+}
+.hos_contents{
+	width: 100%;
+	color: #333333;
+	font-size: 0.7rem;
+	line-height: 1.25rem;
+	overflow: hidden;
+}
+.hl_box{
+	width: 100%;
+}
+.hl_box li{
+	width: 92.5%;
+	height: 2.9rem;
+	margin: 0 auto;
+	border-bottom: 0.05rem dashed #c9cacb;
+}
+.hl_box li.items{
+	display: none;
+}
+.hl_box li.g-db{
+	display: block;
+}
+.hl_box li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	clear: both;
+}
+.hl_bt{
+	display: block;
+	width: 80%;
+	height: 100%;
+	position: relative;
+	font-size: 0.7rem;
+	color: #666666;
+	line-height: 2.9rem;
+	float: left;
+}
+.hl_bt i{
+	display: block;
+	width: 0.6rem;
+	height: 0.7rem;
+	position: absolute;
+	top: 1.2rem;
+	left: -1.2rem;
+}
+.hl_box li i{
+	float: right;
+	line-height: 2.9rem;
+	color: #666666;
+}
+/*-----------------分页----------------------------*/
+.fenye{
+	width: 100%;
+	height: 1.5rem;
+	margin: 1rem 0;
+}
+.fenye_box{
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+	font-size: 0.7rem;
+	color: #b5b5b5;
+	line-height: 1.5rem;
+}
+.fenye_box span{
+	float: left;
+	float: left;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 1px solid #b5b5b5;
+	text-align: center;
+	font-size: 0.7rem;
+	color: #b5b5b5;
+	margin: 0 0.2rem;
+}
+.fenye_list{
+	height: 100%;
+	float: left;
+}
+.fenye_list li{
+	float: left;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 1px solid #b5b5b5;
+	text-align: center;
+	font-size: 0.7rem;
+	color: #b5b5b5;
+	margin: 0 0.2rem;
+}
+.fenye_list li.page-cur{
+	background-color: #289de9;
+	color: white;
+}
+.all-page{
+	float: left;
+}
+.text{
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 1px solid #b5b5b5;
+	text-align: center;
+	margin: 0 0.2rem;
+}
+.page-btn{
+	display: block;
+	width: 2.5rem;
+	height: 1.5rem;
+	border: 1px solid #b5b5b5;
+	text-align: center;
+	margin: 0 0.2rem;
+	background-color: #289de9;
+	color: white;
+	float: left;
+}

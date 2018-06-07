@@ -1,0 +1,367 @@
+
+/*医疗大板*/
+@media screen and (min-width:1500px) {
+	/*外框*/
+	.yp-box {
+	    width: 96%;
+	    min-height: 1080px;
+	    background: #fff;
+	    margin: 0 auto;
+	}
+	/*智慧医院*/
+	.banner {
+	    width: 100%;
+	    height: 23.5rem;
+	    margin-top: 1rem;
+	    position: relative;
+	}
+	.banner p a {
+	    font-size: 1.1rem;
+	    color: #ffffff;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+	}
+	.department h1 {
+	    font-size: 1.5rem;
+	    color: #333333;
+	    line-height: 2.5rem;
+	}
+	.department p {
+	    font-size: 1.1rem;
+	    color: #333333;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+	}
+	.doctor h1 {
+	    font-size: 1.5rem;
+	    color: #333333;
+	    line-height: 2.5rem;
+	}
+	.doctor ul li a span {
+	    display: block;
+	    width: 9.5rem;
+	    height: 9.5rem;
+	    margin: 0 auto;
+	    border-radius: 50%;
+	}
+	.doctor ul li a p {
+	    font-size: 1.2rem;
+	    color: #666666;
+	    text-align: center;
+	    line-height: 2.5rem;
+	}
+	.doctor ul li:last-child a i {
+	    position: absolute;
+	    top: 3rem;
+	    left: 31%;
+	    font-size: 1.5rem;
+	    color: #666666;
+	}
+	.tese h1 {
+	    font-size: 1.5rem;
+	    color: #333333;
+	    line-height: 2.5rem;
+	}
+	.tese ul li {
+	    width: 30%;
+	    height: 11.85rem;
+	    position: relative;
+	}
+	.tese ul li a span {
+	    display: block;
+	    width: 100%;
+	    height: 6.3rem;
+	    position: absolute;
+	    left: 0;
+	    bottom: 0;
+	    background: rgba(116,180,209,0.5);
+	}
+	.tese ul li a span h1 {
+	    font-size: 1.1rem;
+	    color: #FFFFFF;
+	    line-height: 1.2rem;
+	    padding-left: 0.5rem;
+	}
+	.tese ul li a span p {
+	    font-size: 1rem;
+	    color: #fff;
+	    height: 3rem;
+	    padding: 0 0.3rem;
+	    display: -webkit-box;
+	    -webkit-box-orient: vertical;
+	    -webkit-line-clamp: 3;
+	    overflow: hidden;
+	}
+	.map h1 {
+	    font-size: 1.5rem;
+	    color: #333333;
+	    line-height: 2.5rem;
+	}
+	#container {
+	    width: 100%;
+	    height: 25.35rem;
+	    margin-bottom: 1.7rem;
+	    box-shadow: 0px 2px 30px #ccc;
+	    overflow: hidden;
+	}
+	#container h1 {
+	    font-size: 1.3rem;
+	    color: #666666;
+	    text-align: center;
+	    margin-top: 7rem;
+	}
+	#container p {
+	    font-size: 1.1rem;
+	    color: #333333;
+	}
+	.hos-right ul li:first-child {
+	    height: 9.05rem;
+	    background: #718ddf;
+	}
+	.hos-right ul li:nth-child(2) {
+	    height: 11.65rem;
+	    background: #71a5df;
+	}
+	.hos-right ul li:nth-child(3) {
+	    height: 11.65rem;
+	    background: #7671df;
+	}
+	.hos-right ul li:nth-child(4) {
+	    height: 9.05rem;
+	    background: #a571df;
+	}
+	/**
+		手动添加
+	**/
+	.hos-right ul li:nth-child(5) {
+	    height: 9.05rem;
+	    background: #718ddf;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	.hos-right ul li:first-child a i {
+	    display: block;
+	    font-size: 0.9rem;
+	    color: #CCCCCC;
+	    padding-left: 0.5rem;
+	    box-sizing: border-box;
+	    margin-top: 2.25rem;
+	}
+	.hos-right ul li:first-child a h2 {
+	    font-size: 1.2rem;
+	    color: #ffffff;
+	    line-height: 2rem;
+	    padding-left: 0.5rem;
+	    box-sizing: border-box;
+	}
+	.hos-right ul li:first-child a span {
+	    display: block;
+	    width: 2rem;
+	    height: 2rem;
+	    float: right;
+	    margin: 0.3rem 0.5rem 0 0;
+	}
+	.hos-right ul li:nth-child(2) a span {
+	    display: block;
+	    width: 2.56rem;
+	    height: 2.5rem;
+	    margin: 2.15rem auto 1.5rem;
+	}
+	.hos-right ul li:nth-child(2) a i {
+	    display: block;
+	    font-size: 0.9rem;
+	    color: #CCCCCC;
+	    text-align: center;
+	}
+	.hos-right ul li:nth-child(2) a h2 {
+	    font-size: 1.2rem;
+	    color: #ffffff;
+	    text-align: center;
+	}
+	.hos-right ul li:nth-child(3) a span {
+	    display: block;
+	    width: 2.56rem;
+	    height: 2.5rem;
+	    margin: 2.15rem auto 1.5rem;
+	}
+	.hos-right ul li:nth-child(3) a i {
+	    display: block;
+	    font-size: 0.9rem;
+	    color: #CCCCCC;
+	    text-align: center;
+	}
+	.hos-right ul li:nth-child(3) a h2 {
+	    font-size: 1.2rem;
+	    color: #ffffff;
+	    text-align: center;
+	}
+	
+	
+	.hos-right ul li:nth-child(4) a i {
+	    display: block;
+	    font-size: 0.9rem;
+	    color: #CCCCCC;
+	    padding-left: 0.5rem;
+	    box-sizing: border-box;
+	    margin-top: 2.25rem;
+	}
+	.hos-right ul li:nth-child(4) a h2 {
+	    font-size: 1.2rem;
+	    color: #ffffff;
+	    padding-left: 0.5rem;
+	    box-sizing: border-box;
+	}
+	.hos-right ul li:nth-child(4) a span {
+	    display: block;
+	    width: 2rem;
+	    height: 2rem;
+	    float: right;
+	    margin: 0.3rem 0.5rem 0 0;
+	}
+	
+	
+	/*手动添加*/
+	.hos-right ul li:nth-child(5) a i {
+	    display: block;
+	    font-size: 0.9rem;
+	    color: #CCCCCC;
+	    padding-left: 0.5rem;
+	    box-sizing: border-box;
+	    margin-top: 2.25rem;
+	}
+	.hos-right ul li:nth-child(5) a h2 {
+	    font-size: 1.2rem;
+	    color: #ffffff;
+	    padding-left: 0.5rem;
+	    box-sizing: border-box;
+	}
+	.hos-right ul li:nth-child(5) a span {
+	    display: block;
+	    width: 2rem;
+	    height: 2rem;
+	    float: right;
+	    margin: 0.3rem 0.5rem 0 0;
+	}
+	
+	
+	/*
+	 
+	 * 
+	 * 科室*/
+	.dep_left {
+	    width: 80%;
+	    height: 51rem;
+	    margin: 1.5rem 0 0 1.5rem;
+	    overflow-y: auto;
+	    float: left;
+	}
+	.dep_right span {
+	    display: block;
+	    width: 100%;
+	    height: 2.25rem;
+	}
+	.dep_right {
+	    width: 11%;
+	    height: 51rem;
+	    float: right;
+	    margin: 1.5rem 1.5rem 0 0;
+	}
+	#scrollDiv {
+	    width: 100%;
+	    height: 45.65rem;
+	    overflow: hidden;
+	}
+	.gui-left {
+	    width: 76%;
+	    height: 51rem;
+	    float: left;
+	    margin: 1rem 0 0 2.25rem;
+	    overflow-y: auto;
+	}
+	.gui-right {
+	    width: 13%;
+	    height: 51rem;
+	    float: right;
+	    margin: 1rem 2rem 0 0;
+	}
+	.ite_left {
+	    width: 69%;
+	    height: 51rem;
+	    margin: 1rem 0 0 2rem;
+	    overflow-y: auto;
+	    float: left;
+	}
+	.ite_right {
+	    width: 19.6%;
+	    height: 51rem;
+	    margin: 1rem 3rem 0 0;
+	    float: right;
+	}
+	.ite_right ul {
+	    width: 98%;
+	    margin: 0 auto;
+	}
+	.ite_right ul li {
+	    width: 100%;
+	    height: 13.2rem;
+	    margin: 1rem 0;
+	    position: relative;
+	}
+	.doc_left {
+	    width: 72%;
+	    height: 51rem;
+	    margin: 1.5rem 0 0 1.5rem;
+	    overflow-y: auto;
+	    float: left;
+	}
+	.doc_right {
+	    width: 17%;
+	    height: 51rem;
+	    float: right;
+	    margin: 1.5rem 2rem 0 0;
+	}
+	.doc_right span {
+	    display: block;
+	    width: 100%;
+	    height: 3.25rem;
+	    margin: 0 auto;
+	}
+	#scrollDivs {
+	    width: 100%;
+	    height: 42.65rem;
+	    overflow: hidden;
+	}
+	
+	
+	
+	/*
+	 
+	 * 
+	 * 
+	 * 
+	 * 医普宣教*/
+	.article {
+	    width: 100%;
+	    height: 38rem;
+	    margin-top: 1.2rem;
+	    font-size: 0.9rem;
+	    line-height: 1.5rem;
+	    overflow-y: auto;
+	    border-right: 1px solid #e5e5e5;
+	    padding: 0 0.5rem;
+	    box-sizing: border-box;
+	}
+}

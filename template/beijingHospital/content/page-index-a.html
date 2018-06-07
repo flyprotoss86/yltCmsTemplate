@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{CSS_PATH}first-121/css/common.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/css/thems.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/swiper/swiper-3.3.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/css/responsive.css" />
+		<script src="{CSS_PATH}first-121/js/jquery-2.2.3.min.js"></script>
+		<script src="{CSS_PATH}first-121/swiper/swiper-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<!-- <div class="container"> -->
+			<div class="row">
+				<ul class="nav-list">
+					<li>
+						<a href="{$CATEGORYS[1437][url]}">
+							<img src="{IMG_PATH}first-120/pic8.png" />
+							<span><p>医院</p><p>简介</p></span>
+						</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[1438][url]}">
+							<img src="{IMG_PATH}first-120/pic8-1.png" />
+							<span><p>科室</p><p>介绍</p></span>
+						</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[1441][url]}">
+							<img src="{IMG_PATH}first-120/pic8-2.png" />
+							<span><p>楼层</p><p>分布</p></span>
+						</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[1442][url]}">
+							<img src="{IMG_PATH}first-120/pic8-3.png" />
+							<span><p>住院</p><p>指南</p></span>
+						</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[1449][url]}">
+							<img src="{IMG_PATH}first-120/pic8-4.png" />
+							<span><p>健康</p><p>宣教</p></span>
+						</a>
+					</li>
+					{pc:get sql="select * from v9_category where catid=667"}
+					<li>
+						<a href="{$data[0][url]}">
+							<img src="{IMG_PATH}first-120/pic8-5.png" />
+							<span><p>政策</p><p>法规</p></span>
+						</a>
+					</li>
+					{/pc}
+				</ul>
+			</div>
+		<!-- </div>	 -->
+		{template "content","baidu-footer"}
+	</body>
+</html>

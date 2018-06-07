@@ -1,0 +1,28 @@
+{template "content","header"}
+		<!--********-->
+		<div class="banner"><img src="{IMG_PATH}726/on-banner.png" /></div>
+		<!--************************-->
+		<div class="hos_main">
+			
+			<!--*****-->
+			<div class="weizhi" style="background: url({IMG_PATH}726/yybj.png) no-repeat;background-size: 100% 100%;width: 100%;">
+				<span style="margin-left: 5rem;"><i>当前位置：</i>{catpos($catid)}</span>
+			</div>
+			<!--*******************************-->
+			<div class="hos_box" style="width: 100%;margin-right: 0;">
+				
+				<div class="hos_content1">
+					<div class="jieshao">
+						<div class="news_left_top">
+							<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span><i>{$title}</i></div>
+						</div>
+						
+						<div class="jianjie">
+							{$content}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--****-->
+{template "content","footer_show_chuzhen"}	

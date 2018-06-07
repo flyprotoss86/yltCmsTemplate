@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title>信息输入</title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}insert/common.css"/>
+		<style type="text/css">
+			header{
+				width: 100%;
+				height: 3.9rem;
+				border-bottom: 1px solid #ccc;
+			}
+			header h1{
+				font-size: 1.2rem;
+				color: #333;
+				text-align: center;
+				line-height: 3.9rem;
+			}
+			.list{
+				width: 92%;
+				margin: 0 auto;
+			}
+			.list li{
+				width: 95%;
+				margin: 1rem auto;
+				overflow: hidden;
+			}
+			.list li span{
+				display: block;
+				width: 100%;
+				font-size: 1.2rem;
+				height: 100%;
+				float: left;
+				line-height: 3rem;
+			}
+			.list li span input{
+				width: 60%;
+				height: 1.5rem;
+				margin-top: 0.7rem;
+				border-radius: 0.2rem;
+				outline: none;
+				font-size: 1.2rem;
+			}
+			.list li span input.sex{
+				width: 10%;
+			}
+			.yzm{
+				width: 62%;
+    			float: right;
+    			margin-right: 16%;
+			}
+			.v_container{
+				width: 200px;
+				height: 50px;
+			}
+			.submit{
+				display: block;
+				margin: 1rem auto;
+				width: 30%;
+				height: 2.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>信息录入</h1>
+		</header>
+		<form>
+			<ul class="list">
+				<li>
+					<span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" id='username' name='username' class="user" value=""/></span>
+				</li>
+				<li>
+					<span>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：<input type="number" id='age' name='age' class="age" value=""/></span>
+				</li>
+				<li>
+					<span>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
+						<input type="radio" class="sex" name="sex" value="1"/>男
+						<input type="radio" class="sex" name="sex" value="0"/>女
+					</span>
+				</li>
+				<li>
+					<span>关注医院：<input type="text" id='hospital' name="hospital" class="disease" value=""/></span>
+				</li>
+				<li>
+					<span>科&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;室：<input type="text" id='department' name="department" class="dep" value=""/></span>
+				</li>
+				<li>
+					<span>病&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;症：
+						<input type='text' list="companys" id='disease' name="disease" />
+						<datalist id="companys">
+						  <option value="感冒">
+						  <option value="发烧">
+						  
+						</datalist>
+					</span>
+				</li>		
+				<li>
+					<span>联系方式：<input type="number" id='user_phone' name="user_phone" class="phy" value=""/></span>
+				</li>
+				<li>
+					<span>验&nbsp;证&nbsp;码：
+						<div class="yzm">
+							<div id="v_container" class="v_container"></div>
+							<input type="text" id="code_input" style="width: 200px;" value="" placeholder="请输入验证码"/>
+							<!--<button id="my_button">验证</button>-->
+						</div>
+					</span>
+				</li>
+			</ul>
+			<input type="submit" id="my_button" class="submit" value="提交"/>
+		</form>
+	</body>
+	<script type="text/javascript" src="{CSS_PATH}insert/gVerify.js" ></script>
+	<script type="text/javascript" src="{CSS_PATH}insert/jquery-1.4.4.min.js" ></script>
+	<script type="text/javascript">
+		var verifyCode = new GVerify("v_container");
+
+		document.getElementById("my_button").onclick = function(){
+			var res = verifyCode.validate(document.getElementById("code_input").value);
+			if(res){
+					var U = false;
+					//获取判断姓名
+					var username = $('#username').val();
+					//alert(username);
+					if(!username){
+						alert('请输入姓名');
+						return false;
+					}else{
+						U = true;
+					}
+					
+					//获取判断年龄
+					var A = false;
+					var age = $('#age').val();
+					var r = /^[0-9]*[1-9][0-9]*$/　　//正整数					
+					if(!age){
+						alert('请输入年龄');
+						return false;
+					}else{
+						if(!r.test(age)){
+							alert('请输入正确的年龄');
+							return false;
+						}else{
+							if(age<1 || age>200){
+								alert('请输入正确的年龄');
+								return false;
+							}else{
+								A = true;
+							}
+						}
+					}
+					
+					//获取判断性别
+					var S = false;
+					var val=$('input:radio[name="sex"]:checked').val();
+					if(val==null){
+						alert("请选择性别!");
+						return false;
+					}else{
+						S = true;
+					}
+					
+					//获取判断关注医院
+					var H = false;
+					var hospital = $('#hospital').val();
+					if(!hospital){
+						alert('请输入关注医院');
+						return false;
+					}else{
+						H = true;
+					}
+					
+					//获取判断科室
+					var D = false;
+					var department = $('#department').val();
+					if(!department){
+						alert('请输入科室');
+						return false;
+					}else{
+						D = true;
+					}
+					//获取判断病症
+					var DI = false;
+					var disease = $('#disease').val();
+					if(!disease){
+						alert('请输入病症');
+						return false;
+					}else{
+						DI = true;
+					}
+					//获取判断手机号
+					var P = false;
+					var user_phone = $('#user_phone').val();
+					var rphone = /^1[34578]\d{9}$/;
+					if(!user_phone){
+						alert('请输入手机号');
+						return false;
+					}else{
+						if(!rphone.test(user_phone)){
+							alert('请输入正确的手机号');
+							return false;
+						}else{
+							P = true;
+						}
+					}
+					if(U && A && S && H && D && DI && P){
+						$("form").submit(function(){
+
+								$.get('http://119.90.88.62:88/wei_insert.php',{'contents':'insert','username':username,'age':age,'sex':val,'hospital':hospital,'department':department,'disease':disease,'user_phone':user_phone},function(e){if(e == 200){alert('信息录入成功');WeixinJSBridge.call('closeWindow');}},'json');
+							
+						});	
+					}
+			}else{
+				alert("验证码错误");
+				return false;
+			}
+		}
+	</script>
+</html>

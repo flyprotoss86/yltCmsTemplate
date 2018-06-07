@@ -1,0 +1,88 @@
+      <footer>
+			<ul>
+				<li>清华大学附属垂杨柳医院</li>
+				<li><span>医院地址：</span>北京市朝阳区垂杨柳南街2号</li>
+				<li><span>特别声明：</span>本站内容仅供参考，不作为诊断及医疗依据</li>
+				<li>京卫计网审[2015]第0281号 京ICP备08104888号 京公网安备 11010502033717号</li>
+				<li><span>技术支持：</span>北京医链通科技有限责任公司</li>
+			</ul>
+			
+		</footer>
+</div>
+<div class="container">
+			<!--**头部**-->
+			<header>
+				<span class="col-xs-5"><a href="http://119.90.88.62:88"><i><img src="{CSS_PATH}1020/logo.png"/></i>医汇联</a></span>
+				<span class="col-xs-3"><i><img src="{CSS_PATH}1020/menu.png"/></i>菜单</span>
+			</header>
+			<ul class="menu">
+				<li><a href="http://119.90.88.62:88">首页</a></li>
+				<li><a href="http://119.90.88.62:88">合作医院</a></li>
+				<li><a href="https://weidian.com/?userid=1154968935&wfr=wechatpo_keywords_shop">微商城</a></li>
+				<li><a href="http://119.90.88.62:88/html/jiuzhenxuzhi/">就诊须知</a></li>
+			</ul>
+			<!--**导航**-->
+			<div class="row father">
+				<div class="hot-sale">
+					<ul class="hot-title">
+					
+					<li>
+						<a href="/">医院首页</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[221][url]}">医院概况</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[224][url]}">科室介绍</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[278][url]}">特色技术</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[226][url]}">医护团队</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[228][url]}">出诊时间</a>
+					</li>
+					<!--**<li>
+						<a href="{$CATEGORYS[295][url]}">医院宣教</a>
+					</li>**-->
+					<li>
+						<a href="{$CATEGORYS[230][url]}">医院新闻</a>
+					</li>
+					<li>
+						<a href="{$CATEGORYS[348][url]}">注意事项</a>
+					</li>
+					</ul>
+					
+				</div>
+			</div>
+			<!--**广告图**-->
+			<div class="row banner">
+				<img src="{IMG_PATH}1020/lunbo.png"/>
+			</div>
+			<!--**科室**-->
+			<div class="row department">
+				<h1>特色技术</h1>
+				{pc:content action="category" catid="278" order="id DESC" return="info"}
+					<ul>
+					{loop $info $v}
+						<li class="col-xs-3">
+							<a href="{$v['url']}">
+								<span><img src="{$v[image]}"/></span>
+								<p>{str_cut($v['catname'],40)}</p>
+							</a>
+						</li>
+					{/loop}	
+					</ul>
+				{/pc}
+				
+			</div>
+			<!--**专家介绍**-->
+			
+			<!--**底部**-->
+			<footer>2017医汇联  版权所有</footer>
+		</div>
+	</body>
+
+</html>

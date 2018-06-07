@@ -1,0 +1,65 @@
+{template "content","header"}
+
+		<div class="swiper-container" style="height: 13rem;margin-top: 0;">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide div1">
+					<img src="{IMG_PATH}118/dongfang.png" />
+				</div>
+				
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<!--************************-->
+		<div class="on_main">
+			<ul class="on_main_top">
+				<li>
+					<a href="{$CATEGORYS[894][url]}" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img1.png" />
+						<p><span>科室特色</span>/<strong>Department</strong></p>
+					</a>
+				</li>
+				<li>
+					<a href="{$CATEGORYS[896][url]}" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img2.png" />
+						<p><span>医生团队</span>/<strong>Doctor</strong></p>
+					</a>
+				</li>
+				<li>
+					<a href="{$CATEGORYS[923][url]}" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img3.png" />
+						<p><span>就诊须知</span>/<strong>Consultation</strong></p>
+					</a>
+				</li>
+				<li style="position: relative;">
+					<a href="{$CATEGORYS[924][url]}" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img4.png" />
+						<p><span>住院须知</span>/<strong>Inpatient</strong></p>
+					</a>
+				</li>
+			</ul>
+			<!--*********科室特色************-->
+			<div class="depas">
+				<div class="news_left_top">
+					<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span>科室特色</div>
+					<a class="more" href="{$CATEGORYS[894][url]}">更多+</a>
+				</div>
+				 {pc:content action="lists" catid="893" num="7" order="id asc" return="info"}
+					<ul class="depa_list">
+					{loop $info $v}
+						<li> 
+							<a href="{$v['url']}" style="display: block;overflow: hidden;"> 
+								<span><img src="{$v[thumb]}"/></span> 
+								<p>{str_cut($v['title'],40)}</p>
+							</a>
+						</li>
+					
+					
+					{/loop}
+					
+					
+				</ul>
+			{/pc}
+			</div>
+		
+		</div>
+{template "content","footer"}	

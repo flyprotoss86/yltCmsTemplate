@@ -1,0 +1,35 @@
+{template "content","header"}
+<div class="banner"><img src="{IMG_PATH}726/on-banner.png"/></div>
+		<!--************************-->
+		<div class="hos_main">
+			<div class="left_nav">
+				<div class="list_top" style="background: url({IMG_PATH}726/jiancha_nav.png) no-repeat;background-size: 100% 100%;">
+					<span><img src="{IMG_PATH}726/jc-heng.png"/></span>医院概况
+				</div>
+				<ul>
+				{loop $arrchild_arr $cid}
+					<li {if $catid==$cid}class="check"{/if}>
+						
+						<a href="{$CATEGORYS[$cid][url]}">{$CATEGORYS[$cid][catname]}</a>
+					</li>
+				{/loop}
+					
+				</ul>
+			</div>
+			<!--*****-->
+			<div class="weizhi" style="background: url({IMG_PATH}726/yybj.png) no-repeat;background-size: 100% 100%;">
+				
+			</div>
+			<!--*******************************-->
+			<div class="hos_box">
+				<div class="news_left_top">
+					<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span><i>{$title}</i></div>
+				</div>
+				<div class="hos_content1">
+					{$content}
+				</div>
+				
+			</div>
+		</div>
+		<!--    ****   -->
+{template "content","footer_page_h"}	

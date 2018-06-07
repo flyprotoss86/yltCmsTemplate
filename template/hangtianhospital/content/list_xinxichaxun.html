@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}928/common.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../css/tuwenye.css"/>-->
+		<style type="text/css">
+			.tw_box {
+				width: 100%;
+			}
+			
+			header {
+				width: 100%;
+				height: 3.9rem;
+				line-height: 3.9rem;
+				text-align: center;
+				font-size: 1rem;
+				color: #333333;
+			}
+			
+			.tw_main {
+				width: 93.75%;
+				margin: 0 auto;
+			}
+			.message{
+				font-size: 1rem;
+				color: #333333;
+				line-height: 1.9rem;
+			}
+			.message input{
+				width: 6.9rem;
+				height: 1.9rem;
+				text-align: center;
+				color: #333333;
+				border: 1px solid #c9c9c9;
+				border-radius: 5px;
+				margin-left: 1rem;
+				margin-right: 1.5rem;
+				font-size: 0.9rem;
+				outline: none;
+			}
+			.message select{
+				width: 12.9rem;
+				height: 1.9rem;
+				border: 1px solid #c9c9c9;
+				border-radius: 5px;
+				text-align: center;
+				font-size: 0.9rem;
+				color: #333333;
+				outline: none;
+				margin-left: 1rem;
+				margin-right: 4.25rem;
+			}
+			.message button{
+				width: 4.4rem;
+				height: 1.9rem;
+				text-align: center;
+				font-size: 0.9rem;
+				line-height: 1.9rem;
+				color: #333333;
+				background: white;
+				border: 1px solid #c9c9c9;
+				border-radius: 5px;
+				outline: none;
+			}
+			.text{
+				width: 40rem;
+				height: 23.5rem;
+				border: 1px solid #c9c9c9;
+				margin: 2.5rem auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="tw_box">
+			<header>{$CATEGORYS[$catid][catname]}</header>
+			<div class="tw_main">
+				<div class="message">
+					病历号：<input type="text" />
+					检查项目：<select>
+								<option id="op1">血常规</option>
+								<option id="op2">尿检</option>
+								<option id="op3">胸透</option>
+							</select>
+					<button>查询</button>		
+				</div>
+				<div class="text">
+					
+				</div>
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="{JS_PATH}928/jquery-1.11.0.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".message input").keyup(function(){
+//				this.value = this.value.replace(/[^\d]/g, '').replace(/(?=\d)/g, "$1 ");
+				this.value = this.value.replace(/[^0-9.]/g,'');
+			})
+			
+			$("button").click(function(){
+				var selectid = $("select>option:selected")
+				selectid.val(function(){
+        			
+        			var html = "";
+        			if (selectid.attr("id") == "op1") {
+						html +='<p><img src="{IMG_PATH}928/xcg.png"/></p>';
+					}else if (selectid.attr("id") == "op2") {
+						html +='<p><img src="{IMG_PATH}928/nj.jpg"/></p>';
+					}else if (selectid.attr("id") == "op3") {
+						html +='<p><img src="{IMG_PATH}928/xt.jpg"/></p>';
+					}
+					$(".text").html(html)
+        		})
+				
+			})
+			
+			
+			
+		})
+	</script>
+</html>

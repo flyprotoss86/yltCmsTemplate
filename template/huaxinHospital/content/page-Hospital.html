@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{CSS_PATH}demo121/css/common.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}demo121/css/thems.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}demo121/swiper/animate.min.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}demo121/swiper/swiper-3.3.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/css/responsive.css" />
+		<script src="{CSS_PATH}demo121/js/jquery-2.2.3.min.js"></script>
+		<script src="{CSS_PATH}demo121/swiper/swiper-3.3.1.min.js"></script>
+		<script src="{CSS_PATH}demo121/swiper/swiper.animate1.0.2.min.js"></script>
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.swiper-container {
+				width: 98%;
+				height: 100%;
+				position: relative;
+			}
+			.kaifa{
+				width: 25rem;
+				height: 5rem;
+				background: rgb(255, 255, 255);
+				margin: 10rem auto;
+				line-height: 5rem;
+				text-align: center;
+				border-radius: 1rem;
+				position: absolute;
+				left: 31%;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container" style="min-height: 682px;">
+			<!-- <div class="row" style="height: 94%;"> -->
+				<!-- <div class="hospital"> -->
+					<div class="swiper-container" style="padding: 0;">
+						<div class="swiper-wrapper">
+							<!-- <div class="swiper-slide page1"> -->
+								<!-- <div class="kaifa">正在努力的开发中！！！</div> -->
+								<!-- <ul> -->
+									<!-- <li class="ts-btn"> -->
+										<!-- <a> -->
+											<!-- <span><img src="{CSS_PATH}demo121/img/pic15.png"/></span> -->
+											<!-- <p>查询系统</p> -->
+										<!-- </a> -->
+									<!-- </li> -->
+									<!-- <li class="ts-btn"> -->
+										<!-- <a href="#"> -->
+											<!-- <span><img src="{CSS_PATH}demo121/img/pic16.png"/></span> -->
+											<!-- <p>门诊预约</p> -->
+										<!-- </a> -->
+									<!-- </li> -->
+									<!-- <li> -->
+										<!-- <a href="{$CATEGORYS[658][url]}">  -->
+											<!-- <span><img src="{CSS_PATH}demo121/img/pic17.png"/></span> -->
+											<!-- <p>{$CATEGORYS[658][catname]}</p> -->
+										<!-- </a> -->
+									<!-- </li> -->
+									<!-- <li class="ts-btn"> -->
+										<!-- <a href="#"> -->
+											<!-- <span><img src="{CSS_PATH}demo121/img/pic18.png"/></span> -->
+											<!-- <p>医患交流</p> -->
+										<!-- </a> -->
+									<!-- </li> -->
+								<!-- </ul> -->
+								<!-- <div class="up ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><img src="{CSS_PATH}demo121/img/pic19.png" /></div> -->
+							<!-- </div> -->
+							<div class="swiper-slide page2">
+								<div class="kaifa">正在努力的开发中！！！</div>
+								<div class="row">
+									<div class="pages2">
+										<div class="row" style="overflow: hidden;">
+											<div class="banner-a">
+												<img src="{CSS_PATH}demo121/img/banner-a.png" />
+											</div>
+											<ul class="hos-list1">
+												<li style="background: #b894d7;">
+													<a href="{$CATEGORYS[1038]['url']}">医院简介</a>
+												</li>
+												<li style="background: #9a94d7;">
+													<a href="{$CATEGORYS[1039]['url']}">科室介绍</a>
+												</li>
+												<li class="ts-btn" style="background: #d7a494;">
+													<a href="#">查询系统</a>
+												</li>
+												<li style="background: #94c3d7;">
+													<a href="{$CATEGORYS[1040]['url']}">就医指南</a>
+												</li>
+											</ul>
+										</div>
+										<!--医护列表-->
+										<div class="row">
+										
+										{pc:get sql="select * from v9_huanxin_wenzhang where recommend_doctor=1"}
+											<ul class="hos-list2">
+											{if $data[0]}
+												<li>
+													<a href="{$data[0]['url']}">
+														<img src="{$data[0][thumb]}" />
+														<span>{$data[0][doctor_job]}</span>
+														<p>{$data[0]['title']}</p>
+													</a>
+												</li>
+											{/if}
+											{if $data[1]}
+												<li>
+													<a href="{$data[1]['url']}">
+														<img src="{$data[1][thumb]}" />
+														<span>{$data[1][doctor_job]}</span>
+														<p>{$data[1]['title']}</p>
+													</a>
+												</li>
+											{/if}
+											{if $data[2]}
+												<li>
+													<a href="{$data[2]['url']}">
+														<img src="{$data[2][thumb]}" />
+														<span>{$data[2][doctor_job]}</span>
+														<p>{$data[2]['title']}</p>
+													</a>
+												</li>
+											{/if}
+											{if $data[3]}
+												<li>
+													<a href="{$data[3]['url']}">
+														<img src="{$data[3][thumb]}" />
+														<span>{$data[3][doctor_job]}</span>
+														<p>{$data[3]['title']}</p>
+													</a>
+												</li>
+											{/if}
+											{if $data[4]}
+												<li>
+													<a href="{$data[4]['url']}">
+														<img src="{$data[4][thumb]}" />
+														<span>{$data[4][doctor_job]}</span>
+														<p>{$data[4]['title']}</p>
+													</a>
+												</li>
+											{/if}
+												<li>
+													<a href="{$CATEGORYS[1041]['url']}">
+														<img src="{CSS_PATH}demo121/img/pic21.png" />
+														<i>查看更多>></i>
+													</a>
+												</li>
+											</ul>
+										{/pc}
+										</div>
+										<!--内容列表-->
+										<div class="row">
+											<ul class="hos-list3">
+												<li>
+													<a href="{$CATEGORYS[1043]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic22.png"/></span>
+														<p>楼层分布</p>
+													</a>
+												</li>
+												<li>
+													<a href="{$CATEGORYS[1044]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic23.png"/></span>
+														<p>住院指南</p>
+													</a>
+												</li>
+												<li>
+													<a href="{$CATEGORYS[1045]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic24.png"/></span>
+														<p>急诊指南</p>
+													</a>
+												</li>
+												<li>
+													<a href="{$CATEGORYS[1046]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic25.png"/></span>
+														<p>门诊指南</p>
+													</a>
+												</li>
+												<li>
+													<a href="{$CATEGORYS[1047]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic26.png"/></span>
+														<p>特需门诊</p>
+													</a>
+												</li>
+												<li>
+													<a href="{$CATEGORYS[1048]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic27.png"/></span>
+														<p>专家门诊</p>
+													</a>
+												</li>
+												<li>
+													<a href="{$CATEGORYS[1049]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic28.png"/></span>
+														<p>特色医疗</p>
+													</a>
+												</li>
+												<li>
+													<a href="{$CATEGORYS[1050]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic29.png"/></span>
+														<p>医保指南</p>
+													</a>
+												</li>
+												{pc:get sql="select * from nr.v9_category where catid=667"}
+												<li>
+													<a href="{$data[0]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic30.png"/></span>
+														<p>{$data[0]['catname']}</p>
+													</a>
+												</li>
+												{/pc}
+												<li>
+													<a href="{$CATEGORYS[1051]['url']}">
+														<span><img src="{CSS_PATH}demo121/img/pic31.png"/></span>
+														<p>健康宣教</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- </div> -->
+			<!-- </div> -->
+		</div> 
+{template "content","baidu-footer"}
+	</body>
+	<script type="text/javascript">
+		<!-- var mySwiper = new Swiper('.swiper-container', { -->
+			<!-- direction: 'vertical', -->
+			<!-- loop: false, -->
+			<!-- initialSlide: 0, -->
+
+			<!-- prevButton: '.swiper-button-prev', -->
+			<!-- nextButton: '.swiper-button-next', -->
+			<!-- // 如果需要分页器 -->
+			<!-- pagination: '.swiper-pagination', -->
+
+			<!-- onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit -->
+				<!-- swiperAnimateCache(swiper); //隐藏动画元素  -->
+				<!-- swiperAnimate(swiper); //初始化完成开始动画 -->
+			<!-- }, -->
+			<!-- onSlideChangeEnd: function(swiper) { -->
+				<!-- swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画 -->
+			<!-- } -->
+		<!-- }) -->
+		
+		
+		$(".ts-btn").click(function(){
+			$(".kaifa").show().delay(1000).hide(0);
+		})
+	</script>
+
+</html>

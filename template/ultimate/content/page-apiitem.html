@@ -1,0 +1,6 @@
+<?php $cid=intval($_GET['cid']); $iid=intval($_GET['iid']); $iwhere="id='".$iid."'"; ?>
+{pc:content action="lists" catid="$cid" num="1" moreinfo="1" where="$iwhere" order="id DESC" return="info"}
+<?php
+$cnt=json_encode($info);
+header('Content-type: application/json');
+?>aa({$cnt})

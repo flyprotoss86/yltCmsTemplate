@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}424/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}424/css/yipuxuanjiao.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}424/css/fit.css"/>
+		<script src="{CSS_PATH}demo121/js/jquery-2.2.3.min.js"/></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="yp-box">
+				<div class="yp-left">
+				{pc:content action="lists" catid="$catid" num="50" moreinfo="1" order="inputtime DESC" page="$page"}
+					<ul>
+						{loop $data $val}			
+						<li>
+						{if $val['v_static'] == 1}
+							<a content="{$val['content']}" title="{$val['title']}" class="aurl_a">
+							{else}
+							<a href="{$val[url]}">
+						{/if}
+								<span class="img">
+									<img src="{$val[thumb]}"/>
+								</span>
+								<div class="title">
+									<h1>{$val[title]}</h1>
+									<p>{str_cut($val[description], 100)}</p>
+									<span class="lei"><i>{date('Y-m-d')}</i><em>{$CATEGORYS[$val[catid]][catname]}</em></span>
+								</div>
+							</a>
+						</li>
+						{/loop}
+					</ul>
+				{/pc}
+				
+				</div>
+				<script>
+	
+				$('.aurl_a').each(function(){
+					$(this).click(function(){
+						//alert($(this).attr('content'));
+						var url = $(this).attr('content');
+						var title = $(this).attr('title');
+					　　//调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+					　　//myObj.callAndroid(title,url);
+						Medical.playVideo(title,url);
+						//console.log(title,url);
+					});
+				});
+				</script>
+				<!--分类-->
+				<div class="yp-right">
+					<h1>分类</h1>
+					<ul>
+						{pc:content action="category" catid="981" num="99" order="listorder ASC"}
+						{loop $data $v}
+						<li><a href="{$v[url]}">{$v[catname]}</a></li>
+						{/loop}
+						{/pc}
+						<li><a href="{$CATEGORYS[983][url]}">{$CATEGORYS[983][catname]}</a></li>
+						<li><a href="{$CATEGORYS[984][url]}">{$CATEGORYS[984][catname]}</a></li>
+						<li><a href="{$CATEGORYS[985][url]}">{$CATEGORYS[985][catname]}</a></li>
+						<li><a href="{$CATEGORYS[986][url]}">{$CATEGORYS[986][catname]}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

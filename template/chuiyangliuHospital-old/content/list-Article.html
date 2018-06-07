@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}demo121/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}demo121/css/style.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="article-list">
+					{pc:content action="lists" catid="$catid" num="50"  return="info"}
+					<ul>
+					{loop $info $v}
+						<li>
+							<a href="{$v[url]}">
+								<span><img src="{CSS_PATH}demo121/img/2018123.png"/></span>
+								<p>{$v[title]}</p>
+								<i>{$date('Y-m-d',$v[inputtime])}</i>
+							</a>
+						</li>
+					{/loop}
+					</ul>
+					{/pc}
+				</div>
+			</div>
+		</div>
+		{template "content","baidu-footer"}
+	</body>
+</html>

@@ -1,0 +1,118 @@
+<!-- header开始 -->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/common.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/Online_hospital.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/header.css"/>
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/footer.css"/>
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/swiper/swiper-3.3.1.min.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/Department.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/Hospital_profile.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/Department_details.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/pagination.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/doctor.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 770px)" href="{CSS_PATH}726/responsive.css" />
+		<script media="screen and (min-width: 770px)" type="text/javascript" src="{JS_PATH}726/jquery-1.11.0.js"></script>
+		<script media="screen and (min-width: 770px)" src="{CSS_PATH}726/swiper/swiper-3.3.1.min.js"></script>
+		<script media="screen and (min-width: 770px)" type="text/javascript" src="{JS_PATH}726/Online_hospital.js"></script>
+		
+		
+		
+		
+		
+		
+		
+		
+		<script media="screen and (max-width: 769px)" src="{CSS_PATH}1020/index.js"></script>
+		<link rel="stylesheet"  media="screen and (max-width: 769px)" href="{CSS_PATH}1020/bootstrap.min.css">
+		<link rel="stylesheet"  media="screen and (max-width: 769px)" type="text/css" href="{CSS_PATH}1020/index.css" />
+		<link rel="stylesheet" media="screen and (max-width: 769px)" type="text/css" href="{CSS_PATH}1020/header.css" />
+		<script media="screen and (max-width: 769px)" src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script media="screen and (max-width: 769px)" src="{CSS_PATH}1020/bootstrap.min.js"></script>
+		<style type="text/css">
+			.box1 {
+				display: none;
+			}
+			
+			.container {
+				display: block;
+			}
+			
+			@media screen and (min-width: 769px) {
+				.box1 {
+					display: block;
+				}
+				.container {
+					display: none;
+				}
+			}
+			<!-- .On_logo { -->
+				<!-- width: 18.7%; -->
+				<!-- height: 2.4rem; -->
+				<!-- margin: 0.85rem 0 0 0; -->
+				<!-- float: left; -->
+				<!-- color: #333333; -->
+				<!-- font-size: 1.3rem; -->
+				<!-- line-height: 2.2rem; -->
+			<!-- } -->
+			<!-- .nav_list { -->
+				<!-- width: 75%; -->
+				<!-- height: 61%; -->
+				<!-- margin: 0.8rem 0 0 0; -->
+				<!-- float: left; -->
+				<!-- display: -webkit-flex; -->
+				<!-- display: flex; -->
+				<!-- -webkit-justify-content: space-between; -->
+				<!-- justify-content: space-between; -->
+			<!-- } -->
+			<!-- .nav_list li { -->
+				<!-- width: auto; -->
+				<!-- font-size: 1rem; -->
+				<!-- line-height: 2.3rem; -->
+				<!-- margin-right: 0.5rem; -->
+			<!-- } -->
+		</style>
+	</head>
+
+	<body>
+	<div class="box1">
+		<header style="background: url({IMG_PATH}726/header.png) no-repeat;background-size:100% 100%;">
+			<div class="top">
+				<!-- <div class="On_logo"><img src="{IMG_PATH}021/logo2.png" /></div> -->
+				<ul class="nav_list">
+
+					<li {if $catid} class="" {else} class="action" {/if} >
+						<a href="/">医院首页</a>
+					</li>
+					<li {if $catid == 764 || $catid == 765} class="action" {else} class="" {/if}>
+						<a href="{$CATEGORYS[764][url]}">医院概况</a>
+					</li>
+					<li {if $catid == 742 || $catid == 743 || $catid == 744 || $catid == 745 || $catid == 746 || $catid == 747} class="action" {else} class="" {/if}>
+						<a href="{$CATEGORYS[742][url]}">科室介绍</a>
+					</li>
+					<li {if $catid == 748} class="action" {else} class="" {/if}>
+						<a href="{$CATEGORYS[748][url]}">内分泌实验室</a>
+					</li>
+					<li {if $catid == 749} class="action" {else} class="" {/if}>
+						<a href="{$CATEGORYS[749][url]}">出入院须知</a>
+					</li>
+					<li {if $catid == 750} class="action" {else} class="" {/if}>
+						<a href="{$CATEGORYS[750][url]}">内分泌常见注意事项</a>
+					</li>
+					<li {if $catid == 767 || $catid == 768 || $catid == 769 || $catid == 770 || $catid == 771 || $catid == 772} class="action" {else} class="" {/if}>
+						<a href="{$CATEGORYS[767][url]}">健康知识</a>
+					</li>
+					<li {if $catid == 758} class="action" {else} class="" {/if}>
+						<a href="{$CATEGORYS[758][url]}">新技术开展</a>
+					</li>
+					<li {if $catid == 759} class="action" {else} class="" {/if}>
+						<a href="{$CATEGORYS[759][url]}">通知及信息</a>
+					</li>
+				</ul>
+
+			</div>
+		</header>

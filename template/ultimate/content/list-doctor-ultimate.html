@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/hospital.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/fit.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0524/css/ultimate.css"/>
+		<style>
+			.dep_right{
+				width: 11% !important;
+				position: fixed !important;
+				top: 0.5rem !important;
+				right: 1.2rem !important;
+				bottom: 0.5rem !important;
+				height:auto !important;
+				margin:0 !important;
+			}
+			.dep_left{
+				height: auto !important;
+				position:fixed !important;
+				left:1.5rem !important;
+				top:1.5rem !important;
+				bottom:1.5rem !important;
+				width:80% !important;
+				margin:0 !important;
+			}
+			#btn1{
+				position: absolute;
+				bottom: 0;
+			}
+			#scrollDiv ul li.doctor span{
+				color: #707070;
+				font-size: 1rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: auto;
+				white-space: nowrap;
+			}
+			table{
+				height: auto !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="yp-box">
+				<div class="dep_left">
+					<h1>{$title}</h1>
+					{$content}
+				</div>
+				<!--右栏-->
+				<div class="dep_right">
+					<span id="btn2"><img src="{CSS_PATH}0426/img/img-14.png"/></span>
+					<div id="scrollDiv">
+					{pc:content action="lists" catid="$catid" num="100" order="id DESC" return="info"}
+						<ul>
+						{loop $info $val}
+							<li class="doctor" id="li{$val[id]}" onclick="selectItem('{$val[id]}')">
+								<div style="background:#fff url('{$val[thumb]}')"></div>
+								<span>{$val[title]}</span>
+							</li>
+						{/loop}
+						</ul>
+					{/pc}
+					</div>
+					<span id="btn1"><img src="{CSS_PATH}0426/img/img-15.png"/></span>
+				</div>
+			</div>
+		</div>	
+	</body>
+	<script type="text/javascript" src="{CSS_PATH}0426/js/jquery-2.1.0.js" ></script>
+	<script src="{CSS_PATH}0524/js/cmsapi.js"></script>
+	<script>
+    function selectItem(id){
+      getitembycidandid({$catid},id,function(obj){
+        $('#li'+id).addClass('selected').siblings().removeClass('selected')
+        $('.dep_left').empty().append($('<h1>'+obj.title+'</h1>'+obj.content))
+      })
+    }
+    $(document).ready(function () {
+      var _id=GetQueryString('id')
+			if(!_id)
+			  _id=$('.dep_right ul li:first-child').attr('id').substr(2)
+			selectItem(_id)
+    })
+	</script>
+
+
+	<script type="text/javascript">
+		/*重要脚本*/
+		(function($) {
+		  var _width=$('.dep_right').width()
+      $('li.doctor div').width(_width).height(_width).css('border-radius',_width/2).css('background-size','cover').css('background-position','center center');
+      $('#scrollDiv').height($('.dep_right').height()-$('#btn1').height()-$('#btn2').height())
+
+
+			$.fn.extend({
+				Scroll: function(opt, callback) {
+					if(!opt) var opt = {};
+					var _btnUp = $("#" + opt.up); //Shawphy:向上按钮      
+					var _btnDown = $("#" + opt.down); //Shawphy:向下按钮
+					var _this = this.eq(0).find("ul:first");
+					var lineH = _this.find("li:first").height() + 1; //获取行高  此处我加了1 因为样式中用到了margin-bottom:1px 这个根据自己情况修改
+					var line = opt.line ? parseInt(opt.line, 10) : parseInt(this.height() / lineH, 10); //每次滚动的行数，默认为一屏，即父容器高度
+					var speed = opt.speed ? parseInt(opt.speed, 10) : 600; //卷动速度，数值越大，速度越慢（毫秒） 
+					var m = 0; //用于计算的变量
+					var count = _this.find("li").length; //总共的<li>元素的个数
+					var upHeight = line * lineH;
+					var showline = opt.showline; //显示多少行
+					function scrollUp() {
+						if(!_this.is(":animated")) { //判断元素是否正处于动画，如果不处于动画状态，则追加动画。
+							if(m < count) { //判断 m 是否小于总的个数
+								var go_count = count - m - showline;
+								if((count - m) > showline) {
+									if(go_count < line) {
+										m += go_count;
+										upHeight = go_count * lineH;
+										_this.animate({
+											marginTop: "-=" + upHeight + "px"
+										}, speed);
+									} else {
+										m += line;
+										upHeight = line * lineH;
+										_this.animate({
+											marginTop: "-=" + upHeight + "px"
+										}, speed);
+									}
+								} else {
+
+								}
+							}
+						}
+					}
+
+					function scrollDown() {
+						if(!_this.is(":animated")) {
+							if(m > 0) {
+								if(m > line) { //判断m 是否大于一屏个数
+									m -= line;
+									upHeight = line * lineH;
+									_this.animate({
+										marginTop: "+=" + upHeight + "px"
+									}, speed);
+								} else {
+									upHeight = m * lineH;
+									m -= m;
+									_this.animate({
+										marginTop: "+=" + upHeight + "px"
+									}, speed);
+								}
+							}
+						}
+					}
+					_btnUp.bind("click", scrollUp);
+					_btnDown.bind("click", scrollDown);
+				}
+			});
+		})(jQuery);
+		$(function() {
+			$("#scrollDiv").Scroll({
+				line: 2,
+				speed: 500,
+				up: "btn1",
+				down: "btn2",
+				showline: 5
+			});
+		});
+		
+
+	</script>
+</html>

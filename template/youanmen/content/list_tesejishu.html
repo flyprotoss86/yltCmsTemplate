@@ -1,0 +1,40 @@
+{template "content","header"}
+		<div class="banner"><img src="{IMG_PATH}726/on-banner.png" /></div>
+		<!--************************-->
+		<div class="hos_main">
+			<div class="left_nav">
+				<div class="list_top" style="background: url({IMG_PATH}726/jiancha_nav.png) no-repeat;">
+					<span><img src="{IMG_PATH}726/jc-heng.png"/></span>{$CATEGORYS[$catid][catname]}
+				</div>
+			</div>
+			<!--*****-->
+			
+			<!--*******************************-->
+			<div class="hos_box">
+				<!--***************护理团队*************************-->
+				<div class="hos_contents">
+					<div class="news_left_top">
+						<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span>{$CATEGORYS[$catid][catname]}</div>
+					</div>
+					{pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page"}
+					<ul class="hl_box">
+						{loop $data $val}
+							<li>
+								<a href="{$val[url]}">
+									<span class="hl_bt">
+										<i><img src="{IMG_PATH}726/biaotou.png"/></i>{$val['title']}
+									</span>
+								</a>
+							</li>
+						{/loop}
+						
+					</ul>
+				{/pc}
+					
+						<div class="wbd" style="width: 100%;height: 2rem;font-size: 1.2rem;text-align: center;float: left;">{$pages}</div>
+					
+					
+				</div>
+			</div>
+		</div>
+{template "content","footer_list_tesejishu"}

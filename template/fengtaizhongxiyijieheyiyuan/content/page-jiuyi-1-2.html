@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/hospital.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/fit.css"/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="yp-box">
+				<div class="gui-left">
+					{$content}
+				</div>
+				<!--右栏-->
+				<div class="gui-right">
+				{pc:content action="category" catid="$parentid" num="25" siteid="$siteid" order="listorder ASC"}
+					<ul>
+					{loop $data $r}
+					{if $r[catid] == $catid}
+						<li class="only">
+					{else}
+						<li>
+					{/if}
+							<a href="{$r[url]}">{$r[catname]}</a>
+						</li>
+					{/loop}
+						
+					</ul>
+				{/pc}
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="{CSS_PATH}0426/js/jquery-2.1.0.js" ></script>
+	<script type="text/javascript">
+		$(".gui-right ul li").click(function(){
+			$(this).addClass("only").siblings().removeClass("only");
+		})
+	</script>
+</html>

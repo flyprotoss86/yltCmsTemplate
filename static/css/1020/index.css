@@ -1,0 +1,640 @@
+body {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+
+/*--合作医院--*/
+
+.yiyuan {
+	background: #fff;
+}
+
+.yiyuan h1 {
+	font-size: 1.08rem;
+	color: #333333;
+	padding-left: 1.25rem;
+	box-sizing: border-box;
+}
+
+.yiyuan ul {
+	width: 100%;
+	list-style: none;
+	overflow: hidden;
+}
+
+.yiyuan ul li {
+	float: left;
+}
+
+.yiyuan ul li a {
+	display: block;
+}
+.yiyuan ul li a  span{
+	width: 3.33rem;
+	height: 3.33rem;
+	display: block;
+	margin: 1.2rem auto 0;
+}
+.yiyuan ul li a p {
+	color: #666;
+	font-size: 1.2rem;
+	line-height: 2.5rem;
+	text-align: center;
+}
+
+
+/*--微商城--*/
+
+.weishop {
+	background: #fff;
+	margin-top: 0.417rem;
+	margin-bottom: 4rem;
+}
+
+.weishop h1 {
+	font-size: 1.08rem;
+	color: #333333;
+	padding-left: 1.26rem;
+	box-sizing: border-box;
+}
+
+.weishop h1 a {
+	float: right;
+	padding-right: 1.25rem;
+	box-sizing: border-box;
+	color: #333333;
+	text-decoration: none;
+}
+
+.weishop ul {
+	width: 86%;
+	margin: 0 auto;
+	list-style: none;
+	overflow: hidden;
+}
+
+.weishop ul li {
+	float: left;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+
+.weishop ul li a {
+	display: block;
+}
+.weishop ul li a  span{
+	display: block;
+	margin: 1.2rem auto 0;
+	height: 6rem;
+}
+.weishop ul li a p {
+	color: #666;
+	font-size: 1.26rem;
+	line-height: 1.7rem;
+	text-align: center;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/*--**就诊须知**--*/
+
+.notice {
+	background: #fff;
+	margin-top: 0.417rem;
+	padding-bottom: 2rem;
+	margin-bottom: 3.9rem;
+}
+
+.notice h1 {
+	font-size: 1.08rem;
+	color: #333333;
+	padding-left: 1.25rem;
+	box-sizing: border-box;
+}
+
+.notice h1 a {
+	float: right;
+	padding-right: 1.25rem;
+	box-sizing: border-box;
+	color: #333333;
+	text-decoration: none;
+}
+
+.notice ul {
+	width: 86%;
+	margin: 0 auto;
+	list-style: none;
+	overflow: hidden;
+}
+
+.notice ul li {
+	padding-left: 0;
+	padding-right: 0;
+	margin: 1.25rem 0;
+}
+
+.notice ul li span {
+	display: block;
+	width: 23%;
+	float: left;
+}
+
+.notice ul li ol {
+	width: 70%;
+	float: right;
+	list-style: none;
+}
+
+.notice ul li ol h2 {
+	font-size: 1.26rem;
+	color: #000;
+}
+
+.notice ul li ol li {
+	margin: 0;
+	list-style-image: url(../img/dian.png);
+}
+
+.notice ul li ol li a {
+	font-size: 1.2rem;
+	color: #666666;
+	line-height: 1.75rem;
+}
+.not_btn{
+	width:100%;
+	list-style: none;
+}	
+.not_btn li{
+	 width: 25%;
+	 float: left;
+	 text-align: center;
+	 line-height: 3.5rem;
+	 font-size: 1.2rem;
+	 color: #333;
+}
+
+/*-------------------------医院首页------------------------------*/
+/*--广告图--*/
+.banner{
+	width: 100%;
+	height: 11.25rem;
+	margin-top: 6.317rem;
+}
+/*--科室--*/
+.department {
+	background: #fff;
+	padding-bottom: 5rem;
+	/*margin-bottom: 3.9rem;*/
+}
+
+.department h1 {
+	font-size: 1.08rem;
+	color: #333333;
+	padding-left: 1.25rem;
+	box-sizing: border-box;
+}
+.department h1 a {
+	float: right;
+	padding-right: 1.25rem;
+	box-sizing: border-box;
+	color: #333333;
+	text-decoration: none;
+}
+.department ul {
+	width: 100%;
+	list-style: none;
+	overflow: hidden;
+}
+
+.department ul li {
+	float: left;
+}
+
+.department ul li a {
+	display: block;
+}
+.department ul li a span{
+	display: block;
+	border: 1px solid #e3e3e3;
+	margin: 1.2rem auto 0;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.department ul li a p {
+	color: #666;
+	font-size: 1.2rem;
+	line-height: 2.5rem;
+	text-align: center;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+/*--专家介绍--*/
+.expert {
+	background: #fff;
+	margin-top: 0.417rem;
+	padding-bottom: 2rem;
+	margin-bottom: 3.9rem;
+}
+
+.expert h1 {
+	font-size: 1.08rem;
+	color: #333333;
+	padding-left: 1.25rem;
+	box-sizing: border-box;
+}
+
+.expert h1 a {
+	float: right;
+	padding-right: 1.25rem;
+	box-sizing: border-box;
+	color: #333333;
+	text-decoration: none;
+}
+
+.expert ul {
+	width: 86%;
+	margin: 0 auto;
+	list-style: none;
+	overflow: hidden;
+}
+
+.expert ul li {
+	float: left;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+
+.expert ul li a {
+	display: block;
+}
+.expert ul li a  span{
+	display: block;
+	margin: 1.2rem auto 0;
+}
+.expert ul li a p {
+	color: #333333;
+	font-size: 1.2rem;
+	line-height: 1.7rem;
+	text-align: center;
+	margin: 0 0 0;
+}
+.expert ul li a p:last-child{
+	color: #666666;
+	font-size: 0.917rem;
+}
+/*------------------------医院简介-----------------------------------*/
+.yam_page_btn{
+	width: 90%;
+	list-style: none;
+	border: 1px solid #666;
+	margin: 0 auto;
+	overflow: hidden;
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.yam_page_btn li{
+	text-align: center;
+	line-height: 3rem;
+	float: left;
+	margin: 0 1.2rem;
+}
+
+.yam_page_btn li a{
+	color: #333;
+}
+.yam_page_btn1{
+	width: 50%;
+	height: 3rem;
+	list-style: none;
+	border: 1px solid #666;
+	border-right: none;
+}
+.yam_page_btn1 li{
+	width: 100%;
+	height: 100%;
+	border-right: 1px solid #666;
+	text-align: center;
+	line-height: 3rem;
+	float: left;
+}
+.yam_page_btn1 li a{
+	color: #333;
+}
+
+
+
+.synopsis{
+	width: 95%;
+    background: #fff;
+    padding-bottom: 5rem;
+    /* margin-bottom: 8.9rem; */
+    margin: 0 auto;
+    overflow-x: auto;
+}
+.synopsis h1{
+	font-size: 1.2rem;
+	color: #333333;
+	text-align: center;
+	font-weight: 900;
+}
+.synopsis p{
+	width: 86%;
+	text-indent:2rem;
+	margin: 0 auto;
+}
+.syn_box div{
+	overflow: hidden;
+}
+.syn_box div span{
+	display: block;
+}
+.syn_box div span span img{
+	width: 100%;
+	height: auto;
+}
+.syn_btn{
+	width: 86%;
+	height: 3rem;
+	border: 1px solid #666;
+	border-right: none;
+	margin: 0 auto;
+}
+.syn_btn span{
+	display: block;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	line-height: 3rem;
+	color: #333;
+	float: left;
+	border-right: 1px solid #666;
+}
+
+
+/*--------------------------------科室详情------------------------------------*/
+.ks_synopsis{
+	width: 100%;
+	background: #fff;
+}
+.ks_synopsis h1 {
+    font-size: 1.2rem;
+    color: #333333;
+    text-align: center;
+    font-weight: 900;
+    position: relative;
+}
+.ks_synopsis h1 span{
+	display: block;
+	width: 4rem;
+	height: 2rem;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	color: #333333;
+	position: absolute;
+	top: -0.6rem;
+	left: 1.25rem;
+}
+.ks_synopsis h1 span img{
+	width: 0.75rem;
+	height: 1.29rem;
+	margin-right: 0.58rem;
+	margin-top: -0.3rem;
+}
+.ks_synopsis p{
+	width: 86%;
+	text-indent:2rem;
+	margin: 0 auto;
+}
+
+.ks_department {
+	background: #fff;
+	padding-bottom: 2rem;
+	margin-bottom: 3.9rem;
+}
+
+.ks_department h1 {
+	font-size: 1.08rem;
+	color: #333333;
+	padding-left: 1.25rem;
+	box-sizing: border-box;
+}
+.ks_department h1 a {
+	float: right;
+	padding-right: 1.25rem;
+	box-sizing: border-box;
+	color: #333333;
+	text-decoration: none;
+}
+.ks_department ul {
+	width: 100%;
+	list-style: none;
+	overflow: hidden;
+}
+
+.ks_department ul li {
+	float: left;
+}
+
+.ks_department ul li a {
+	display: block;
+}
+.ks_department ul li a span{
+	display: block;
+	border: 1px solid #e3e3e3;
+	margin: 1.2rem auto 0;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.ks_department ul li a p {
+	color: #666;
+	font-size: 1.2rem;
+	line-height: 2.5rem;
+	text-align: center;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.fenye{
+	text-align: center;
+	font-size: 1.26rem;
+}
+
+/*--------------------------医生详情--------------------------*/
+.doctor{
+	background: #ffffff;
+	padding-bottom: 5rem;
+}
+.doctor h1 {
+    font-size: 1.2rem;
+    color: #333333;
+    text-align: center;
+    font-weight: 900;
+    position: relative;
+}
+.doctor h1 span{
+	display: block;
+	width: 4rem;
+	height: 2rem;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	color: #333333;
+	position: absolute;
+	top: -0.6rem;
+	left: 1.25rem;
+}
+.doctor h1 span img{
+	width: 0.75rem;
+	height: 1.29rem;
+	margin-right: 0.58rem;
+	margin-top: -0.3rem;
+}
+.doc_nr{
+	width: 86%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.doc_top{
+	overflow: hidden;
+}
+.doc_top span{
+	display: block;
+	/*width: 22%;*/
+	/*height: 9rem;*/
+	float: left;
+	padding-left: 0;
+	padding-right: 0;
+}
+.doc_top ul{
+	float: left;
+	list-style: none;
+	margin-left: 1.7rem;
+}
+.doc_top ul li{
+	line-height: 2rem;
+	color: #666666;
+	font-size: 0.917rem;
+}
+.doc_top ul li:first-child{
+	font-size: 1.2rem;
+	color: #333333;
+}
+.doc_center p{
+	text-indent: 2rem;
+	font-size: 0.83rem;
+	color: #333;
+}
+
+.doc_bottom ul {
+	width: 100%;
+	margin: 0 auto;
+	list-style: none;
+	overflow: hidden;
+}
+
+.doc_bottom ul li {
+	float: left;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+
+.doc_bottom ul li a {
+	display: block;
+}
+.doc_bottom ul li a  span{
+	display: block;
+	margin: 1.2rem auto 0;
+}
+.doc_bottom ul li a p {
+	color: #333333;
+	font-size: 1.2rem;
+	line-height: 1.7rem;
+	text-align: center;
+	margin: 0 0 0;
+}
+.doc_bottom ul li a p:last-child{
+	color: #666666;
+	font-size: 0.917rem;
+}
+/*--------------------------------医学宣教------------------------------*/
+.miss {
+	background: #fff;
+	margin-top: 0.417rem;
+	padding-bottom: 5rem;
+}
+
+.miss ul {
+	width: 86%;
+	margin: 0 auto;
+	list-style: none;
+	overflow: hidden;
+}
+
+.miss ul li {
+	float: left;
+	padding-left: 7.5px;
+	padding-right: 7.5px;
+}
+
+.miss ul li a {
+	display: block;
+}
+.miss ul li a  span{
+	display: block;
+	margin: 1.2rem auto 0;
+}
+.miss ul li a p {
+	color: #666;
+	font-size: 1.2rem;
+	line-height: 1.7rem;
+	text-align: center;
+}
+/*-----------------------文章列表页-------------------------*/
+.article{
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4.5rem;
+}
+.article ul{
+	list-style: none;
+}
+.article ul li{
+	width: 86%;
+	height: 3rem;
+	line-height: 3rem;
+	color: #666666;
+	margin: 0 auto;
+	border-bottom: 1px solid #666666;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.article ul li span{
+	display: block;
+	width: 1.2rem;
+	height: 1.3rem;
+	float: left;
+	margin: 0 1.2rem 0 1.2rem;
+}
+/*--------------门诊相关----------------*/
+.mzxg{
+	width: 100%;
+}
+.mzxg li{
+	width: 33.3%;
+	list-style: none;
+	height: 3rem;
+	text-align: center;
+	color: #333;
+	line-height: 3rem;
+	float: left;
+}
+
+
+

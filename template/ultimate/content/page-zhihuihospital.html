@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/hospital.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/fit.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0524/css/ultimate.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="yp-box">
+				<div class="hos-left">
+					<!--简介-->
+					<div class="banner" style="border-radius:0.3rem;background: url('{CSS_PATH}0426/img/img-4.jpg');background-size:cover;">
+						<p>
+							<a href="{$CATEGORYS[1369][url]}"> {$CATEGORYS[1369][description]}<i>查看更多</i></a>
+						</p>
+					</div>
+					<!--科室介绍-->
+					{pc:content action="lists" catid="1370" num="1" moreinfo="1" order="id DESC" return="info"}
+
+					{loop $info $r}
+					<div class="department">
+						<h1>科室介绍</h1>
+						<p>{str_cut(strip_tags($r[content]),300,'...')}   </p>
+						<a href="{$CATEGORYS[1370][url]}">查看更多》</a>
+					</div>
+					{/loop}
+					{/pc}
+					<!--医师-->
+					<div class="doctor">
+						<h1>医师</h1>
+						{pc:content action="lists" catid="1371" num="3"  order="id DESC" return="info"}
+						<ul>
+						{loop $info $r}
+							<li>
+								<a href="{$CATEGORYS[$r[catid]][url]}?id={$r[id]}">
+									<span style="background:#fff url('{$r[thumb]}'); background-size:cover"></span>
+									<p>{$r[title]}</p>
+								</a>
+							</li>
+						{/loop}
+							<li>
+								<a href="{$CATEGORYS[1371][url]}">
+									<span><img src="{CSS_PATH}0426/img/img-6.png"/></span>
+									<i>更多医生</i>
+								</a>
+							</li>
+						</ul>
+						{/pc}
+					</div>
+					<!--特色-->
+					<div class="tese">
+						<h1>特色医疗</h1>
+						{pc:content action="category" catid="1384" num="3" siteid="$siteid" order="listorder ASC" return="info"}
+						<ul>
+							{loop $info $c}
+							<li>
+								<a href="{$CATEGORYS[1384][url]}?cid={$c[catid]}" style="background: url('{$c[image]}');background-size:cover;">
+									<span>
+										<h3>{$c[catname]}</h3>
+									</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<!--位置-->
+					<div class="map">
+						<h1>位置</h1>
+						<div id="container">
+							<div class="map" id="allmap"></div>
+							<h4>恒基伟业大厦B座</h4>
+							<p>路线：地铁15号线望京东站下车步行300米，公交车101、102路研发园下车</p>
+						</div>
+					</div>
+				</div>
+				<!--右栏-->
+				<div class="hos-right">
+					<ul>
+						<li>
+							<a href="{$CATEGORYS[1389][url]}">
+								<i>Medical guide</i>
+								<h2>就医指南</h2>
+								<span><img src="{CSS_PATH}0426/img/img-10.png"/></span>
+							</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[1402][url]}">
+								<span><img src="{CSS_PATH}0426/img/img-11.png"/></span>
+								<i>The repprt</i>
+								<h2>检查报告</h2>
+							</a>
+						</li>
+						<li id="btncalnurse">
+							<a>
+								<span><img src="{CSS_PATH}0426/img/img-12.png"/></span>
+								<i>Call the nurse</i>
+								<h2>呼叫护士</h2>
+							</a>
+						</li>
+						<li>
+							<a url='http://cs.bjyihuilian.com/selectprescribed?mac=' id='prescribed'>
+								<i>The query</i>
+								<h2>医嘱查询</h2>
+								<span><img src="{CSS_PATH}0426/img/img-13.png"/></span>
+							</a>
+						</li>
+						<li>
+							<a href='{$CATEGORYS[1403][url]}'>
+								<span><img src="{CSS_PATH}0426/img/img-19.png"/></span>
+								<i>Consumer query</i>
+								<h2>费用查询</h2>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="{CSS_PATH}0426/js/jquery-2.1.0.js"></script>
+	<script>
+		$(document).ready(function () {
+      $(document).ready(function () {
+        $('.hos-left').height($(window).height())
+        $('.hos-right').height($(window).height())
+      })
+      //呼叫护士
+      $('#btncalnurse').click(function(){
+        Medical.callnurse()
+      });
+      //检查报告 Medical.inspect(url);
+      $('#inspect').click(function(){
+        var url = $(this).attr('url');
+        //调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+        Medical.inspect(url);
+      });
+      //费用查询 Medical.cost(url);
+      $('#cost').click(function(){
+        var url = $(this).attr('url');
+        //调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+        Medical.cost(url);
+      });
+      //医嘱查询 Medical.prescribed(url);
+      $('#prescribed').click(function(){
+        var url = $(this).attr('url');
+        //调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+        Medical.prescribed(url);
+      });
+    })
+	</script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?&v=1.3"></script>
+	<script type="text/javascript">
+    var map;
+    var bounds;
+    var circle;
+    var local;
+    var lng = '116.494096';
+    var lat = '40.014328'; //指定位置的经度纬度可以到百度定位拾取系统去拿 http://api.map.baidu.com/lbsapi/getpoint/index.html
+    var search = '景区';
+    //			var MyMarker;
+    // 百度地图API功能
+    $(function() {
+      $('#allmap').height($(window).height())
+      map = new BMap.Map("allmap");
+      GetLocation();
+      var mPoint = new BMap.Point(lng, lat);
+      var MyIcon = new BMap.Icon("标记箭头图标路径", new BMap.Size(18, 28));
+      //				MyMarker = new BMap.Marker(mPoint, {
+      //					icon: MyIcon
+      //				});
+      map.enableScrollWheelZoom();
+      map.centerAndZoom(mPoint, 15);
+      //				map.addOverlay(MyMarker);
+
+      map.addEventListener("click", function(e) {
+        //					map.removeOverlay(MyMarker);
+        mPoint = new BMap.Point(e.point.lng, e.point.lat);
+        //					MyMarker = new BMap.Marker(mPoint, {
+        //						icon: MyIcon
+        //					});
+        //					map.addOverlay(MyMarker);
+        Search(search, mPoint);
+      });
+
+      $('.tuijian_list2 li').each(function(index) {
+        $(this).click(function() {
+          $(this).parents('.tuijian_list2').find('.tuijian_in').removeClass('tuijian_in');
+          $(this).addClass("tuijian_in");
+          search = $(this).attr('val_class');
+          Search(search, mPoint);
+        });
+      });
+      Search(search, mPoint);
+
+    });
+
+    /**
+     * 得到圆的内接正方形bounds
+     * @param {Point} centerPoi 圆形范围的圆心
+     * @param {Number} r 圆形范围的半径
+     * @return 无返回值
+     */
+    function getSquareBounds(centerPoi, r) {
+      var a = Math.sqrt(2) * r; //正方形边长
+      var mPoi = getMecator(centerPoi);
+      var x0 = mPoi.x,
+        y0 = mPoi.y;
+      var x1 = x0 + a / 2,
+        y1 = y0 + a / 2; //东北点
+      var x2 = x0 - a / 2,
+        y2 = y0 - a / 2; //西南点
+      var ne = getPoi(new BMap.Pixel(x1, y1)),
+        sw = getPoi(new BMap.Pixel(x2, y2));
+      return new BMap.Bounds(sw, ne);
+    };
+    //根据球面坐标获得平面坐标。
+    function getMecator(poi) {
+      return map.getMapType().getProjection().lngLatToPoint(poi);
+    };
+    //根据平面坐标获得球面坐标。
+    function getPoi(mecator) {
+      return map.getMapType().getProjection().pointToLngLat(mecator);
+    };
+
+    function Search(search, mPoint) {
+      map.clearOverlays();
+      circle = new BMap.Circle(mPoint, 1000, {
+        stroke: "white",
+        strokeWeight: 1,
+        fillOpacity: 0.3,
+        strokeOpacity: 0.3
+      });
+      map.addOverlay(circle);
+      local = new BMap.LocalSearch(map, {
+        renderOptions: {
+          map: map,
+          autoViewport: false
+        }
+      });
+      bounds = getSquareBounds(circle.getCenter(), circle.getRadius());
+      local.searchInBounds(search, bounds);
+      //				map.addOverlay(MyMarker);
+      /*
+      map.centerAndZoom(mPoint, 16);
+      var local = new BMap.LocalSearch(map, {
+          renderOptions: {map: map, panel: "r-result"}
+      });
+      local.search(search);
+      */
+    };
+
+    function GetLocation() {
+      var geolocation = new BMap.Geolocation();
+      geolocation.getCurrentPosition(function(r) {
+        if(this.getStatus() == BMAP_STATUS_SUCCESS) {
+          lng = r.point.lng;
+          lat = r.point.lat;
+        } else {
+          alert('failed' + this.getStatus());
+        }
+      }, {
+        enableHighAccuracy: true
+      });
+    };
+
+	</script>
+</html>

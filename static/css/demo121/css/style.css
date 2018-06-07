@@ -1,0 +1,153 @@
+.container {
+	height: 100%;
+	background: url(../img/img-bj.png) no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+	position: relative;
+}
+.row {
+	width: 100%;
+	height: 94%;
+	margin-bottom: 0.5rem;
+}
+.back {
+    display: block;
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    text-align: center;
+    float: left;
+    line-height: 3rem;
+    color: #333;
+    margin: 0.5rem 0 0 1rem;
+}
+.article-list{
+	width: 96%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #cccccc;
+    margin: 1rem auto 0;
+    overflow: hidden;
+    position: relative;
+}
+.article-list ul{
+	width: 98%;
+	height: 94%;
+	margin: 1rem auto;
+	overflow: scroll;	
+}
+.article-list ul li{
+	width: 100%;
+	height: 3rem;
+	background: #EEEEEE;
+	margin: 0.2rem 0;
+	overflow: hidden;
+}
+.article-list ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.article-list ul li a span{
+	display: block;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 1rem 1rem 0 1rem;
+	float: left;
+}
+.article-list ul li a p{
+	width: 60%;
+	float: left;
+	line-height: 3rem;
+	color: #333333;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.article-list ul li a i{
+	display: block;
+	width: 30%;
+	line-height: 3rem;
+	float: right;
+	color: #666666;
+	text-align: right;
+	padding-right: 2rem;
+	box-sizing: border-box;
+}
+/*
+ 
+ * 
+ * 图文页面*/
+.tuwen-box{
+	width: 96%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #cccccc;
+    margin: 1rem auto 0;
+    overflow: hidden;
+    position: relative;
+}
+.btn-list{
+	width: 97%;
+	height: 2rem;
+	margin: 0.5rem auto;
+}
+.btn-list li{
+	width: 15%;
+	height: 100%;
+	float: left;
+	margin: 0 0.5rem;
+	background: #EEEEEE;
+	text-align: center;
+	font-size: 1rem;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.btn-list li.active{
+	background: #9966cc;
+}
+.btn-list li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 2rem;
+	color: #333333;
+}
+.btn-list li.active a{
+	color: #fff;
+}
+.jiankangbaike {
+	width: 97%;
+	height: 86%;
+	margin: 0.5rem auto;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.jiankangbaike li {
+	width: 23.7%;
+	float: left;
+	margin: 0 0.25rem 0.5rem 0.25rem;
+	box-sizing: border-box;
+}
+
+.jiankangbaike li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
+
+.jiankangbaike li a div {
+	width: 100%;
+	height: 8.15rem;
+	border: 1px solid #ccc;
+}
+
+.jiankangbaike li a span {
+	display: block;
+	width: 100%;
+	height: 1.5rem;
+	color: #666;
+	font-size: 0.9rem;
+}

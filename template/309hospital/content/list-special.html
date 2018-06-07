@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{CSS_PATH}120/css/common.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}120/css/thems.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}120/swiper/swiper-3.3.1.min.css" />
+		<script src="{CSS_PATH}120/js/jquery-2.2.3.min.js"></script>
+		<script src="{CSS_PATH}120/swiper/swiper-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			
+			<div class="row">
+				
+				<div class="Recommend" style="margin-top: 1rem;">
+				{pc:content action="lists" catid="$catid" num="20" order="id DESC" page="$page"}
+					<ul style="margin-top: 1rem;">
+					{loop $data $v}
+						<li>
+							<a href="{$v[url]}"><img src="{$v[thumb]}"/><span>{$v[title]}</span></a>
+						</li>
+					{/loop}
+						
+					</ul>
+				{/pc}
+				</div>
+			</div>
+			<!--底部-->
+			<div class="row">
+				<span class="bottom"><img src="{CSS_PATH}120/img/pic5.png"/></span>
+			</div>
+		</div>
+	</body>
+</html>

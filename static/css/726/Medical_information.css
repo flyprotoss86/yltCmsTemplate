@@ -1,0 +1,181 @@
+html,
+body{
+	width: 100%;
+/*	height: 100%;*/
+}
+.med_box{
+	width: 100%;
+	height: 100%;
+}
+.med_main{
+	width: 95.6%;
+	height: 100%;
+	margin: 0 auto;
+}
+header{
+	width: 100%;
+	height: 3rem;
+	position: relative;
+}
+header h1{
+	width: 100%;
+	height: 100%;
+	line-height: 3rem;
+	text-align: center;
+	color: #333333;
+	font-size: 0.9rem;
+}
+header span{
+	display: block;
+	width: 4rem;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height: 3rem;
+}
+header span a{
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	float: left;
+	margin-top: 0.9rem;
+	margin-right: 0.5rem;
+}
+.med_banner{
+	width: 100%;
+	height: 7.5rem;
+}
+.med_list{
+	width: 100%;
+	height: 100%;
+}
+.nav_img{
+	width: 9.5rem;
+	height: 2.2rem;
+	margin: 1rem 0 0 0.6rem;
+	position: relative;
+	text-align: center;
+	color: white;
+	line-height: 2.2rem;
+	float: left;
+}
+.nav_img span{
+	display: block;
+	width: 1.2rem;
+	height: 0.9rem;
+	position: absolute;
+	top: 0.65rem;
+	left: 1.75rem;
+}
+.list{
+	width: 75.3%;
+	float: left;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+.list li{
+	width: 100%;
+}
+.list_main{
+	width: 95%;
+	height: 5.75rem;
+	float: right;
+	border-bottom: 0.05rem dashed #c9cacb;
+}
+.list_bt{
+	display: block;
+	height: 1.1rem;
+	margin-top: 1.5rem;
+	position: relative;
+	line-height: 1.1rem;
+	color: #333333;
+	font-size: 0.9rem;
+}
+.list_bt a{
+	display: block;
+	width: 1rem;
+	height: 1.1rem;
+	float: left;
+	position: absolute;
+	top: 0;
+	left: -1.7rem;
+}
+.list_main p{
+	width: 61%;
+	line-height: 3rem;
+	color: #333333;
+	font-size: 0.7rem;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+}
+.list_main i{
+	width: 4.5rem;
+	height: 0.75rem;
+	font-size: 0.7rem;
+	color: #999999;
+	float: right;
+	margin-top: 1.2rem;
+}
+/*===================检查详情==========================*/
+.jc_content{
+	width: 75.3%;
+	float: left;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+.jcxq{
+	width: 95%;
+	height: 3.5rem;
+	float: right;
+	border-bottom: 0.05rem dashed #c9cacb;
+}
+.jcxq_bt{
+	display: block;
+	height: 1.1rem;
+	margin-top: 0.65rem;
+	position: relative;
+	line-height: 1.1rem;
+	color: #333333;
+	font-size: 0.8rem;
+}
+.jcxq_bt a{
+	display: block;
+	width: 1rem;
+	height: 1.1rem;
+	float: left;
+	position: absolute;
+	top: 0;
+	left: -1.7rem;
+}
+.jcxq p{
+	width: 61%;
+	line-height: 3rem;
+	color: #333333;
+	font-size: 0.7rem;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+}
+.jcxq i{
+	width: 4.5rem;
+	height: 0.75rem;
+	font-size: 0.7rem;
+	color: #999999;
+	float: right;
+	margin-top: 0.2rem;
+}
+.xx_xinxi{
+	width: 95%;
+	height: 100%;
+	float: right;
+	margin-top: 1.5rem;
+	font-size: 0.7rem;
+	color: #333333;
+}
+.xx_xinxi p{
+	font-size: 0.7rem;
+}

@@ -1,0 +1,10 @@
+<?php
+$pid=intval($_GET['pid']);
+$isql="select c.catid,c.catname,concat(s.domain,c.url) url,c.image,c.description from v9_category c left join v9_site s on c.siteid=s.siteid where parentid=".$pid." order by c.listorder ASC"; ?>
+{pc:get sql="$isql" cache="3600" num="20" return="data"}
+{/pc}
+<?php
+header('Content-type: application/json');
+$cnt=json_encode($data);
+?>aa({$cnt})
+

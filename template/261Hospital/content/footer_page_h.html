@@ -1,0 +1,73 @@
+   <footer>
+			<ul>
+				<li>中国人民解放军二六一医院</li>
+				<li><span>特别声明：</span>本站内容仅供参考，不作为诊断及医疗依据</li>
+				<li><span>技术支持：</span>北京医链通科技有限责任公司</li>
+			</ul>
+
+		</footer>
+</div>
+<div class="container">
+			<!--**头部**-->
+			<header>
+				<span class="col-xs-5"><a href="http://119.90.88.62:88"><i><img src="{CSS_PATH}1020/logo.png"/></i>医汇联</a></span>
+				<span class="col-xs-3"><i><img src="{CSS_PATH}1020/menu.png"/></i>菜单</span>
+			</header>
+			<ul class="menu">
+				<li><a href="http://119.90.88.62:88">首页</a></li>
+				<li><a href="http://119.90.88.62:88">合作医院</a></li>
+				<li><a href="https://weidian.com/?userid=1154968935&wfr=wechatpo_keywords_shop">微商城</a></li>
+				<li><a href="http://119.90.88.62:88/html/jiuzhenxuzhi/">就诊须知</a></li>
+			</ul>
+			<!--**导航**-->
+			<div class="row father">
+				<div class="hot-sale">
+					<ul class="hot-title">
+						<li>
+							<a href="/">医院首页</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[446][url]}">医院介绍</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[448][url]}">科室介绍</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[449][url]}">专家介绍</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[450][url]}">医院新闻</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[452][url]}">就医指南</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--**广告图**-->
+			<div class="row banner">
+				<img src="{IMG_PATH}1020/lunbo.png"/>
+			</div>
+			<ul class="yam_page_btn">
+			{loop $arrchild_arr $cid}
+					<li style="text-align: center;line-height: 3rem;float: left;margin: 0 1rem;">
+						
+						<a href="{$CATEGORYS[$cid][url]}" style="color: #333;">{$CATEGORYS[$cid][catname]}</a>
+					</li>
+			{/loop}
+			</ul>
+			<!--**科室**-->
+			<div class="row synopsis">
+				<h1>{$title}</h1>
+				<div>{$content}</div>
+			</div>
+			
+			<!--**专家介绍**-->
+			
+			<!--**底部**-->
+			<footer>2017医汇联  版权所有</footer>
+		</div>
+	</body>
+	
+
+</html>

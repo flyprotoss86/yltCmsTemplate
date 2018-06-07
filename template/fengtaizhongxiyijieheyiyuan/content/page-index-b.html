@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{CSS_PATH}0424/css/common.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0424/css/thems.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0424/css/responsive.css" />
+		<script src="{CSS_PATH}0424/js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=oxPscHlXTd0xvtGyRilOmAEpu5N8VeAy"></script>
+		<style type="text/css">
+			.map {
+				width: 96%;
+				height: 100%;
+				background: #fff;
+				border: 1px solid #cccccc;
+				margin: 0 auto;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.map-box {
+				width: 57.5%;
+				height: 100%;
+				float: left;
+				margin: 0 0.6rem;
+			}
+			.map-box h1{
+				width: 100%;
+				height: 3.2rem;
+				line-height: 3.2rem;
+			}
+			.map-box h1 span{
+				display: block;
+				width: 1.2rem;
+				height: 1.2rem;
+				float: left;
+				margin: 1rem 0.6rem 0 0;
+			}
+			#allmap {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				margin: 0;
+			}
+			
+			.tab {
+				width: 37%;
+				height: 34.5rem;
+				-moz-box-shadow: 6px 5px 5px #d3d3d3; /* 老的 Firefox */
+				box-shadow: 6px 5px 5px #d3d3d3;
+				float: left;
+				margin: 0 0.6rem 0.5rem;
+			}
+			
+			.nav {
+				width: 100%;
+				height: 3.2rem;
+				overflow: hidden;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-justify-content: space-between;
+				justify-content: space-between;
+			}
+			
+			.nav li {
+				width: 3.5rem;
+				height: 1.5rem;
+				line-height: 1.5rem;
+				font-size: 0.8rem;
+				text-align: center;
+				margin-top: 1rem;
+				border: 1px solid #d2d2d2;
+				color: #666666;
+				float: left;
+				background: #fff;
+				border-radius: 1.5rem;
+			}
+			
+			.nav li.active {
+				background: #ac82d1;
+				color: #fff;
+			}
+			.tablea{
+				width: 100%;
+			}
+			.box {
+				margin: 10px;
+				display: none
+			}
+			
+			.box ul {
+				width: 100%;
+			    height: 30rem;
+			    overflow: hidden;
+			    overflow-y: auto;
+			}
+			
+			.box ul li {
+				width: 100%;
+				height: 6rem;
+			}
+			.box ul li .shop-list{
+				width: 70%;
+				height: 100%;
+				float: left;
+			}
+			.box ul li .shop-list p{
+				font-size: 0.7rem;
+				color: #666666;
+			}
+			.box ul li .shop-list p:first-child{
+				line-height: 2.4rem;
+				padding-left: 0.4rem;
+				box-sizing: border-box;
+			}
+			.box ul li .shop-list p:first-child a{
+				color: #5e81c6;
+			}
+			.box ul li .shop-list p:nth-child(2){
+				padding-left: 1.5rem;
+				box-sizing: border-box;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+			}
+			.box ul li .shop-list p:nth-child(3){
+				padding-left: 1.5rem;
+				box-sizing: border-box;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+			}
+			.box ul li span{
+				display: block;
+				width: 4.1rem;
+				height: 3.4rem;
+				float: right;
+				position: relative;
+				margin: 1.6rem 0.8rem 0 0;
+			}
+			.box ul li span i{
+				display: block;
+				width: 100%;
+				line-height: 1rem;
+				text-align: center;
+				color: #fff;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				bottom: 0;
+				font-size: 0.7rem;			
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="Healthy">
+				{pc:get sql="select * from v9_category where catid=666"}
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}0424/img/pic2.png"/></span>{$data[0][catname]}
+						<a href="{$data[0][url]}">更多>></a>
+					</div>
+				{/pc}
+				{pc:get sql="select * from v9_news where v9_news.catid=666 and v9_news.recommend=1 order by v9_news.inputtime desc"}
+					<ul class="jiankangbaike">
+{if $data[0]}
+						<li>
+							<a href="{$data[0][url]}">
+								<div>
+									<img src="{$data[0][thumb]}" />
+								</div>
+								<span>{$data[0][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[1]}
+						<li>
+							<a href="{$data[1][url]}">
+								<div>
+									<img src="{$data[1][thumb]}" />
+								</div>
+								<span>{$data[1][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[2]}
+						<li>
+							<a href="{$data[2][url]}">
+								<div>
+									<img src="{$data[2][thumb]}" />
+								</div>
+								<span>{$data[2][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[3]}
+						<li>
+							<a href="{$data[3][url]}">
+								<div>
+									<img src="{$data[3][thumb]}" />
+								</div>
+								<span>{$data[3][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[4]}
+						<li>
+							<a href="{$data[4][url]}">
+								<div>
+									<img src="{$data[4][thumb]}" />
+								</div>
+								<span>{$data[4][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[5]}
+						<li>
+							<a href="{$data[5][url]}">
+								<div>
+									<img src="{$data[5][thumb]}" />
+								</div>
+								<span>{$data[5][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[6]}
+						<li>
+							<a href="{$data[6][url]}">
+								<div>
+									<img src="{$data[6][thumb]}" />
+								</div>
+								<span>{$data[6][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[7]}
+						<li>
+							<a href="{$data[7][url]}">
+								<div>
+									<img src="{$data[7][thumb]}" />
+								</div>
+								<span>{$data[7][title]}</span>
+							</a>
+						</li>
+					{/if}
+					</ul>
+					{/pc}
+					<!--营养美食-->
+					<div class="m-food">
+						<div class="top-bt" style="width: 100%;">
+							营养美食
+						
+							<!-- <a id="more" onclick="calljs()" style="margin-right: 0.25rem;">更多>></a> -->
+						</div>
+						<!-- {pc:content action="lists" catid="762" order="id desc" num="5"} 
+							<ul>
+							{loop $data $r}
+								<li>
+									<a class="more" onclick="calljs()">
+										<span><img src="{$r[thumb]}"/></span>
+										<p>{$r[title]}</p>
+										<i>¥：{$r[price]}</i>
+									</a>
+								</li>
+							{/loop}
+							</ul>
+						{/pc}
+						  -->
+					</div>
+				</div>
+			</div>
+
+			<!--保险-->
+
+			<div class="row">
+				<div class="Insurance">
+				{pc:get sql="select * from v9_category where catid=972"}
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}first-121/img/pic2-2.png"/></span>医疗健康保险
+						<a href="{$data[0][url]}">更多>></a>
+					</div>
+				{/pc}
+					{pc:content action="lists" catid="972" siteid="1" order="listorder DESC" num="8"}
+					<ul class="baoxian">
+						{loop $data $val}
+						{if $val[Insurance_static] == 1}
+							<li>
+								<a href="{$val[url]}">
+									<div>
+										<img src="{$val[thumb]}" />
+									</div>
+									<span>{$val[title]}</span>
+								</a>
+							</li>
+						{/if}
+						{/loop}
+					</ul>
+					{/pc}
+					<!--生活服务-->
+					<div class="m-food">
+					{pc:get sql="select * from phpcmsv9_jingdong.v9_category where catid=9"}
+						<div class="top-bt" style="width: 100%;">
+							{$data[0][catname]}
+							<a href="http://119.90.88.62:99/" style="margin-right: 0.25rem;">更多>></a>
+						</div>
+					{/pc}
+					{pc:get sql="select phpcmsv9_jingdong.v9_news.*,phpcmsv9_jingdong.v9_news_data.content from phpcmsv9_jingdong.v9_news,phpcmsv9_jingdong.v9_news_data where phpcmsv9_jingdong.v9_news.catid=9 and phpcmsv9_jingdong.v9_news.id = phpcmsv9_jingdong.v9_news_data.id order by phpcmsv9_jingdong.v9_news.inputtime desc"}
+						<ul>
+						{if $data[0]}
+							<li>
+								<a href="{$data[0][content]}">
+									<span><img src="{$data[0][thumb]}"/></span>
+									<p>{$data[0][title]}</p>
+									<i>¥：{$data[0][price]}</i>
+								</a>
+							</li>
+						{/if}
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][content]}">
+									<span><img src="{$data[1][thumb]}"/></span>
+									<p>{$data[1][title]}</p>
+									<i>¥：{$data[1][price]}</i>
+								</a>
+							</li>
+						{/if}
+							{if $data[2]}
+							<li>
+								<a href="{$data[2][content]}">
+									<span><img src="{$data[2][thumb]}"/></span>
+									<p>{$data[2][title]}</p>
+									<i>¥：{$data[2][price]}</i>
+								</a>
+							</li>
+							{/if}
+							{if $data[3]}
+							<li>
+								<a href="{$data[3][content]}">
+									<span><img src="{$data[3][thumb]}"/></span>
+									<p>{$data[3][title]}</p>
+									<i>¥：{$data[3][price]}</i>
+								</a>
+							</li>
+							{/if}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+
+			<!--科室推荐-->
+
+			<div class="row">
+				<div class="Department">
+				
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}first-121/img/pic2.png"/></span>科室推荐
+						<a href="{$CATEGORYS[843][url]}">更多>></a>
+					</div>
+
+					<div class="Department-s">
+					
+					{pc:get sql="select * from v9_ftzxy_news where recommend_depar=1"}
+						<ul class="keshi">
+						{if $data[0]}
+							<li>
+								<a href="{$data[0][url]}">
+									<span><img src="{$data[0][thumb]}"/></span>
+									<p>{$data[0][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][url]}">
+									<span><img src="{$data[1][thumb]}"/></span>
+									<p>{$data[1][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[2]}
+							<li>
+								<a href="{$data[2][url]}">
+									<span><img src="{$data[2][thumb]}"/></span>
+									<p>{$data[2][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[3]}
+							<li>
+								<a href="{$data[3][url]}">
+									<span><img src="{$data[3][thumb]}"/></span>
+									<p>{$data[3][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[4]}
+							<li>
+								<a href="{$data[4][url]}">
+									<span><img src="{$data[4][thumb]}"/></span>
+									<p>{$data[4][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[5]}
+							<li>
+								<a href="{$data[5][url]}">
+									<span><img src="{$data[5][thumb]}"/></span>
+									<p>{$data[5][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[6]}
+							<li>
+								<a href="{$data[6][url]}">
+									<span><img src="{$data[6][thumb]}"/></span>
+									<p>{$data[6][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[7]}
+							<li>
+								<a href="{$data[7][url]}">
+									<span><img src="{$data[7][thumb]}"/></span>
+									<p>{$data[7][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[8]}
+							<li>
+								<a href="{$data[8][url]}">
+									<span><img src="{$data[8][thumb]}"/></span>
+									<p>{$data[8][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[9]}
+							<li>
+								<a href="{$data[9][url]}">
+									<span><img src="{$data[9][thumb]}"/></span>
+									<p>{$data[9][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[10]}
+							<li>
+								<a href="{$data[10][url]}">
+									<span><img src="{$data[10][thumb]}"/></span>
+									<p>{$data[10][title]}</p>
+								</a>
+							</li>
+						{/if}
+						</ul>
+					{/pc}
+						<!--医护团队-->
+				
+						<div class="top-bt">
+							专家推荐
+							<a href="{$CATEGORYS[844][url]}">更多>></a>
+						</div>
+				
+					{pc:get sql="select * from v9_ftzxy_news where recommend_doctor=1"}
+
+						<ul class="Doctor	">
+						
+					
+						{if $data[0]}
+							<li>
+								<a href="{$data[0][url]}">
+									<div><img src="{$data[0][thumb]}" /></div>
+									<p>{$data[0][title]}/{$data[0][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[0][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][url]}">
+									<div><img src="{$data[1][thumb]}" /></div>
+									<p>{$data[1][title]}/{$data[1][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[1][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[2]}
+							<li>
+								<a href="{$data[2][url]}">
+									<div><img src="{$data[2][thumb]}" /></div>
+									<p>{$data[2][title]}/{$data[2][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[2][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[3]}
+							<li>
+								<a href="{$data[3][url]}">
+									<div><img src="{$data[3][thumb]}" /></div>
+									<p>{$data[3][title]}/{$data[3][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[3][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[4]}
+							<li>
+								<a href="{$data[4][url]}">
+									<div><img src="{$data[4][thumb]}" /></div>
+									<p>{$data[4][title]}/{$data[4][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[4][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[5]}
+							<li>
+								<a href="{$data[5][url]}">
+									<div><img src="{$data[5][thumb]}" /></div>
+									<p>{$data[5][title]}/{$data[5][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[5][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+
+			<!--周边服务-->
+
+			<div class="row">
+				<div class="map">
+					<!--地图-->
+					<div class="map-box" id="container">
+						<h1><span><img src="{CSS_PATH}0424/img/pic2-3.png"/></span>周边服务</h1>
+						<div class="map" id="allmap" style="height: 31rem;"></div>
+					</div>
+
+					<!--列表-->
+					<div class="tab">
+						<ul class="nav">
+							<li class="active">{$CATEGORYS[974][catname]}</li>
+							<li>{$CATEGORYS[975][catname]}</li>
+							<li>{$CATEGORYS[976][catname]}</li>
+							<li>{$CATEGORYS[977][catname]}</li>
+							<li>{$CATEGORYS[978][catname]}</li>
+							<li>{$CATEGORYS[979][catname]}</li>
+						</ul>
+						<div id="tablea" class="tablea">
+						{pc:content action="lists" catid="974" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="txtSearch1" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+						{pc:content action="lists" catid="975" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="txtSearch1" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}	
+						{pc:content action="lists" catid="976" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="txtSearch1" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+						{pc:content action="lists" catid="977" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="txtSearch1" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+					{pc:content action="lists" catid="978" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="txtSearch1" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+							{pc:content action="lists" catid="979" num="20" moreinfo="1" order="id DESC" return="info"}
+							<div class="box">
+							
+								<ul>
+									{loop $info $val}
+									{if $val[Advertisement] == 1}
+									<li onclick="search(this)" data_Id="txtSearch1" id="aa">
+										<div class="shop-list">
+											<p>
+												<a href="#">{$val[title]}</a>
+											</p>
+											<p>{$val[content]}</p>
+										</div>
+										<span><img src="{$val[thumb]}"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1" value="{$val[title]}" />
+									</li>
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/pc}
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var map;
+		var bounds;
+		var circle;
+		var local;			
+		var lng = '116.215666';
+		var lat = '39.82656';  //指定位置的经度纬度可以到百度定位拾取系统去拿 http://api.map.baidu.com/lbsapi/getpoint/index.html  
+		map = new BMap.Map("allmap"); // 创建Map实例
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lng = position.coords.longitude;
+			lat = position.coords.latitude;
+		});
+		var mPoint = new BMap.Point(lng, lat);
+		map.enableScrollWheelZoom();
+		map.centerAndZoom(mPoint, 15);
+
+		//搜索
+		var city = new BMap.LocalSearch(map, {
+			renderOptions: {
+				map: map,
+				autoViewport: true
+			}
+		}); //地图显示到查询结果处
+		$("#aa").click();
+
+		function search(obj) {
+			console.log(obj);
+
+			var name = obj.attributes["data_Id"].nodeValue;
+			var s = document.getElementById(name).attributes["value"].nodeValue;
+			console.log(s);
+			city.setSearchCompleteCallback(onSearchComplete); // 设置检索结束后的回调函数。参数： results: LocalResult 或  Array<LocalResult> ,如果是多关键字检索，回调    // 函数参数为LocalResult 的数组，数组中的结果顺序和检索中多关键字数组中顺序一致。 
+			city.search(s); //查找城市
+		}
+
+		function onSearchComplete(result) {
+			var n = result.getNumPois(); // 返回搜索结果数
+		}
+
+		//点击选项列表
+		var mOption = {
+			poiRadius: 500, //半径为1000米内的POI,默认100米
+			numPois: 20 //列举出50个POI,默认10个
+		}
+		var myGeo = new BMap.Geocoder();
+
+		$(".tablea").find(".box:first").show(); //为每个BOX的第一个元素显示  
+		$('.nav li').each(function(index) {
+			$(this).click(function() {
+				var index = $(this).index(); //获取当前a标签的个数  
+				$(this).parent().next().find(".box").hide().eq(index).show(); //返回上一层，在下面查找css名为box隐藏，然后选中的显示  
+				$(this).addClass("hover").siblings().removeClass("hover"); //a标签显示，同辈元素隐藏  
+
+			});
+		});
+
+		$(".nav li").click(function() {
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active")
+		})
+	</script>
+
+</html>

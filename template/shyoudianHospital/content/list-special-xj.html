@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{CSS_PATH}demo121/css/common.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}demo121/css/thems.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}demo121/swiper/swiper-3.3.1.min.css" />
+		<script src="{CSS_PATH}demo121/js/jquery-2.2.3.min.js"></script>
+		<script src="{CSS_PATH}demo121/swiper/swiper-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="Recommend" style="margin-top: 1rem;">
+				{pc:content action="lists" catid="$catid" num="50" order="id DESC" page="$page"}
+					<ul style="margin-top: 1rem;">
+					{loop $data $v}
+						<li>
+						{if $v['v_static'] == 1}
+							<a content="{$v['content']}" title="{$v['title']}" class="aurl_a"><img src="{$v[thumb]}"/><span>{$v[title]}</span></a>
+						{else}
+							<a href="{$v[url]}"><img src="{$v[thumb]}"/><span>{$v[title]}</span></a>
+						{if}
+						</li>
+					{/loop}
+						
+					</ul>
+				{/pc}
+				</div>
+				<script>
+	
+				$('.aurl_a').each(function(){
+					$(this).click(function(){
+						//alert($(this).attr('content'));
+						var url = $(this).attr('content');
+						var title = $(this).attr('title');
+					　　//调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+					　　//myObj.callAndroid(title,url);
+						Medical.playVideo(title,url);
+						//console.log(title,url);
+					});
+				});
+				</script>
+			</div>
+			<!--底部-->
+			<div class="row">
+				<span class="bottom"><img src="{CSS_PATH}demo121/img/pic5.png"/></span>
+			</div>
+		</div>
+		{template "content","baidu-footer"}
+	</body>
+</html>

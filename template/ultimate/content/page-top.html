@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="{CSS_PATH}first-121/css/common.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/css/thems.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/swiper/swiper-3.3.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/css/responsive.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0524/css/ultimate.css"/>
+		<script src="{CSS_PATH}first-121/js/jquery-2.2.3.min.js"></script>
+		<script src="{CSS_PATH}first-121/swiper/swiper-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<!-- <div class="container"> -->
+			<div class="row">
+				<div class="banner-yp">
+					<div class="swiper-container" style="margin: 0;">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<a href="#">
+									<img src="{CSS_PATH}first-121/img/banner-b.png" />
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a href="#">
+									<img src="{CSS_PATH}first-121/img/banner-c.png" />
+								</a>
+							</div>
+							<div class="swiper-slide div1">
+								<a href="#">
+									<img src="{CSS_PATH}first-121/img/banner-a.png" />
+								</a>
+							</div>
+							<div class="swiper-slide div2">
+								<a href="#">
+									<img src="{CSS_PATH}first-121/img/banner-yp.png" />
+								</a>
+							</div>
+						</div>
+						<!-- 如果需要分页器 -->
+						<div class="swiper-pagination"></div>
+
+						<!-- 如果需要导航按钮 -->
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+			</div>
+		<!-- </div> -->
+		{template "content","baidu-footer"}
+	</body>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container', {
+			//direction: 'vertical',
+			<!-- initialSlide :2, -->
+			direction : 'horizontal',
+			effect:'fade',//滑动效果    
+			autoplay: 3000,
+			loop: true,
+			observer:true,
+			observeParents:true,
+			autoplayDisableOnInteraction: false,//用户操作swiper之后不禁止autoplay
+			prevButton: '.swiper-button-prev',
+			nextButton: '.swiper-button-next',
+			// 如果需要分页器
+			pagination: '.swiper-pagination',
+			//paginationClickable: true,
+			lazyLoading:true,//图片延迟加载 
+			lazyLoadingInPrevNext:true//前一个和后一个延迟加载 
+		})
+		
+		$(".div3").click(function(){
+			Native.playGame();
+		})
+	</script>
+</html>

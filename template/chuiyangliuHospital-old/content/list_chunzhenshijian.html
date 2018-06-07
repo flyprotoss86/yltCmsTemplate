@@ -1,0 +1,46 @@
+{template "content","header"}
+		<div class="banner"><img src="{IMG_PATH}726/on-banner.png" /></div>
+		<!--************************-->
+		<div class="hos_main">
+			<div class="left_nav">
+				<div class="list_top" style="background: url({IMG_PATH}726/jiancha_nav.png) no-repeat;">
+					<span><img src="{IMG_PATH}726/jc-heng.png"/></span>出诊时间
+				</div>
+				
+			</div>
+			<!--*****-->
+			<div class="weizhi" style="background: url({IMG_PATH}726/yybj.png) no-repeat;background-size: 100% 100%;">
+				
+			</div>
+			
+			<!--*******************************-->
+			<div class="hos_box">
+				<!--***************护理团队*************************-->
+				<div class="hos_contents">
+					<div class="news_left_top">
+						 
+					</div>
+					{pc:content action="lists" catid="$catid" num="24" order="inputtime DESC" page="$page"}
+					<ul class="hl_box">
+						{loop $data $val}
+							<li>
+								<a href="{$val['url']}">
+									<span class="hl_bt">
+										<i><img src="{IMG_PATH}726/biaotou.png"/></i>{$val['title']}
+									</span>
+									<i>{date('Y-m-d',$val[inputtime])}</i>
+								</a>
+							</li>
+						{/loop}
+						
+					</ul>
+				{/pc}
+				
+					
+					
+					<div class="wbd" style="width: 100%;height: 2rem;font-size: 1.2rem;text-align: center;float: left;">{$pages}</div>
+					
+				</div>
+			</div>
+		</div>
+{template "content","footer_list_chuzhenshijian"}

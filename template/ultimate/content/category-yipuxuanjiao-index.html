@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}424/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}424/css/yipuxuanjiao.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}424/css/fit.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0524/css/ultimate.css"/>
+		<style>
+			.yp-right ul li{
+				width: 44.4%;
+				height: 1.7rem;
+				background: #fff;
+				margin: 0.45rem 0;
+				border:0.1rem solid #aa7ecf;
+				border-radius: 0.5rem;
+			}
+			.yp-right ul li a{
+				color: #aa7ecf;
+			}
+			.yp-right ul li.selected{
+				background: #aa7ecf;
+			}
+			.yp-right ul li.selected a{
+				color: #FFFFFF;
+			}
+			#lstitems p{
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="yp-box">
+				<div class="yp-left">
+				{pc:content action="lists" catid="1367" num="50" moreinfo="1" order="inputtime DESC" page="$page"}
+					<ul id="lstitems">
+						{loop $data $val}
+						<li>
+						{if $val['v_static'] == 1}
+							<a content="{$val['content']}" title="{$val['title']}" class="aurl_a">
+							{else}
+							<a href="{$val[url]}">
+						{/if}
+								<span class="img">
+									<img src="{$val[thumb]}"/>
+								</span>
+								<div class="title">
+									<h1>{$val[title]}</h1>
+									<p>{str_cut($val[description], 100)}</p>
+									<span class="lei"><i id="dtstrdetail"></i><em>{$CATEGORYS[$val[catid]][catname]}</em></span>
+								</div>
+							</a>
+						</li>
+						{/loop}
+					</ul>
+				{/pc}
+
+				</div>
+
+				<!--分类-->
+				<div class="yp-right">
+					<h1>分类</h1>
+					<ul>
+						{pc:content action="category" catid="$catid" num="25" siteid="$siteid" order="listorder ASC"}
+						{loop $data $v}
+						<li id="li{$v[catid]}" onclick="selectCat({$v[catid]})"><a>{$v[catname]}</a></li>
+						{/loop}{/pc}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="{CSS_PATH}demo121/js/jquery-2.2.3.min.js"/></script>
+    <script src="{CSS_PATH}0524/js/cmsapi.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('#li1367').addClass('selected')
+        $('#dtstrdetail').text(GetDTstr({$val[inputtime]}))
+      })
+			function selectCat(catid){
+			  var catName=$(event.currentTarget).find('a').text()
+        $(event.currentTarget).addClass('selected').siblings().removeClass('selected')
+        getitemsbycid(catid,function(data){
+					var cnt=''
+          data.forEach(function(o){
+            cnt +=(
+              '<li><a href="'+o.url+'"><span class="img"><img src="'+o.thumb+'"/></span><div class="title"><h1>'+o.title+'</h1><p>'
+							+((o.description && o.description.length>100) ? o.description.substr(0,100) : o.description)+'</p>'
+							+'<span class="lei"><i>'+GetDTstr(o.inputtime)+'</i><em>'+catName+'</em></span></div></a></li>'
+						)
+					})
+          $('#lstitems').empty().append($(cnt))
+        })
+			}
+		</script>
+    <script>
+    $('.aurl_a').each(function(){
+      $(this).click(function(){
+        //alert($(this).attr('content'));
+        var url = $(this).attr('content');
+        var title = $(this).attr('title');
+        //调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+        //myObj.callAndroid(title,url);
+        Medical.playVideo(title,url);
+        //console.log(title,url);
+      });
+    });
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/hospital.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/fit.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0524/css/ultimate.css"/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="yp-box" style="position: relative;">
+				<!--置顶-->
+				<div class="top"><img src="{CSS_PATH}0426/img/img-18.png"/></div>
+				<div class="ys-box">
+					<h1 class="ys-bt">全部医生</h1>
+					{pc:content action="category" catid="$catid" num="25" siteid="$siteid" order="listorder ASC"}
+					{loop $data $r}
+					<!--科室1-->
+					<div class="ks">
+						<p class="ys-ks">{$r[catname]}</p>
+						{pc:content action="lists" catid="$r[catid]" num="100"  order="id ASC" return="info"}
+							<ul>
+							{loop $info $val}
+								<li>
+									<a href="{$r[url]}?id={$val[id]}">
+										<span style="background:#fff url('{$val[thumb]}');background-size:cover"></span>
+										<p>{$val[title]}</p>
+									</a>
+								</li>
+							{/loop}	
+							</ul>
+						{/pc}
+					</div>
+					{/loop}
+					{/pc}
+					
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="{CSS_PATH}0426/js/jquery-2.1.0.js" ></script>
+	<script type="text/javascript">
+		$(".top").click(function(){
+			$("body,html").animate({ scrollTop: '0px' },500);
+		})
+	</script>
+</html>

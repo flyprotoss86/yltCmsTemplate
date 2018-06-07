@@ -1,0 +1,92 @@
+        <footer>
+			<ul>
+				<li>解放军第309医院</li>
+				<li><span>特别声明：</span>本站内容仅供参考，不作为诊断及医疗依据</li>
+				<li>京ICP备13044424号 </li>
+				<li><span>技术支持：</span>北京医链通科技有限责任公司</li>
+			</ul>
+			
+		</footer>
+</div>
+<div class="container">
+			<!--**头部**-->
+			<header>
+				<span class="col-xs-5"><a href="http://119.90.88.62:88"><i><img src="{CSS_PATH}1020/logo.png"/></i>医汇联</a></span>
+				<span class="col-xs-3"><i><img src="{CSS_PATH}1020/menu.png"/></i>菜单</span>
+			</header>
+			<ul class="menu">
+				<li><a href="http://119.90.88.62:88">首页</a></li>
+				<li><a href="http://119.90.88.62:88">合作医院</a></li>
+				<li><a href="https://weidian.com/?userid=1154968935&wfr=wechatpo_keywords_shop">微商城</a></li>
+				<li><a href="http://119.90.88.62:88/html/jiuzhenxuzhi/">就诊须知</a></li>
+			</ul>
+			<!--**导航**-->
+			<div class="row father">
+				<div class="hot-sale">
+					<ul class="hot-title">
+						
+						<li>
+							<a href="/">医院首页</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[421][url]}">医院概况</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[430][url]}">科室介绍</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[425][url]}">医护团队</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[427][url]}">特色技术</a>
+						</li>
+						<li>
+							<a href="{$CATEGORYS[428][url]}">相关须知</a>
+						</li>
+						
+
+					</ul>
+				</div>
+			</div>
+		
+			<!--**广告图**-->
+			<div class="row banner">
+				<img src="{IMG_PATH}1020/lunbo.png"/>
+			</div>
+			{pc:get sql="select * from v9_category where parentid=424 order by catid asc" return="data"}
+				<ul class="yam_page_btn">
+				{loop $data $r}
+	
+					<li>
+						
+						<a href="{$r['url']}">{$r['catname']}</a>
+					</li>
+				{/loop}
+				</ul>
+			{/pc}
+			<!--**科室**-->
+			<div class="row weishop">
+				{pc:content action="lists" catid="425" order="id DESC" page="$page"}
+				<ul>
+				{loop $data $r}
+					<li class="col-xs-3">
+						<a href="{$r[url]}">
+							<span><img src="{$r[thumb]}"/></span>
+							<p>{$r[title]}</p>
+						</a>
+					</li>
+				{/loop}	
+				</ul>
+				{/pc}
+				<div class="fenye">{$pages}</div>
+			</div>
+			
+			<!--**专家介绍**-->
+			
+			<!--**底部**-->
+			<footer>2017医汇联  版权所有</footer>
+		</div>
+	</body>
+	
+
+</html>

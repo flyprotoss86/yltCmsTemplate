@@ -1,0 +1,9 @@
+<?php
+$tab=$_GET['tab'];
+$isql="select * from ".$tab; ?>
+{pc:get sql="$isql" cache="3600" num="50" return="data"}
+{/pc}
+<?php
+header('Content-type: application/json');
+$cnt=json_encode($data);
+?>aa({$cnt})

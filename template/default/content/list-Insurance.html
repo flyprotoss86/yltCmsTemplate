@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}baoxian/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}baoxian/css/style.css"/>
+	</head>
+	<body>
+		<div class="bx_list">
+		
+			<ul>
+			{pc:content action="lists" catid="$catid" num="20"  order="id DESC" return="info"}
+				  {loop $info $v}
+					{if $v['Insurance_static'] == 1}
+						<li>
+							<a href="{$v[url]}">
+							<div class="nr">
+								<img src="{$v[thumb]}"/>
+								<p>{$v[title]}</p>
+								<p>{$v[description]}</p>
+								<p>{$v[Insurance_company]}</p>
+							</div>
+							</a>
+						</li>
+					 
+						
+					 {/if}
+				{/loop}
+			{/pc}
+			{pc:content action="lists" catid="$catid" num="20"  order="id DESC" return="info"}
+				  {loop $info $v}
+				  {if $v[Insurance_static]=="2"}
+					<li>
+						<!--内容-->
+						<div class="nr">
+							<img src="{$v[thumb]}"/>
+							<p>{$v[title]}</p>
+							<p>{$v[description]}</p>
+							<p>{$v[Insurance_company]}</p>
+							<!--遮罩-->
+							<div class="wait">待开放</div>
+						</div>
+					</li>
+				{/if}
+				{/loop}
+			{/pc}
+			</ul>
+	
+		</div>
+	</body>
+</html>

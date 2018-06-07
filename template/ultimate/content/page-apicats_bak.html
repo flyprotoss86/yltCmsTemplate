@@ -1,0 +1,6 @@
+<?php $pid=intval($_GET['pid'])?>
+{pc:content action="category" catid="$pid" num="25" siteid="$siteid" order="listorder ASC"}
+<?php
+header('Content-type: application/json');
+$cnt=json_encode($data);
+?>aa({$cnt})

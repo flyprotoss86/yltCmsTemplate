@@ -1,0 +1,6 @@
+<?php $cid=intval($_GET['cid'])?>
+{pc:content action="lists" catid="$cid" num="12" moreinfo="0" order="id DESC" return="info"}
+<?php
+$cnt=json_encode($info);
+header('Content-type: application/json');
+?>aa({$cnt})

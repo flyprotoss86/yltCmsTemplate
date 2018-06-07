@@ -1,0 +1,35 @@
+{template "content","header"}
+		<!--********-->
+		<div class="banner"><img src="{IMG_PATH}726/on-banner.png" /></div>
+		<!--************************-->
+		<div class="hos_main">
+			<div class="left_nav">
+				<div class="list_top" style="background: url({IMG_PATH}726/jiancha_nav.png) no-repeat;">
+					<span><img src="{IMG_PATH}726/jc-heng.png"/></span>医护团队
+				</div>
+
+			</div>
+			<!--*****-->
+			<div class="weizhi" style="background: url({IMG_PATH}726/yybj.png) no-repeat;background-size: 100% 100%;">
+				<span><i>当前位置：</i>{catpos($catid)}</span>
+			</div>
+			<!--*******************************-->
+			<div class="hos_box">
+				
+				<div class="hos_content1">
+					<div class="jieshao">
+						<div class="news_left_top">
+							<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span><i>医护团队</i></div>
+						</div>
+						<div class="headpic">
+							<img src="{$thumb}"/>
+						</div>
+						<div class="jianjie">
+							{$content}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--****-->
+{template "content","footer_show_doctor"}	

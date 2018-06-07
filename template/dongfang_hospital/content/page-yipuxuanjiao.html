@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title>{$CATEGORYS[$catid][catname]}</title>
+		<link rel="stylesheet" href="{CSS_PATH}first-120/common.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-120/thems.css" />
+		<link rel="stylesheet" type="text/css" href="{JS_PATH}first-120/swiper-3.3.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-120/responsive.css" />
+		<script src="{JS_PATH}first-120/jquery-2.2.3.min.js"></script>
+		<script src="{JS_PATH}first-120/swiper-3.3.1.min.js"></script>
+
+	</head>
+
+	<body>
+		<div class="container">
+			<!--医普轮播图-->
+			<div class="row">
+				<div class="banner-yp">
+					<div class="swiper-container" style="width: 98%;height: 15.25rem;margin-top: 0;padding: 10px 0;">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="{IMG_PATH}first-120/banner-a.png" />
+							</div>
+							<div class="swiper-slide">
+								<img src="{IMG_PATH}first-120/banner-yp.png" />
+							</div>
+							<div class="swiper-slide">
+								<img src="{IMG_PATH}first-120/banner-yx.png" />
+							</div>
+						</div>
+						<!-- 如果需要分页器 -->
+						<div class="swiper-pagination"></div>
+
+						<!-- 如果需要导航按钮 -->
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+			</div>
+			<!--专题列表-->
+			<div class="row">
+				<ul class="special">
+					<li>
+						<img src="{IMG_PATH}first-120/pic1.png" />
+						<i>专题</i>
+						<div class="i-ma">
+							<h1>医疗宣教</h1>
+							<a href="{$CATEGORYS[1487]['url']}">进入专题>></a>
+						</div>
+					</li>
+					{pc:get sql="select * from nr.v9_category where catid=524"}
+					<li>
+						<img src="{$data[0][image]}" />
+						<i>专题</i>
+						<div class="i-ma">
+							<h1>医普常识</h1>
+							<a href="{$data[0][url]}">进入专题>></a>
+						</div>
+					</li>
+					{/pc}
+					{pc:get sql="select * from nr.v9_category where catid=525"}
+					<li>
+						<img src="{$data[0][image]}" />
+						<i>专题</i>
+						<div class="i-ma">
+							<h1>养生保健</h1>
+							<a href="{$data[0][url]}">进入专题>></a>
+						</div>
+					</li>
+					{/pc}
+					
+					<li>
+						<img src="{IMG_PATH}first-120/pic4.png" />
+						<i>专题</i>
+						<div class="i-ma">
+							<h1>热点活动</h1>
+							<a href="{$CATEGORYS[1489]['url']}">进入专题>></a>
+						</div>
+					</li>
+					
+					
+				</ul>
+			</div>
+			<!--为您推荐-->
+			<div class="row">
+				<div class="Recommend">
+					<div class="top-bt">
+						<span><img src="{IMG_PATH}first-120/pic2.png"/></span>为您推荐
+					</div>
+					<ul>
+					<!-- {pc:get sql="select v9_dongfang_news.*,v9_dongfang_news_data.content from v9_dongfang_news,v9_dongfang_news_data where v9_dongfang_news_data.id=v9_dongfang_news.id and  v9_dongfang_news.recommend_xuanjiao=1 order by v9_dongfang_news.inputtime desc limit 0,3--"} -->
+
+						<!-- {loop $data $value} -->
+						<!-- <li> -->
+							<!-- {if $value['v_static'] == 1} -->
+							<!-- <a content="{$value['content']}" title="{$value['title']}" class="aurl_a"> -->
+							<!-- {else} -->
+							<!-- <a href="{$value['url']}"> -->
+							<!-- {/if} -->
+							<!-- <img src="{$value[thumb]}" /><span>{$value[title]}</span></a> -->
+						<!-- </li> -->
+						<!-- {/loop} -->
+					<!-- {/pc}	 -->
+						{pc:get sql="select * from nr.v9_news where nr.v9_news.catid=524 and nr.v9_news.recommend=1 order by nr.v9_news.inputtime desc"}
+						{if $data[0]}
+						<li>
+							<a href="{$data[0][url]}"><img src="{$data[0][thumb]}" /><span>{$data[0][title]}</span></a>
+						</li>
+						{/if}
+						{if $data[1]}
+						<li>
+							<a href="{$data[1][url]}"><img src="{$data[1][thumb]}" /><span>{$data[1][title]}</span></a>
+						</li>
+						{/if}
+						{/pc}
+						{pc:get sql="select * from nr.v9_news where nr.v9_news.catid=525 and nr.v9_news.recommend=1 order by nr.v9_news.inputtime desc"}
+						{if $data[0]}
+						<li>
+							<a href="{$data[0][url]}"><img src="{$data[0][thumb]}" /><span>{$data[0][title]}</span></a>
+						</li>
+						{/if}
+						{if $data[1]}
+						<li>
+							<a href="{$data[1][url]}"><img src="{$data[1][thumb]}" /><span>{$data[1][title]}</span></a>
+						</li>
+						{/if}
+						{if $data[2]}
+						<li>
+							<a href="{$data[2][url]}"><img src="{$data[2][thumb]}" /><span>{$data[2][title]}</span></a>
+						</li>
+						{/if}
+						{/pc}
+					<!-- {pc:get sql="select v9_dongfang_news.*,v9_dongfang_news_data.content from v9_dongfang_news,v9_dongfang_news_data where v9_dongfang_news_data.id=v9_dongfang_news.id and  v9_dongfang_news.recommend=1 order by v9_dongfang_news.inputtime desc limit 0,3--"} -->
+						
+						<!-- {if $data[0]} -->
+						<!-- <li> -->
+							<!-- <a href="{$data[0][url]}"><img src="{$data[0][thumb]}" /><span>{$data[0][title]}</span></a> -->
+						<!-- </li> -->
+						<!-- {/if} -->
+						<!-- {if $data[1]} -->
+						<!-- <li> -->
+							<!-- <a href="{$data[1][url]}"><img src="{$data[1][thumb]}" /><span>{$data[1][title]}</span></a> -->
+						<!-- </li> -->
+						<!-- {/if} -->
+						<!-- {/pc} -->
+					</ul>
+				</div>
+			</div>
+			<!--热门专题-->
+			<div class="row">
+				<div class="hot">
+				
+					<div class="top-bt">
+						<span><img src="{IMG_PATH}first-120/pic3.png"/></span>热门专题
+						
+						<a href="{$CATEGORYS[1490]['url']}">更多>></a>
+						
+					</div>
+
+					<div class="hot-box">
+					{pc:get sql="select * from v9_dongfang_news where v9_dongfang_news.catid=1490 and v9_dongfang_news.recommend=1 order by v9_dongfang_news.inputtime desc"}
+						<div class="hot-left">
+						<a href="{$data[0][url]}">
+							<img src="{$data[0][thumb]}" />
+							<span>{$data[0][title]}</span>
+						</a>
+						</div>
+					
+					
+						<ul>
+						
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][url]}"><img src="{$data[1][thumb]}" /><span>{$data[1][title]}</span></a>
+							</li>
+						{/if}
+						{if $data[2]}
+							<li>
+								<a href="{$data[2][url]}"><img src="{$data[2][thumb]}" /><span>{$data[2][title]}</span></a>
+							</li>
+						{/if}
+						{if $data[3]}
+							<li>
+								<a href="{$data[3][url]}"><img src="{$data[3][thumb]}" /><span>{$data[3][title]}</span></a>
+							</li>
+						{/if}
+						{if $data[4]}
+							<li>
+								<a href="{$data[4][url]}"><img src="{$data[4][thumb]}" /><span>{$data[4][title]}</span></a>
+							</li>
+						{/if}
+						{if $data[5]}
+							<li>
+								<a href="{$data[5][url]}"><img src="{$data[5][thumb]}" /><span>{$data[5][title]}</span></a>
+							</li>
+						{/if}
+						{if $data[6]}
+							<li>
+								<a href="{$data[6][url]}"><img src="{$data[6][thumb]}" /><span>{$data[6][title]}</span></a>
+							</li>
+						{/if}
+						
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+			<script>
+				$('.aurl_a').each(function(){
+					$(this).click(function(){
+						//alert($(this).attr('content'));
+						var url = $(this).attr('content');
+						var title = $(this).attr('title');
+					　　//调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+					　　//myObj.callAndroid(title,url);
+						Medical.playVideo(title,url);
+						//console.log(title,url);
+					});
+				});
+			</script>
+			<!--底部-->
+			<div class="row">
+				<span class="bottom"><img src="{IMG_PATH}first-120/pic5.png"/></span>
+			</div>
+		</div>
+		{template "content","baidu-footer"}
+	</body>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container', {
+			//direction: 'vertical',
+			//autoplay:1000,
+			//loop: true,
+			prevButton: '.swiper-button-prev',
+			nextButton: '.swiper-button-next',
+			// 如果需要分页器
+			pagination: '.swiper-pagination',
+			//paginationClickable: true,
+		})
+	</script>
+
+</html>

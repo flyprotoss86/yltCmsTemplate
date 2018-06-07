@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<a onclick="WeixinJSBridge.call('closeWindow')">关闭</a>
+<script src="http://site.bjyihuilian.com/statics/css/0426/js/jquery-2.1.0.js"></script>
+<script src="js/cmsapi.js"></script>
+<script>
+  $(document).ready(function () {
+    // getitembycidandid(1323,12,function(obj, txt){
+    //   console.log(1.1,obj)
+    //   console.log(1.2,txt)
+    // })
+    getitemsbycid(1323,function(data){
+      console.log(2,data)
+    })
+    getcatsbypid(1325,function (data) {
+      console.log(3,data)
+    })
+  })
+
+
+
+</script>
+</body>
+</html>

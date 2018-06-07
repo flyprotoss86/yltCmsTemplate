@@ -1,0 +1,69 @@
+{template "content","header"}	
+		<!--********-->
+		<div class="banner"><img src="{IMG_PATH}726/on-banner.png" /></div>
+		<!--************************-->
+		<div class="hos_main">
+			<div class="left_nav">
+				<div class="list_top" style="background: url({IMG_PATH}726/jiancha_nav.png) no-repeat;">
+					<span><img src="{IMG_PATH}726/jc-heng.png"/></span>医护团队
+				</div>
+				<ul>
+				{pc:content action="category" catid="225"  siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			
+		
+					<li>
+						<a href="{$r[url]}">{$r[catname]}</a>
+						<span style="background: url({IMG_PATH}726/baijiao.png) no-repeat;background-size: 100% 100%;"></span>
+					</li>
+					{/loop}
+        {/pc}
+					
+				</ul>
+			</div>
+			<!--*****-->
+			<div class="weizhi" style="background: url({IMG_PATH}726/yybj.png) no-repeat;background-size: 100% 100%;">
+				
+			</div>
+			<!--*******************************-->
+			<div class="hos_box">
+				<div class="hos_content1">
+					
+					<div class="depa louti">
+						<div class="news_left_top">
+							<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span></div>
+						</div>
+						<ul class="depa_list">
+							{pc:content action="category" catid="226"  siteid="$siteid" order="listorder ASC"}
+							
+							
+						{loop $data $rq}
+							<li>
+								<a href="{$rq[url]}">
+									<span><img src="{$rq[image]}"/></span>
+									<p>{$rq[catname]}</p>
+								</a>
+							</li>
+									{/loop}
+						{/pc}		
+							
+						</ul>
+					</div>
+
+			
+			
+				</div>
+				<!--***************护理团队*************************-->
+				<div class="hos_content2">
+					<div class="news_left_top">
+						<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span>护理团队</div>
+					</div>
+
+					<div class="data-container hl_box"></div>
+					<div id="pagination-demo1" style="margin: 1.5rem 0;"></div>
+
+				</div>
+			</div>
+		</div>
+		<!--****-->
+{template "content","footer_category_yihukeshi"}	

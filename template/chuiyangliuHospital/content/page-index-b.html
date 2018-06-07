@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{CSS_PATH}first-121/css/common.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/css/thems.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/swiper/swiper-3.3.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/css/responsive.css" />
+		<script src="{CSS_PATH}first-121/js/jquery-2.2.3.min.js"></script>
+		<script src="{CSS_PATH}first-121/swiper/swiper-3.3.1.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=e0SFgyS03vwR9WSpVEhAX2mGwVrOVkvd"></script>
+		<script src="{CSS_PATH}first-121/js/map.js"></script>
+		<style type="text/css">
+			.swiper-container{
+				width: 31%;
+				height: 19.5%;
+				float: left;
+				margin-top: 0;
+			}
+			@media screen and (min-width:1500px) {
+				.swiper-container{
+					width: 31%;
+					height: 30.5rem;
+					padding: 0;
+					margin-top: 0;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- <div class="container"> -->
+			<div class="row">
+				<div class="Healthy">
+				{pc:get sql="select * from v9_category where catid=666"}
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}first-121/img/pic2-1.png"/></span>{$data[0][catname]}
+						<a href="{$data[0][url]}">更多>></a>
+					</div>
+				{/pc}
+				{pc:get sql="select * from v9_news where v9_news.catid=666 and v9_news.recommend=1 order by v9_news.inputtime desc"}
+					<ul class="jiankangbaike">
+					{if $data[0]}
+						<li>
+							<a href="{$data[0][url]}">
+								<div>
+									<img src="{$data[0][thumb]}" />
+								</div>
+								<span>{$data[0][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[1]}
+						<li>
+							<a href="{$data[1][url]}">
+								<div>
+									<img src="{$data[1][thumb]}" />
+								</div>
+								<span>{$data[1][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[2]}
+						<li>
+							<a href="{$data[2][url]}">
+								<div>
+									<img src="{$data[2][thumb]}" />
+								</div>
+								<span>{$data[2][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[3]}
+						<li>
+							<a href="{$data[3][url]}">
+								<div>
+									<img src="{$data[3][thumb]}" />
+								</div>
+								<span>{$data[3][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[4]}
+						<li>
+							<a href="{$data[4][url]}">
+								<div>
+									<img src="{$data[4][thumb]}" />
+								</div>
+								<span>{$data[4][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[5]}
+						<li>
+							<a href="{$data[5][url]}">
+								<div>
+									<img src="{$data[5][thumb]}" />
+								</div>
+								<span>{$data[5][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[6]}
+						<li>
+							<a href="{$data[6][url]}">
+								<div>
+									<img src="{$data[6][thumb]}" />
+								</div>
+								<span>{$data[6][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[7]}
+						<li>
+							<a href="{$data[7][url]}">
+								<div>
+									<img src="{$data[7][thumb]}" />
+								</div>
+								<span>{$data[7][title]}</span>
+							</a>
+						</li>
+					{/if}
+					</ul>
+				{/pc}
+					<!--营养美食-->
+					<div class="m-food">
+						<div class="top-bt" style="width: 100%;">
+							营养美食
+							<!-- <a href="http://www.bjmedicallink.com/padst">更多>></a> -->
+							<a id="more" onclick="calljs()" style="margin-right: 0.25rem;">更多>></a>
+						</div>
+						{pc:content action="lists" catid="762" order="id desc" num="5"}  
+						<ul>
+						{loop $data $r}
+							<li>
+								<a class="more" onclick="calljs()">
+									<span><img src="{$r[thumb]}"/></span>
+									<p>{$r[title]}</p>
+									<i>¥：{$r[price]}</i>
+								</a>
+							</li>
+						{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+			</div>
+	
+			<!--保险-->
+
+			<div class="row">
+				<div class="Insurance">
+				{pc:get sql="select * from v9_category where catid=972"}
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}first-121/img/pic2-2.png"/></span>医疗健康保险
+						<a href="{$data[0][url]}">更多>></a>
+					</div>
+				{/pc}
+					{pc:content action="lists" catid="972" siteid="1" order="listorder DESC" num="8"}
+					<ul class="baoxian">
+						{loop $data $val}
+						{if $val[Insurance_static] == 1}
+						<li>
+							<a href="{$val[url]}">
+								<div>
+									<img src="{$val[thumb]}" />
+								</div>
+								<span>{$val[title]}</span>
+							</a>
+						</li>
+						{/if}
+						{/loop}
+					</ul>
+					{/pc}
+					<!--生活服务-->
+					<div class="m-food">
+					{pc:get sql="select * from phpcmsv9_jingdong.v9_category where catid=9"}
+						<div class="top-bt" style="width: 100%;">
+							{$data[0][catname]}
+							<a href="http://119.90.88.62:99/" style="margin-right: 0.25rem;">更多>></a>
+						</div>
+					{/pc}
+					{pc:get sql="select phpcmsv9_jingdong.v9_news.*,phpcmsv9_jingdong.v9_news_data.content from phpcmsv9_jingdong.v9_news,phpcmsv9_jingdong.v9_news_data where phpcmsv9_jingdong.v9_news.catid=9 and phpcmsv9_jingdong.v9_news.id = phpcmsv9_jingdong.v9_news_data.id order by phpcmsv9_jingdong.v9_news.inputtime desc"}
+						<ul>
+						{if $data[0]}
+							<li>
+								<a href="{$data[0][content]}">
+									<span><img src="{$data[0][thumb]}"/></span>
+									<p>{$data[0][title]}</p>
+									<i>¥：{$data[0][price]}</i>
+								</a>
+							</li>
+						{/if}
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][content]}">
+									<span><img src="{$data[1][thumb]}"/></span>
+									<p>{$data[1][title]}</p>
+									<i>¥：{$data[1][price]}</i>
+								</a>
+							</li>
+						{/if}
+							{if $data[2]}
+							<li>
+								<a href="{$data[2][content]}">
+									<span><img src="{$data[2][thumb]}"/></span>
+									<p>{$data[2][title]}</p>
+									<i>¥：{$data[2][price]}</i>
+								</a>
+							</li>
+							{/if}
+							{if $data[3]}
+							<li>
+								<a href="{$data[3][content]}">
+									<span><img src="{$data[3][thumb]}"/></span>
+									<p>{$data[3][title]}</p>
+									<i>¥：{$data[3][price]}</i>
+								</a>
+							</li>
+							{/if}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+
+			<!--科室推荐-->
+
+			<div class="row">
+				<div class="Department">
+				
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}first-121/img/pic2.png"/></span>科室推荐
+						<a href="{$CATEGORYS[656][url]}">更多>></a>
+					</div>
+
+					<div class="Department-s">
+					
+					{pc:get sql="select * from v9_chuiyangliu_news where recommend_depar=1"}
+						<ul class="keshi">
+						{if $data[0]}
+							<li>
+								<a href="{$data[0][url]}">
+									<span><img src="{$data[0][thumb]}"/></span>
+									<p>{$data[0][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][url]}">
+									<span><img src="{$data[1][thumb]}"/></span>
+									<p>{$data[1][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[2]}
+							<li>
+								<a href="{$data[2][url]}">
+									<span><img src="{$data[2][thumb]}"/></span>
+									<p>{$data[2][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[3]}
+							<li>
+								<a href="{$data[3][url]}">
+									<span><img src="{$data[3][thumb]}"/></span>
+									<p>{$data[3][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[4]}
+							<li>
+								<a href="{$data[4][url]}">
+									<span><img src="{$data[4][thumb]}"/></span>
+									<p>{$data[4][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[5]}
+							<li>
+								<a href="{$data[5][url]}">
+									<span><img src="{$data[5][thumb]}"/></span>
+									<p>{$data[5][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[6]}
+							<li>
+								<a href="{$data[6][url]}">
+									<span><img src="{$data[6][thumb]}"/></span>
+									<p>{$data[6][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[7]}
+							<li>
+								<a href="{$data[7][url]}">
+									<span><img src="{$data[7][thumb]}"/></span>
+									<p>{$data[7][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[8]}
+							<li>
+								<a href="{$data[8][url]}">
+									<span><img src="{$data[8][thumb]}"/></span>
+									<p>{$data[8][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[9]}
+							<li>
+								<a href="{$data[9][url]}">
+									<span><img src="{$data[9][thumb]}"/></span>
+									<p>{$data[9][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[10]}
+							<li>
+								<a href="{$data[10][url]}">
+									<span><img src="{$data[10][thumb]}"/></span>
+									<p>{$data[10][title]}</p>
+								</a>
+							</li>
+						{/if}
+						</ul>
+					{/pc}
+						<!--医护团队-->
+				
+						<div class="top-bt">
+							专家推荐
+							<a href="{$CATEGORYS[668][url]}">更多>></a>
+						</div>
+				
+					{pc:get sql="select * from v9_chuiyangliu_news where recommend_doctor=1"}
+
+						<ul class="Doctor	">
+						
+					
+						{if $data[0]}
+							<li>
+								<a href="{$data[0][url]}">
+									<div><img src="{$data[0][thumb]}" /></div>
+									<p>{$data[0][title]}/{$data[0][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[0][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][url]}">
+									<div><img src="{$data[1][thumb]}" /></div>
+									<p>{$data[1][title]}/{$data[1][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[1][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[2]}
+							<li>
+								<a href="{$data[2][url]}">
+									<div><img src="{$data[2][thumb]}" /></div>
+									<p>{$data[2][title]}/{$data[2][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[2][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[3]}
+							<li>
+								<a href="{$data[3][url]}">
+									<div><img src="{$data[3][thumb]}" /></div>
+									<p>{$data[3][title]}/{$data[3][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[3][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[4]}
+							<li>
+								<a href="{$data[4][url]}">
+									<div><img src="{$data[4][thumb]}" /></div>
+									<p>{$data[4][title]}/{$data[4][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[4][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[5]}
+							<li>
+								<a href="{$data[5][url]}">
+									<div><img src="{$data[5][thumb]}" /></div>
+									<p>{$data[5][title]}/{$data[5][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[5][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+			
+			
+			<!--周边服务-->
+			
+			<div class="row">
+				<div class="map">
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}first-121/img/pic2-3.png"/></span>周边服务
+					</div>
+					<div class="tuijian_listbox1">
+						<ul class="tuijian_list2">
+							<li val_class="美食" class="active">美食</li>
+							<li val_class="酒店">酒店</li>
+							<li val_class="银行">银行</li>
+							<li val_class="超市">超市</li>
+							<li val_class="药店">药店</li>
+							<li val_class="水果店">水果店</li>
+						</ul>
+					</div>
+					<div class="map-box" id="container">
+						<div class="map" id="allmap"></div>
+					</div>
+					<div class="swiper-container">
+						<div class="swiper-wrapper panel">							
+							<!--<div class="swiper-slide">1</div>-->
+						</div>
+						<!-- 如果需要导航按钮 -->
+						<div class="swiper-button-prev" style="left: 5px;"></div>
+						<div class="swiper-button-next" style="right: 5px;"></div>
+					</div>
+					
+				</div>
+			</div>
+		<!-- </div>	 -->
+		{template "content","baidu-footer"}
+	</body>
+	<script type="text/javascript">
+		//商家列表滑动
+		var mySwiper = new Swiper('.swiper-container', {
+			initialSlide :0,
+    		observer:true,//修改swiper自己或子元素时，自动初始化swiper
+    		observeParents:true,//修改swiper的父元素时，自动初始化swiper
+			prevButton: '.swiper-button-prev',
+			nextButton: '.swiper-button-next',
+		})
+	
+	
+	
+	
+		var map;
+		var bounds;
+		var circle;
+		var local;
+		var lng = '116.472905';
+		var lat = '39.893303'; //指定位置的经度纬度可以到百度定位拾取系统去拿 http://api.map.baidu.com/lbsapi/getpoint/index.html  
+//		var lng,lat;
+		var search = '景区';
+//		var lng, lat;
+		$(function() {
+			map = new BMap.Map("allmap"); // 创建Map实例
+			navigator.geolocation.getCurrentPosition(function (position) {  
+			    lng = position.coords.longitude;  
+			    lat = position.coords.latitude;  
+			});
+			var mPoint = new BMap.Point(lng, lat);
+			map.enableScrollWheelZoom();
+			map.centerAndZoom(mPoint, 15);
+			
+			
+			//点击选项列表
+			var mOption = {
+				poiRadius: 500, //半径为1000米内的POI,默认100米
+				numPois: 20 //列举出50个POI,默认10个
+			}
+			var myGeo = new BMap.Geocoder();
+			
+			//显示列表
+			myGeo.getLocation(mPoint,
+				function mCallback(rs) {
+					var allPois = rs.surroundingPois; //获取全部POI（该点半径为100米内有6个POI点）
+					console.log(allPois);
+					var lie = allPois.length;
+					var divN = Math.ceil(lie / 4); //多少行
+					//var divY = lie - divN*4; 
+					console.log(divN)//4
+					var html = '';
+					for(var i=0;i<divN;i++){
+								
+								html += '<div class="swiper-slide"><ul>'
+								for(var j=0;j<=3;j++){
+									var y = i*4+j;
+									if(y<lie){
+										if((y+1)%4 == 0){
+//											echo '<li>'.$arr[$y].'</li>';
+											html += "<li><p>" + (y+1) + "、" + allPois[y].title + "</p><p>地址:"+ allPois[y].address +"</p></li>"
+										}else{
+//											if($arr[$y]){
+//												echo '<li>'.$arr[$y].'</li>';
+//											}	
+											html += "<li><p>" + (y+1) + "、" + allPois[y].title + "</p><p>地址:"+ allPois[y].address +"</p></li>"
+
+										}	
+									}
+								 	
+								}
+								html += '</ul></div>'
+								
+							}
+							
+							$(".swiper-wrapper").html(html);	
+
+				}, mOption
+			);
+			
+			
+			
+			$('.tuijian_list2 li').each(function(index) {
+				$(this).click(function() {
+					if ($(this).hasClass("active")) {
+						$(this).siblings().removeClass("active");
+					} else{
+						$(this).addClass("active").siblings().removeClass("active");
+					}
+					
+					$(this).parents('.tuijian_list2').find('.tuijian_in').removeClass('tuijian_in');
+					$(this).addClass("tuijian_in");
+					search = $(this).attr('val_class');
+					Search(search, mPoint);
+					
+					
+				});
+		});
+
+			
+		})
+		
+		/**  
+		 * 得到圆的内接正方形bounds  
+		 * @param {Point} centerPoi 圆形范围的圆心  
+		 * @param {Number} r 圆形范围的半径  
+		 * @return 无返回值     
+		 */
+		function getSquareBounds(centerPoi, r) {
+			var a = Math.sqrt(2) * r; //正方形边长  
+			var mPoi = getMecator(centerPoi);
+			var x0 = mPoi.x,
+				y0 = mPoi.y;
+			var x1 = x0 + a / 2,
+				y1 = y0 + a / 2; //东北点  
+			var x2 = x0 - a / 2,
+				y2 = y0 - a / 2; //西南点  
+			var ne = getPoi(new BMap.Pixel(x1, y1)),
+				sw = getPoi(new BMap.Pixel(x2, y2));
+			return new BMap.Bounds(sw, ne);
+		};
+		//根据球面坐标获得平面坐标。  
+		function getMecator(poi) {
+			return map.getMapType().getProjection().lngLatToPoint(poi);
+		};
+		//根据平面坐标获得球面坐标。  
+		function getPoi(mecator) {
+			return map.getMapType().getProjection().pointToLngLat(mecator);
+		};
+		//点击标点
+		function Search(search, mPoint) {
+			map.clearOverlays();
+			circle = new BMap.Circle(mPoint, 1000, {
+				stroke: "white",
+				strokeWeight: 1,
+				fillOpacity: 0.3,
+				strokeOpacity: 0.3
+			});
+			map.addOverlay(circle);
+			local = new BMap.LocalSearch(map, {
+				renderOptions: {
+					map: map,
+					autoViewport: false
+				}
+			});
+			bounds = getSquareBounds(circle.getCenter(), circle.getRadius());
+			local.searchInBounds(search, bounds);
+		};
+		
+		//测试
+		function calljs() {
+			Native.calljs();
+		}
+	</script>
+</html>

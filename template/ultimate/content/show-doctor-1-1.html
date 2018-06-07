@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/hospital.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/fit.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0524/css/ultimate.css"/>
+		<style>
+			#scrollDivs ul li a span img{
+				width:auto !important;
+				height: auto !important;
+				max-width: 100% !important;
+				max-height: 100% !important;
+			}
+			.doc_right{
+				height: auto !important;
+				margin: 0 !important;
+				position: fixed !important;
+				right: 1.5rem !important;
+				top: 1.5rem !important;
+				bottom: 1.5rem !important;
+			}
+			#btn1{
+				position: absolute !important;
+				bottom: 0 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="yp-box">
+				<div class="doc_left">
+					<h1>{$title}</h1>
+					<p>{$doctor_job}</p>
+					<p>{$content}</p>
+				</div>
+				<!--右栏-->
+				<div class="doc_right">
+					<span id="btn2"><img src="{CSS_PATH}0426/img/img-14.png"/></span>
+					<div id="scrollDivs">
+					{pc:content action="lists" catid="$catid" num="100" order="id DESC" return="info"}
+						<ul>
+						{loop $info $r}
+						{if $id == $r[id]}
+							<li class="about">
+						{else}
+							<li>
+						{/if}
+								<a href="{$r[url]}">
+									<span><img src="{$r[thumb]}"/></span>
+									<p>{$r[title]}</p>
+								</a>
+							</li>
+						{/loop}
+						</ul>
+					{/pc}
+					</div>
+					<span id="btn1"><img src="{CSS_PATH}0426/img/img-15.png"/></span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="{CSS_PATH}0426/js/jquery-2.1.0.js"></script>
+	<script type="text/javascript">
+    /*重要脚本*/
+    (function($) {
+      $('#scrollDivs').height($('.doc_right').height()-$('#btn1').height()-$('#btn2').height())
+      $.fn.extend({
+        Scroll: function(opt, callback) {
+          if(!opt) var opt = {};
+          var _btnUp = $("#" + opt.up); //Shawphy:向上按钮
+          var _btnDown = $("#" + opt.down); //Shawphy:向下按钮
+          var _this = this.eq(0).find("ul:first");
+          var lineH = _this.find("li:first").height() + 1; //获取行高  此处我加了1 因为样式中用到了margin-bottom:1px 这个根据自己情况修改
+          var speed = opt.speed ? parseInt(opt.speed, 10) : 200; //卷动速度，数值越大，速度越慢（毫秒）
+          var count = _this.find("li").length; //总共的<li>元素的个数
+          var childHeight = count * lineH;//line * lineH;
+          var boxHeight = $('#scrollDivs').height()
+          var scollHeight=lineH * 2
+          var top=0
+          function scrollUp() {
+            var _up
+            if((childHeight-boxHeight-top) <scollHeight){
+              _up = childHeight-boxHeight-top
+            }
+            else{
+              _up = scollHeight
+            }
+            top += _up
+            _this.animate({
+              marginTop: "-=" + _up + "px"
+            }, speed);
+          }
+
+          function scrollDown() {
+            var _down
+            if(top < scollHeight){
+              _down = top
+            }
+            else{
+              _down = scollHeight
+            }
+            top -= _down
+            _this.animate({
+              marginTop: "+=" + _down + "px"
+            }, speed);
+          }
+
+          if(boxHeight < childHeight){
+            _btnUp.bind("click", scrollUp);
+            _btnDown.bind("click", scrollDown);
+          }
+        }
+      });
+    })(jQuery);
+    $(function() {
+      $("#scrollDivs").Scroll({
+        line: 2,
+        speed: 500,
+        up: "btn1",
+        down: "btn2",
+        showline: 5
+      });
+    });
+
+    //点击科室
+    $("#scrollDivs ul li").click(function() {
+      $(this).addClass("about").siblings().removeClass("about");
+    })
+	</script>
+</html>

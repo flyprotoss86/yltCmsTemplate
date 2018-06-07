@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{CSS_PATH}first-121/css/common.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/css/thems.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/swiper/swiper-3.3.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}first-121/css/responsive.css" />
+		<script src="{CSS_PATH}first-121/js/jquery-2.2.3.min.js"></script>
+		<script src="{CSS_PATH}first-121/swiper/swiper-3.3.1.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=e0SFgyS03vwR9WSpVEhAX2mGwVrOVkvd"></script>
+		<!-- <script src="{CSS_PATH}first-121/js/map.js"></script> -->
+		<style type="text/css">
+			.swiper-container{
+				width: 31%;
+				height: 19.5%;
+				float: left;
+				margin-top: 0;
+			}
+			@media screen and (min-width:1500px) {
+				.swiper-container{
+					width: 31%;
+					height: 30.5rem;
+					padding: 0;
+					margin-top: 0;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- <div class="container"> -->
+			<div class="row">
+				<div class="Healthy">
+				{pc:get sql="select * from v9_category where catid=666"}
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}first-121/img/pic2-1.png"/></span>{$data[0][catname]}
+						<a href="{$data[0][url]}">更多>></a>
+					</div>
+				{/pc}
+				{pc:get sql="select * from v9_news where v9_news.catid=666 and v9_news.recommend=1 order by v9_news.inputtime desc"}
+					<ul class="jiankangbaike">
+					{if $data[0]}
+						<li>
+							<a href="{$data[0][url]}">
+								<div>
+									<img src="{$data[0][thumb]}" />
+								</div>
+								<span>{$data[0][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[1]}
+						<li>
+							<a href="{$data[1][url]}">
+								<div>
+									<img src="{$data[1][thumb]}" />
+								</div>
+								<span>{$data[1][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[2]}
+						<li>
+							<a href="{$data[2][url]}">
+								<div>
+									<img src="{$data[2][thumb]}" />
+								</div>
+								<span>{$data[2][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[3]}
+						<li>
+							<a href="{$data[3][url]}">
+								<div>
+									<img src="{$data[3][thumb]}" />
+								</div>
+								<span>{$data[3][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[4]}
+						<li>
+							<a href="{$data[4][url]}">
+								<div>
+									<img src="{$data[4][thumb]}" />
+								</div>
+								<span>{$data[4][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[5]}
+						<li>
+							<a href="{$data[5][url]}">
+								<div>
+									<img src="{$data[5][thumb]}" />
+								</div>
+								<span>{$data[5][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[6]}
+						<li>
+							<a href="{$data[6][url]}">
+								<div>
+									<img src="{$data[6][thumb]}" />
+								</div>
+								<span>{$data[6][title]}</span>
+							</a>
+						</li>
+					{/if}
+					{if $data[7]}
+						<li>
+							<a href="{$data[7][url]}">
+								<div>
+									<img src="{$data[7][thumb]}" />
+								</div>
+								<span>{$data[7][title]}</span>
+							</a>
+						</li>
+					{/if}
+					</ul>
+				{/pc}
+					<!--营养美食-->
+					<div class="m-food">
+						<div class="top-bt" style="width: 100%;">
+							营养美食
+						
+							<!-- <a id="more" onclick="calljs()" style="margin-right: 0.25rem;">更多>></a> -->
+						</div>
+						<!-- {pc:content action="lists" catid="762" order="id desc" num="5"} 
+							<ul>
+							{loop $data $r}
+								<li>
+									<a class="more" onclick="calljs()">
+										<span><img src="{$r[thumb]}"/></span>
+										<p>{$r[title]}</p>
+										<i>¥：{$r[price]}</i>
+									</a>
+								</li>
+							{/loop}
+							</ul>
+						{/pc}
+						  -->
+					</div>
+				</div>
+			</div>
+	
+			<!--保险-->
+
+			<div class="row">
+				<div class="Insurance">
+				{pc:get sql="select * from v9_category where catid=972"}
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}first-121/img/pic2-2.png"/></span>医疗健康保险
+						<a href="{$data[0][url]}">更多>></a>
+					</div>
+				{/pc}
+					{pc:content action="lists" catid="972" siteid="1" order="listorder DESC" num="8"}
+					<ul class="baoxian">
+						{loop $data $val}
+						{if $val[Insurance_static] == 1}
+							<li>
+								<a href="{$val[url]}">
+									<div>
+										<img src="{$val[thumb]}" />
+									</div>
+									<span>{$val[title]}</span>
+								</a>
+							</li>
+						{/if}
+						{/loop}
+					</ul>
+					{/pc}
+					<!--生活服务-->
+					<div class="m-food">
+					{pc:get sql="select * from phpcmsv9_jingdong.v9_category where catid=9"}
+						<div class="top-bt" style="width: 100%;">
+							{$data[0][catname]}
+							<a href="http://119.90.88.62:99/" style="margin-right: 0.25rem;">更多>></a>
+						</div>
+					{/pc}
+					{pc:get sql="select phpcmsv9_jingdong.v9_news.*,phpcmsv9_jingdong.v9_news_data.content from phpcmsv9_jingdong.v9_news,phpcmsv9_jingdong.v9_news_data where phpcmsv9_jingdong.v9_news.catid=9 and phpcmsv9_jingdong.v9_news.id = phpcmsv9_jingdong.v9_news_data.id order by phpcmsv9_jingdong.v9_news.inputtime desc"}
+						<ul>
+						{if $data[0]}
+							<li>
+								<a href="{$data[0][content]}">
+									<span><img src="{$data[0][thumb]}"/></span>
+									<p>{$data[0][title]}</p>
+									<i>¥：{$data[0][price]}</i>
+								</a>
+							</li>
+						{/if}
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][content]}">
+									<span><img src="{$data[1][thumb]}"/></span>
+									<p>{$data[1][title]}</p>
+									<i>¥：{$data[1][price]}</i>
+								</a>
+							</li>
+						{/if}
+							{if $data[2]}
+							<li>
+								<a href="{$data[2][content]}">
+									<span><img src="{$data[2][thumb]}"/></span>
+									<p>{$data[2][title]}</p>
+									<i>¥：{$data[2][price]}</i>
+								</a>
+							</li>
+							{/if}
+							{if $data[3]}
+							<li>
+								<a href="{$data[3][content]}">
+									<span><img src="{$data[3][thumb]}"/></span>
+									<p>{$data[3][title]}</p>
+									<i>¥：{$data[3][price]}</i>
+								</a>
+							</li>
+							{/if}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+
+			<!--科室推荐-->
+
+			<div class="row">
+				<div class="Department">
+				
+					<div class="top-bt">
+						<span><img src="{CSS_PATH}first-121/img/pic2.png"/></span>科室推荐
+						<a href="{$CATEGORYS[843][url]}">更多>></a>
+					</div>
+
+					<div class="Department-s">
+					
+					{pc:get sql="select * from v9_ftzxy_news where recommend_depar=1"}
+						<ul class="keshi">
+						{if $data[0]}
+							<li>
+								<a href="{$data[0][url]}">
+									<span><img src="{$data[0][thumb]}"/></span>
+									<p>{$data[0][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][url]}">
+									<span><img src="{$data[1][thumb]}"/></span>
+									<p>{$data[1][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[2]}
+							<li>
+								<a href="{$data[2][url]}">
+									<span><img src="{$data[2][thumb]}"/></span>
+									<p>{$data[2][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[3]}
+							<li>
+								<a href="{$data[3][url]}">
+									<span><img src="{$data[3][thumb]}"/></span>
+									<p>{$data[3][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[4]}
+							<li>
+								<a href="{$data[4][url]}">
+									<span><img src="{$data[4][thumb]}"/></span>
+									<p>{$data[4][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[5]}
+							<li>
+								<a href="{$data[5][url]}">
+									<span><img src="{$data[5][thumb]}"/></span>
+									<p>{$data[5][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[6]}
+							<li>
+								<a href="{$data[6][url]}">
+									<span><img src="{$data[6][thumb]}"/></span>
+									<p>{$data[6][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[7]}
+							<li>
+								<a href="{$data[7][url]}">
+									<span><img src="{$data[7][thumb]}"/></span>
+									<p>{$data[7][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[8]}
+							<li>
+								<a href="{$data[8][url]}">
+									<span><img src="{$data[8][thumb]}"/></span>
+									<p>{$data[8][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[9]}
+							<li>
+								<a href="{$data[9][url]}">
+									<span><img src="{$data[9][thumb]}"/></span>
+									<p>{$data[9][title]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[10]}
+							<li>
+								<a href="{$data[10][url]}">
+									<span><img src="{$data[10][thumb]}"/></span>
+									<p>{$data[10][title]}</p>
+								</a>
+							</li>
+						{/if}
+						</ul>
+					{/pc}
+						<!--医护团队-->
+				
+						<div class="top-bt">
+							专家推荐
+							<a href="{$CATEGORYS[844][url]}">更多>></a>
+						</div>
+				
+					{pc:get sql="select * from v9_ftzxy_news where recommend_doctor=1"}
+
+						<ul class="Doctor	">
+						
+					
+						{if $data[0]}
+							<li>
+								<a href="{$data[0][url]}">
+									<div><img src="{$data[0][thumb]}" /></div>
+									<p>{$data[0][title]}/{$data[0][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[0][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[1]}
+							<li>
+								<a href="{$data[1][url]}">
+									<div><img src="{$data[1][thumb]}" /></div>
+									<p>{$data[1][title]}/{$data[1][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[1][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[2]}
+							<li>
+								<a href="{$data[2][url]}">
+									<div><img src="{$data[2][thumb]}" /></div>
+									<p>{$data[2][title]}/{$data[2][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[2][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[3]}
+							<li>
+								<a href="{$data[3][url]}">
+									<div><img src="{$data[3][thumb]}" /></div>
+									<p>{$data[3][title]}/{$data[3][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[3][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[4]}
+							<li>
+								<a href="{$data[4][url]}">
+									<div><img src="{$data[4][thumb]}" /></div>
+									<p>{$data[4][title]}/{$data[4][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[4][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						{if $data[5]}
+							<li>
+								<a href="{$data[5][url]}">
+									<div><img src="{$data[5][thumb]}" /></div>
+									<p>{$data[5][title]}/{$data[5][doctor_job]}</p>
+									<p>科室：{$CATEGORYS[$data[5][catid]][catname]}</p>
+								</a>
+							</li>
+						{/if}
+						
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+			
+			
+			<!--周边服务-->
+			
+						<div class="row">
+				<div class="map">
+					<!--地图-->
+					<div class="map-box" id="container">
+						<h1><span><img src="../img/pic2-3.png"/></span>周边服务</h1>
+						<div class="map" id="allmap" style="height: 31rem;"></div>
+					</div>
+
+					<!--列表-->
+					<div class="tab">
+						<ul class="nav">
+							<li class="active">住宿</li>
+							<li>银行</li>
+							<li>美食</li>
+							<li>药店</li>
+							<li>超市</li>
+							<li>鲜花水果</li>
+						</ul>
+						<div id="tablea" class="tablea">
+							<div class="box">
+								<ul>
+									<li onclick="search(this)" data_Id="txtSearch1" id="aa">
+										<div class="shop-list">
+											<p>1：
+												<a href="#">速8酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走30米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1" value="速8酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch2">
+										<div class="shop-list">
+											<p>2：
+												<a href="#">北京富力万丽酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走到双井桥下富力广场</p>
+											<p>特色：大型星级酒店，配有西餐厅，各式中餐</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch2" value="北京富力万丽酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch3">
+										<div class="shop-list">
+											<p>3：
+												<a href="#">汉庭酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来东100米，过天桥左边下来50米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch3" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch4">
+										<div class="shop-list">
+											<p>4：
+												<a href="#">金和宾馆（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向南400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch4" value="金和宾馆（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch5">
+										<div class="shop-list">
+											<p>5：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch5" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch5">
+										<div class="shop-list">
+											<p>6：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch5" value="汉庭酒店（垂杨柳店）" />
+									</li>
+								</ul>
+							</div>
+							<div class="box">
+								<ul>
+									<li onclick="search(this)" data_Id="txtSearch1s" id="aa">
+										<div class="shop-list">
+											<p>1：
+												<a href="#">速8酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走30米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1s" value="速8酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch2s">
+										<div class="shop-list">
+											<p>2：
+												<a href="#">北京富力万丽酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走到双井桥下富力广场</p>
+											<p>特色：大型星级酒店，配有西餐厅，各式中餐</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch2s" value="北京富力万丽酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch3s">
+										<div class="shop-list">
+											<p>3：
+												<a href="#">汉庭酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来东100米，过天桥左边下来50米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch3s" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch4s">
+										<div class="shop-list">
+											<p>4：
+												<a href="#">金和宾馆（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向南400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch4s" value="金和宾馆（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch5s">
+										<div class="shop-list">
+											<p>5：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch5s" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch6s">
+										<div class="shop-list">
+											<p>6：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch6s" value="汉庭酒店（垂杨柳店）" />
+									</li>
+								</ul>
+							</div>
+							<div class="box">
+								<ul>
+									<li onclick="search(this)" data_Id="txtSearch1ss" id="aa">
+										<div class="shop-list">
+											<p>1：
+												<a href="#">速8酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走30米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1ss" value="速8酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch2ss">
+										<div class="shop-list">
+											<p>2：
+												<a href="#">北京富力万丽酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走到双井桥下富力广场</p>
+											<p>特色：大型星级酒店，配有西餐厅，各式中餐</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch2ss" value="北京富力万丽酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch3ss">
+										<div class="shop-list">
+											<p>3：
+												<a href="#">汉庭酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来东100米，过天桥左边下来50米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch3ss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch4ss">
+										<div class="shop-list">
+											<p>4：
+												<a href="#">金和宾馆（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向南400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch4ss" value="金和宾馆（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch5ss">
+										<div class="shop-list">
+											<p>5：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch5ss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch6ss">
+										<div class="shop-list">
+											<p>6：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch6ss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+								</ul>
+							</div>
+							<div class="box">
+								<ul>
+									<li onclick="search(this)" data_Id="txtSearch1sss" id="aa">
+										<div class="shop-list">
+											<p>1：
+												<a href="#">速8酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走30米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1sss" value="速8酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch2sss">
+										<div class="shop-list">
+											<p>2：
+												<a href="#">北京富力万丽酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走到双井桥下富力广场</p>
+											<p>特色：大型星级酒店，配有西餐厅，各式中餐</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch2sss" value="北京富力万丽酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch3sss">
+										<div class="shop-list">
+											<p>3：
+												<a href="#">汉庭酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来东100米，过天桥左边下来50米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch3sss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch4sss">
+										<div class="shop-list">
+											<p>4：
+												<a href="#">金和宾馆（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向南400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch4sss" value="金和宾馆（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch5sss">
+										<div class="shop-list">
+											<p>5：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch5sss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch6sss">
+										<div class="shop-list">
+											<p>6：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch6sss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+								</ul>
+							</div>
+							<div class="box">
+								<ul>
+									<li onclick="search(this)" data_Id="txtSearch1ssss" id="aa">
+										<div class="shop-list">
+											<p>1：
+												<a href="#">速8酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走30米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1ssss" value="速8酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch2ssss">
+										<div class="shop-list">
+											<p>2：
+												<a href="#">北京富力万丽酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走到双井桥下富力广场</p>
+											<p>特色：大型星级酒店，配有西餐厅，各式中餐</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch2ssss" value="北京富力万丽酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch3ssss">
+										<div class="shop-list">
+											<p>3：
+												<a href="#">汉庭酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来东100米，过天桥左边下来50米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch3ssss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch4ssss">
+										<div class="shop-list">
+											<p>4：
+												<a href="#">金和宾馆（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向南400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch4ssss" value="金和宾馆（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch5ssss">
+										<div class="shop-list">
+											<p>5：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch5ssss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch6ssss">
+										<div class="shop-list">
+											<p>6：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch6ssss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+								</ul>
+							</div>
+							<div class="box">
+								<ul>
+									<li onclick="search(this)" data_Id="txtSearch1sssss" id="aa">
+										<div class="shop-list">
+											<p>1：
+												<a href="#">速8酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走30米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch1sssss" value="速8酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch2sssss">
+										<div class="shop-list">
+											<p>2：
+												<a href="#">北京富力万丽酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来右转50米，丁字路口向北走到双井桥下富力广场</p>
+											<p>特色：大型星级酒店，配有西餐厅，各式中餐</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch2sssss" value="北京富力万丽酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch3sssss">
+										<div class="shop-list">
+											<p>3：
+												<a href="#">汉庭酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来东100米，过天桥左边下来50米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch3sssss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch4sssss">
+										<div class="shop-list">
+											<p>4：
+												<a href="#">金和宾馆（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向南400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch4sssss" value="金和宾馆（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch5sssss">
+										<div class="shop-list">
+											<p>5：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch5sssss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+									<li onclick="search(this)" data_Id="txtSearch6sssss">
+										<div class="shop-list">
+											<p>6：
+												<a href="#">7天连锁酒店（垂杨柳店）</a>
+											</p>
+											<p>垂杨柳医院门诊出来后向正南方向400米</p>
+										</div>
+										<span><img src="../img/img1.png"/><i>外部环境</i></span>
+										<input type="hidden" name="" id="txtSearch6sssss" value="汉庭酒店（垂杨柳店）" />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		<!-- </div>	 -->
+		{template "content","baidu-footer"}
+	</body>
+	<script type="text/javascript">
+		var map;
+		var bounds;
+		var circle;
+		var local;
+		var lng = '116.375632';
+		var lat = '40.041288'; //指定位置的经度纬度可以到百度定位拾取系统去拿 http://api.map.baidu.com/lbsapi/getpoint/index.html  
+		map = new BMap.Map("allmap"); // 创建Map实例
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lng = position.coords.longitude;
+			lat = position.coords.latitude;
+		});
+		var mPoint = new BMap.Point(lng, lat);
+		map.enableScrollWheelZoom();
+		map.centerAndZoom(mPoint, 15);
+
+		//搜索
+		var city = new BMap.LocalSearch(map, {
+			renderOptions: {
+				map: map,
+				autoViewport: true
+			}
+		}); //地图显示到查询结果处
+		$("#aa").click();
+
+		function search(obj) {
+			console.log(obj);
+
+			var name = obj.attributes["data_Id"].nodeValue;
+			var s = document.getElementById(name).attributes["value"].nodeValue;
+			console.log(s);
+			city.setSearchCompleteCallback(onSearchComplete); // 设置检索结束后的回调函数。参数： results: LocalResult 或  Array<LocalResult> ,如果是多关键字检索，回调    // 函数参数为LocalResult 的数组，数组中的结果顺序和检索中多关键字数组中顺序一致。 
+			city.search(s); //查找城市
+		}
+
+		function onSearchComplete(result) {
+			var n = result.getNumPois(); // 返回搜索结果数
+		}
+
+		//点击选项列表
+		var mOption = {
+			poiRadius: 500, //半径为1000米内的POI,默认100米
+			numPois: 20 //列举出50个POI,默认10个
+		}
+		var myGeo = new BMap.Geocoder();
+
+		$(".tablea").find(".box:first").show(); //为每个BOX的第一个元素显示  
+		$('.nav li').each(function(index) {
+			$(this).click(function() {
+				var index = $(this).index(); //获取当前a标签的个数  
+				$(this).parent().next().find(".box").hide().eq(index).show(); //返回上一层，在下面查找css名为box隐藏，然后选中的显示  
+				$(this).addClass("hover").siblings().removeClass("hover"); //a标签显示，同辈元素隐藏  
+
+			});
+		});
+
+		$(".nav li").click(function() {
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active")
+		})
+	</script>
+</html>

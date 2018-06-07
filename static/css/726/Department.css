@@ -1,0 +1,227 @@
+
+.hos_main{
+	width: 95.6%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.left_nav{
+	width: 15%;
+	margin-top: 1rem;
+	float: left;
+}
+.list_top{
+	width: 100%;
+	height: 2.2rem;
+	margin-bottom: 0.25rem;
+	color: #fff;
+	font-size: 1rem;
+	line-height: 2.2rem;
+}
+.list_top span{
+	display: block;
+	float: left;
+	width: 0.9rem;
+	height: 0.7rem;
+	margin: 0.75rem 0.75rem 0 1rem;
+}
+.left_nav ul{
+	border-top: 0.05rem solid #c5c3c3;
+}
+.left_nav ul li{
+	width: 100%;
+	height: 2.2rem;
+	font-size: 0.7rem;
+	color: #666666;
+	line-height: 2.2rem;
+	position: relative;
+	padding-left: 5%;
+	box-sizing: border-box;
+	border-bottom: 0.05rem solid #c5c3c3;
+}
+.left_nav ul li span{
+	display: block;
+	width: 0.4rem;
+	height: 0.7rem;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0.75rem;
+	right: 1.05rem;
+}
+.left_nav ul li.check{
+	color: #fff;
+	background-color: #409de5;
+	border: none;
+	
+}
+.weizhi{
+	width: 80%;
+	height: 7.2rem;
+	background-size: 100% 100%;
+	float: right;
+	margin-right: 1.4rem;
+}
+
+.weizhi span{
+	display: block;
+	height: 1.25rem;
+	font-size: 0.7rem;
+	color: #333333;
+	line-height: 1.25rem;
+	margin-top: 4rem;
+	margin-left: 0.9rem;
+}
+
+.weizhi span a{
+	color: #333333;
+}
+
+.hos_box{
+	width: 80%;
+	float: right;
+	margin-right: 1.4rem;
+}
+.news_left_top{
+	width: 100%;
+	height: 2.5rem;
+	border-bottom: 0.1rem solid #e2d3cd;
+}
+.left_bt{
+	height: 2.6rem;
+	border-bottom: 0.1rem solid #3ab9f0;
+	position: relative;
+	font-size: 0.8rem;
+	color: #3ab9f0;
+	padding-left: 1.5rem;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 2.5rem;
+	float: left;
+}
+.left_bt span{
+	display: block;
+	width: 0.55rem;
+	height: 0.55rem;
+	position: absolute;
+	top: 1rem;
+	left: 0.85rem;
+}
+.hos_content1{
+	width: 100%;
+	color: #333333;
+	font-size: 0.7rem;
+	line-height: 1.25rem;
+	overflow: hidden;
+/*	display: none;*/
+}
+/*--------科室------*/
+.depa{
+	width: 100%;
+	float: left;
+}
+.depa_list{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.depa_list li{
+	width: 11%;
+	border: 0.05rem solid #e0dcda;
+	float: left;
+	margin: 1.5rem 0 1.5rem 2.7%;
+	background: #f3f6fb;
+}
+.depa_list li span{
+	display: block;
+	width: 62.8%;
+	height: 4.15rem;
+	margin: 20% auto 0;
+}
+.depa_list li p{
+	color: #666666;
+	font-size: 1rem;
+	text-align: center;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/*-----------------护理团队---------------------------------*/
+.hos_content2{
+	width: 100%;
+	color: #333333;
+	font-size: 0.7rem;
+	line-height: 1.25rem;
+	overflow: hidden;
+	display: none;
+}
+.hos_contents{
+	width: 100%;
+	color: #333333;
+	font-size: 0.7rem;
+	line-height: 1.25rem;
+	overflow: hidden;
+}
+.hos_contents img{
+	display: block;
+    width: 57%;
+    height: auto;
+    margin: 1rem auto;
+}
+.hl_box{
+	width: 100%;
+}
+.hl_box li{
+	width: 92.5%;
+	height: 2.9rem;
+	margin: 0 auto;
+	border-bottom: 0.05rem dashed #c9cacb;
+}
+.hl_box li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	clear: both;
+}
+.hl_bt{
+	display: block;
+	width: 80%;
+	height: 100%;
+	position: relative;
+	font-size: 1rem;
+	color: #666666;
+	line-height: 2.9rem;
+	float: left;
+}
+.hl_bt i{
+	display: block;
+	width: 0.6rem;
+	height: 0.7rem;
+	position: absolute;
+	top: 1.2rem;
+	left: -1.2rem;
+}
+.hl_box li i{
+	float: right;
+	line-height: 2.9rem;
+	color: #666666;
+	font-size: 0.9rem;
+}
+.fenye{
+	width: 100%;
+	height: 1.5rem;
+	margin: 1rem 0;
+}
+.fenye_list{
+	width: 30%;
+	height: 100%;
+	background: beige;
+	margin: 0 auto;
+}
+.fenye_list li{
+	float: left;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 1px solid #b5b5b5;
+}

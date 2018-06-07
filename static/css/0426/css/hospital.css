@@ -1,0 +1,802 @@
+html,
+body{
+	width: 100%;
+	height: 100%;
+}
+.container {
+	background: url(../img/img-bj.png) no-repeat;
+	background-size: 100% 100%;
+	border: 1px ;
+	min-height: 100%;
+}
+.yp-box {
+	width: 96%;
+	min-height: 752px;
+	background: #fff;
+	/*border: 1px solid #cccccc;*/
+	margin: 0 auto;
+}
+.hos-left{
+	width: 70%;
+	height: 100%;
+	margin-left: 1rem;
+	float: left;
+	overflow: scroll;
+}
+.banner{
+	width: 100%;
+	height: 17.5rem;
+	margin-top: 1rem;
+	position: relative;
+	border-radius: 0.3rem;
+}
+.banner p{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 6rem;
+	background: rgba(0,0,0,0.4);
+	padding: 1rem 2.5rem;
+	box-sizing: border-box;
+	border-bottom-right-radius: 0.3rem;
+	border-bottom-left-radius: 0.3rem;
+}
+.banner p a{
+	font-size: 0.9rem;
+	color: #ffffff;
+}
+.banner p a i{
+	color: #6699ff;
+}
+.department{
+	margin-top: 0.5rem;
+	overflow: hidden;
+}
+.department h1{
+	font-size: 1.2rem;
+	color: #333333;
+	line-height: 2.5rem;
+}
+.department p{
+	font-size: 0.9rem;
+	color: #333333;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+.department a{
+	color: #6699ff;
+	float: right;
+}
+.doctor{
+	margin-top: 0.5rem;
+}
+.doctor h1{
+	font-size: 1.2rem;
+	color: #333333;
+	line-height: 2.5rem;
+}
+.doctor ul{
+	width: 100%;
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.doctor ul li{
+	width: 25%;
+}
+.doctor ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.doctor ul li a span{
+	display: block;
+	width: 7.5rem;
+	height: 7.5rem;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.doctor ul li a p{
+	font-size: 1rem;
+	color: #666666;
+	text-align: center;
+	line-height: 1.5rem;
+}
+.doctor ul li:last-child{
+	position: relative;
+}
+.doctor ul li:last-child a i{
+	position: absolute;
+	top: 3rem;
+	left: 28%;
+	font-size: 1rem;
+	color: #666666;
+}
+/*特色*/
+.tese{
+	margin-top: 0.5rem;
+}
+.tese h1{
+	font-size: 1.2rem;
+	color: #333333;
+	line-height: 2.5rem;
+}
+.tese ul{
+	width: 100%;
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.tese ul li{
+	width: 30%;
+	height: 8.85rem;
+	position: relative;
+}
+.tese ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.tese ul li a span{
+	display: block;
+	width: 100%;
+	height: 5.3rem;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: rgba(116,180,209,0.5);
+}
+.tese ul li a span h3{
+	font-size: 0.9rem;
+	color: #FFFFFF;
+	line-height: 1.2rem;
+	padding-left: 0.5rem;
+}
+.tese ul li a span p{
+	font-size: 0.7rem;
+	color: #fff;
+	height: 3rem;
+	padding: 0 0.3rem;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+/*位置*/
+.map{
+	margin-top: 0.5rem;
+}
+.map h1{
+	font-size: 1.2rem;
+	color: #333333;
+	line-height: 2.5rem;
+}
+#container{
+	width: 100%;
+	height: 13.35rem;
+	margin-bottom: 1.7rem;
+	box-shadow:0px 2px 30px #ccc;
+	overflow: hidden;
+}
+#allmap{
+	width: 64.5%;
+	height: 100%;
+	float: left;
+}
+#container h4{
+	font-size: 0.9rem;
+	color: #666666;
+	text-align: center;
+	margin-top: 4rem;
+}
+#container p{
+	font-size: 0.7rem;
+	color: #333333;
+}
+/****右栏****/
+.hos-right{
+	width: 24%;
+	/* height: 15.25rem; */
+	margin: 1rem 1rem 0 0;
+	position: fixed;
+	right: 0.3rem;
+	overflow: scroll;
+}
+.hos-right ul li{
+	width: 47.9%;
+	height: 4rem;
+	margin-bottom: 0.5rem;
+	border-radius: 0.3rem;
+}
+.hos-right ul li:nth-of-type(odd){
+	float: left;
+}
+.hos-right ul li:nth-of-type(even){
+	float: right;
+}
+.hos-right ul li:nth-child(1),.hos-right ul li:nth-child(6){
+	height: 6.05rem;
+	background: #718ddf;
+}
+.hos-right ul li:nth-child(1) a,.hos-right ul li:nth-child(6) a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.hos-right ul li:nth-child(1) a i,.hos-right ul li:nth-child(6) a i{
+	display: block;
+	font-size: 0.6rem;
+	color: #CCCCCC;
+	padding-left: 0.5rem;
+	box-sizing: border-box;
+	margin-top: 1.25rem;
+}
+.hos-right ul li:nth-child(1) a h2,.hos-right ul li:nth-child(6) a h2{
+	font-size: 0.9rem;
+	color: #ffffff;
+	padding-left: 0.5rem;
+	box-sizing: border-box;
+}
+.hos-right ul li:nth-child(1) a span,.hos-right ul li:nth-child(6) a span{
+	display: block;
+	width: 1.5rem;
+	height: 1.5rem;
+	float: right;
+	margin: 0.3rem 0.5rem 0 0;
+}
+
+/* */
+
+.hos-right ul li:nth-child(5),.hos-right ul li:nth-child(10){
+	height: 6.05rem;
+	background: #92c1bb;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hos-right ul li:nth-child(5) a,.hos-right ul li:nth-child(10) a{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+.hos-right ul li:nth-child(5) a i,.hos-right ul li:nth-child(10) a i{
+	display: block;
+	font-size: 0.6rem;
+	color: #CCCCCC;
+	padding-left: 0.5rem;
+	box-sizing: border-box;
+}
+.hos-right ul li:nth-child(5) a h2,.hos-right ul li:nth-child(10) a h2{
+	font-size: 0.9rem;
+	color: #ffffff;
+	padding-left: 0.5rem;
+	box-sizing: border-box;
+}
+.hos-right ul li:nth-child(5) a span,.hos-right ul li:nth-child(10) a span{
+	display: block;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0.3rem auto 0;
+}
+
+
+
+.hos-right ul li:nth-child(2),.hos-right ul li:nth-child(7){
+	height: 8.65rem;
+	background: #71a5df;
+}
+.hos-right ul li:nth-child(2) a,.hos-right ul li:nth-child(7) a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.hos-right ul li:nth-child(2) a span,.hos-right ul li:nth-child(7) a span{
+	display: block;
+	width: 1.56rem;
+	height: 1.5rem;
+	margin: 2.15rem auto 1.5rem;
+}
+.hos-right ul li:nth-child(2) a i,.hos-right ul li:nth-child(7) a i{
+	display: block;
+	font-size: 0.6rem;
+	color: #CCCCCC;
+	text-align: center;
+}
+.hos-right ul li:nth-child(2) a h2,.hos-right ul li:nth-child(7) a h2{
+	font-size: 0.9rem;
+	color: #ffffff;
+	text-align: center;
+}
+.hos-right ul li:nth-child(3),.hos-right ul li:nth-child(8){
+	height: 8.65rem;
+	background: #7671df;
+}
+.hos-right ul li:nth-child(3) a,.hos-right ul li:nth-child(8) a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.hos-right ul li:nth-child(3) a span,.hos-right ul li:nth-child(8) a span{
+	display: block;
+	width: 1.56rem;
+	height: 1.5rem;
+	margin: 2.15rem auto 1.5rem;
+}
+.hos-right ul li:nth-child(3) a i,.hos-right ul li:nth-child(8) a i{
+	display: block;
+	font-size: 0.6rem;
+	color: #CCCCCC;
+	text-align: center;
+}
+.hos-right ul li:nth-child(3) a h2,.hos-right ul li:nth-child(8) a h2{
+	font-size: 0.9rem;
+	color: #ffffff;
+	text-align: center;
+}
+.hos-right ul li:nth-child(4),.hos-right ul li:nth-child(9){
+	height: 6.05rem;
+	background: #a571df;
+}
+.hos-right ul li:nth-child(4) a,.hos-right ul li:nth-child(9) a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.hos-right ul li:nth-child(4) a i,.hos-right ul li:nth-child(9) a i{
+	display: block;
+	font-size: 0.6rem;
+	color: #CCCCCC;
+	padding-left: 0.5rem;
+	box-sizing: border-box;
+	margin-top: 1.25rem;
+}
+.hos-right ul li:nth-child(4) a h2,.hos-right ul li:nth-child(9) a h2{
+	font-size: 0.9rem;
+	color: #ffffff;
+	padding-left: 0.5rem;
+	box-sizing: border-box;
+}
+.hos-right ul li:nth-child(4) a span,.hos-right ul li:nth-child(9) a span{
+	display: block;
+	width: 1.5rem;
+	height: 1.5rem;
+	float: right;
+	margin: 0.3rem 0.5rem 0 0;
+}
+
+
+/*
+ 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 医院详情*/
+.title{
+	line-height: 5rem;
+	font-size: 1.8rem;
+	text-align: center;
+	color: #333333;
+}
+.text img{
+	display: block;
+	width: 77.8%;
+	margin: 1rem auto;
+}
+.text p{
+	width: 77.8%;
+	margin: 0 auto;
+
+}
+.text {
+	font-size: 0.8rem;
+	margin-top: 0.5rem;
+}
+/**
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 科室介绍*/
+.dep_left{
+	width: 80%;
+	height: 31rem;
+	margin: 1.5rem 0 0 1.5rem;
+	overflow-y: auto;
+	float: left;
+}
+.dep_left h1{
+	font-size: 1.2rem;
+	color: #333333;
+	text-align: center;
+	line-height: 2.25rem;
+}
+.dep_left p{
+	text-indent: 2rem;
+	font-size: 0.9rem;
+	color: #333333;
+}
+.dep_left .bt{
+	display: block;
+	width: 5.7rem;
+	height: 2.3rem;
+	background: #ac82d1;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 2.3rem;
+	border-radius: 0.9rem;
+	margin: 1rem 0;
+}
+.dep_right{
+	width: 11%;
+	height: 31rem;
+	float: right;
+	margin: 1.5rem 1.5rem 0 0;
+}
+.dep_right span{
+	display: block;
+	width: 6.55rem;
+	height: 2.25rem;
+}
+#scrollDiv{
+	width: 100%;
+	height: 23.65rem;
+	overflow: hidden;
+}
+#scrollDiv ul li{
+	width: 100%;
+	height: 2.4rem;
+	border: 1px solid #d2d2d2;
+	margin-bottom: 1.35rem;
+	border-radius: 0.9rem;
+	font-size: 1.1rem;
+	text-align: center;
+	line-height: 2.4rem;
+}
+#scrollDiv ul li a{
+	color: #666666;
+}
+#scrollDiv ul li.about{
+	background: #ac82d1;
+	border: none;
+	color:#fff;
+}
+#scrollDiv ul li.about a{
+	color: #ffffff;
+}
+
+
+#scrollDiv ul li.doctor{
+	border:none;
+	box-sizing: content-box;
+	text-align: center;
+	height: auto;
+	width:100%;
+}
+
+#scrollDiv ul li.doctor span{
+	color:#707070;
+	font-size:1rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	width: auto;
+}
+#scrollDiv ul li.doctor .selected{
+	border: 0.2rem solid #c5a8dd
+}
+
+/**
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 医师介绍*/
+.doc_left{
+	width: 72%;
+	height: 31rem;
+	margin: 1.5rem 0 0 1.5rem;
+	overflow-y: auto;
+	float: left;
+}
+.doc_left h1{
+	font-size: 1.2rem;
+	color: #333333;
+}
+.doc_left p{
+	font-size: 0.9rem;
+	color: #666666;
+	line-height: 1.85rem;
+}
+.doc_right{
+	width: 7.5rem;
+	height: 31rem;
+	float: right;
+	margin: 1.5rem 2rem 0 0;
+}
+.doc_right span{
+	display: block;
+	width: 6.55rem;
+	height: 2.25rem;
+	margin: 0 auto;
+}
+#scrollDivs{
+	width: 100%;
+	height: 23.65rem;
+	overflow: hidden;
+}
+#scrollDivs ul li{
+	width: 100%;
+}
+#scrollDivs ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#scrollDivs ul li a span{
+	display: flex;
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+	margin: 0 auto;
+	overflow: hidden;
+	background: #ccc;
+	justify-content: center;
+	align-items: center;
+}
+#scrollDivs ul li a p{
+	text-align: center;
+	line-height: 2rem;
+	font-size: 1rem;
+	color: #666666;
+}
+#scrollDivs ul li.about span{
+	border: 2px solid #c6a9de;
+}
+/**
+ * 
+ * 
+ * 
+ * 
+ * 医疗特色*/
+.ite_left{
+	width: 69%;
+	height: 32rem;
+	margin: 1rem 0 0 2rem;
+	overflow-y: auto;
+	float: left;
+	font-size:0.8rem;
+}
+.ite_left h1{
+	text-align: center;
+	font-size: 1.2rem;
+	color: #333333;
+	line-height: 3rem;
+}
+.ite_left p{
+	margin-top: 1.2rem;
+	font-size: 0.9rem;
+	color: #333333;
+}
+.ite_left p img{
+	display: block;
+	width: 50%;
+	height: auto;
+	margin: 0.5rem auto;
+}
+.ite_right{
+	width: 19.6%;
+	height: 32rem;
+	position: fixed;
+	right: 1rem;
+	top: 1rem;
+}
+.ite_right ul{
+	width: 81.6%;
+	margin: 0 auto;
+}
+.ite_right ul li{
+	width: 100%;
+	height: 7.2rem;
+	margin: 1rem 0;
+	position: relative;
+}
+.ite_right ul li:nth-child(1),.ite_right ul li:nth-child(6){
+	margin-top: 3rem;
+}
+.ite_right ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.ite_right ul li a span{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(116,180,209,0.5);
+}
+.ite_right ul li a span h3{
+	font-size: 0.9rem;
+	color: #FFFFFF;
+	line-height: 2rem;
+	padding-left: 1rem;
+	box-sizing: border-box;
+}
+.ite_right ul li.action span{
+	display: none;
+}
+.ite_right ul li.action{
+	border: 7px solid #aa7ed0;
+	margin-left: -0.4rem;
+	border-radius: 0.4rem;
+}
+/*
+ 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * *****全部医生*******/
+.ys-box{
+	width: 93%;
+	height: 100%;
+	margin: 0 auto;
+}
+.ys-bt{
+	font-size: 1.2rem;
+	color: #333333;
+	line-height: 5rem;
+}
+.ys-ks{
+	font-size: 1.1rem;
+	color: #333333;
+	font-weight: 900;
+	position: relative;
+	padding-left: 0.5rem;
+}
+.ys-ks::before{
+	display: block;
+	content: '';
+	position: absolute;
+	width: 0.5rem;
+	height: 1.3rem;
+	left: -0.3rem;
+	top: 0.1rem;
+	background: #000;
+}
+.ks ul{
+	overflow: hidden;
+}
+.ks ul li{
+	width: 7.5rem;
+	float: left;
+	margin: 1rem 0.5rem;
+}
+.ks ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.ks ul li a span{
+	display: block;
+	width: 7.5rem;
+	height: 7.5rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.ks ul li a p{
+	text-align: center;
+	font-size: 1rem;
+	color: #666666;
+	line-height: 1.5rem;
+}
+.top{
+	width: 2.1rem;
+	height: 2.1rem;
+	position: fixed;
+	left: 1.2rem;
+	bottom: 1.5rem;
+}
+/*
+ 
+ * 
+ * 
+ * 
+ * 
+ * 就医指南*/
+.gui-left{
+	width: 76%;
+	height: 32rem;
+	float: left;
+	margin: 1rem 0 0 2.25rem;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.gui-left h1{
+	font-size: 1.2rem;
+	color: #333333;
+	line-height: 3rem;
+}
+.nr{
+	font-size: 1rem;
+	color: #353535;
+}
+.gui-right{
+	width: 13%;
+	height: 32rem;
+	float: right;
+	margin: 1rem 2rem 0 0;
+}
+.gui-right ul{
+	width: 100%;
+}
+.gui-right ul li{
+	width: 83%;
+	height: 2.75rem;
+	margin: 0 auto;
+	border: 1px solid #d5d5d5;
+	margin-bottom: 1rem;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+.gui-right ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 1.1rem;
+	color: #666666;
+	line-height: 2.75rem;
+}
+.gui-right ul li:nth-child(1),.gui-right ul li:nth-child(6){
+	margin-top: 5rem;
+}
+.gui-right ul li.only a{
+	color: #FFFFFF;
+	background: #ac82d1;
+}
+
+
+
+.department h1,.doctor h1,.tese h1,.map h1{
+	padding-left: 1rem;
+	position: relative;
+}
+
+.department>h1::before,.map>h1::before,.tese>h1::before, .doctor h1::before{
+	content: '';
+	display: block;
+	height: 1.5rem;
+	width: 0.3rem;
+	background: #534b9d;
+	position: absolute;
+	left: 0rem;
+	top: 0.4rem;
+}
+
+#scrollDiv ul li.selected div{
+	border: 0.1rem solid #c6a9de;
+	box-sizing: border-box;
+}

@@ -1,0 +1,345 @@
+
+/*保险列表*/
+/*悬浮*/
+.suspension {
+	width: 7rem;
+	height: 10rem;
+	background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 10rem;
+	right: 0;
+	/*display: none;*/
+}
+
+.suspension img {
+	width: 100%;
+	height: auto;
+}
+
+.suspension p {
+	text-align: center;
+	color: #fff;
+}
+.bx_list {
+	width: 93.75%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.bx_list ul {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.bx_list ul li {
+	width: 25%;
+	/*height: 13.7rem;*/
+	float: left;
+}
+
+.bx_list ul li .nr {
+	width: 93%;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+.bx_list ul li .nr .wait {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	line-height: 13.7rem;
+	text-align: center;
+	font-size: 1.6rem;
+	position: absolute;
+	top: 0;
+	background: rgba(0, 0, 0, 0.6);
+	/*display: none;*/
+}
+
+.bx_list ul li .nr img {
+	width: 100%;
+	height: 10rem;
+}
+
+.bx_list ul li .nr p:nth-child(2) {
+	font-size: 0.9rem;
+	color: #333333;
+	overflow: hidden;
+	line-height: 1.75rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.bx_list ul li .nr p:nth-child(3) {
+	font-size: 0.7rem;
+	color: #666666;
+	overflow: hidden;
+	line-height: 1rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.bx_list ul li .nr p:nth-child(4) {
+	font-size: 0.9rem;
+	color: #666666;
+	overflow: hidden;
+	line-height: 1.5rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+/*保险详情*/
+
+
+
+.ins-main {
+	width: 93.75%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.ins-main .title {
+	text-align: center;
+	font-size: 1.8rem;
+	line-height: 6.35rem;
+}
+
+.banner {
+	width: 100%;
+	height: 14.5rem;
+}
+
+.abstract {
+	width: 93%;
+	margin: 3rem auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.abstract div {
+	width: 28%;
+	height: 100%;
+}
+
+.abstract div img {
+	display: block;
+	width: 10rem;
+	height: auto;
+	margin: 0 auto;
+}
+
+.abstract div span {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.abstract div span h1 {
+	text-align: center;
+	line-height: 3rem;
+	font-size: 1.2rem;
+}
+
+.abstract div span p {
+	font-size: 0.9rem;
+	width: 83%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.ins-main h2 {
+	width: 100%;
+	height: 1.8rem;
+	margin: 2.5rem 0 1rem 0;
+}
+
+.ins-main h2 div {
+	width: 33%;
+	height: 100%;
+	margin: 0 auto;
+	/*display: flex;*/
+	position: relative;
+}
+
+.ins-main h2 div span img {
+	width: 80%;
+	height: auto;
+}
+
+.ins-main h2 div span:first-child {
+	display: block;
+	height: 100%;
+	width: 1.8rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.ins-main h2 div span:nth-child(2) {
+	display: block;
+	height: 100%;
+	font-size: 1.8rem;
+	line-height: 1.8rem;
+	text-align: center;
+}
+
+.ins-main h2 div span:nth-child(3) {
+	display: block;
+	height: 100%;
+	width: 1.8rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.advantage {
+	width: 93%;
+	height: 100%;
+	margin: 0 auto;
+}
+.advantage img{
+	height: 43.5rem;
+}
+
+/*保障方案*/
+
+.guarantee {
+	width: 93%;
+	height: 100%;
+	margin: 0 auto;
+	border-radius: 1.5rem;
+	overflow: hidden;
+}
+
+.guarantee h1 {
+	width: 100%;
+	height: 5.4rem;
+	background: #b690d6;
+	line-height: 5.4rem;
+	text-align: center;
+	color: #fff;
+	font-size: 1.8rem;
+}
+
+#table_wrap>table {
+	font-size: 16px;
+	text-align: center;
+	margin: 0 auto;
+	border-collapse: separate;
+	border-spacing: 0;
+	border: 1px #987891;
+}
+
+table thead tr,
+table tbody tr {
+	height: 4.3rem;
+	line-height: 4.3rem;
+}
+table tr .one{
+	width: 20.8%;
+	font-size: 1.2rem;
+	color: #a75595;
+	font-weight: 600;
+}
+table tr th {
+	border: 1px solid #987891;
+	font-size: 1.2rem;
+	color: #a75595;
+	font-weight: 600;
+}
+
+table tr td {
+	font-size: 1rem;
+	color: #333333;
+	border: 1px solid #987891;
+}
+
+table tr:last-child td:first-child {
+	border-bottom-left-radius: 1.5rem;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 1.5rem;
+    padding: 2rem 10rem;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 2rem;
+}
+
+
+/*投保*/
+
+.notice {
+	width: 100%;
+	background: url(../img/pic38.png) no-repeat;
+}
+
+.not-list {
+	width: 93%;
+	margin: 0 auto;
+}
+
+.not-list ul {
+	width: 100%;
+}
+
+.not-list ul li {
+	width: 100%;
+	overflow: hidden;
+}
+
+.not-list ul li span {
+	display: block;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: #b690d6;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 1.5rem;
+	color: #ffffff;
+	border-radius: 50%;
+	margin: 0.5rem 1rem 0.5rem 0;
+	float: left;
+}
+
+.not-list ul li p {
+	width: 64%;
+	height: 100%;
+	line-height: 2.5rem;
+	font-size: 1rem;
+	color: #333333;
+	float: left;
+	margin-left: 2.5rem;
+}
+
+.not-list ul li p.first {
+	margin-left: 0;
+	font-size: 1.2rem;
+}
+
+.not-list ul li p em {
+	color: #a75595;
+}
+
+.foot {
+	margin-top: 1rem;
+}
+
+footer {
+	width: 100%;
+}
+footer p{
+	font-size: 1.6rem;
+	line-height: 3rem;
+	color: #2a5ca6;
+	text-align: center;
+}
+footer p:last-child{
+	font-size: 2rem;
+	color: #2a5ca6;
+	font-weight: 600;
+}

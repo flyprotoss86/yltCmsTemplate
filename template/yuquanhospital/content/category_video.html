@@ -1,0 +1,64 @@
+{template "content","header"}
+<link href="{CSS_PATH}vms/vms.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]><link href="{CSS_PATH}vms/ielt9.css" rel="stylesheet" type="text/css" /><![endif]--> 
+<script type="text/javascript" src="{JS_PATH}jquery.tools_tabs.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}cookie.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		{loop subcat($catid,0,0,$siteid) $r}
+$('#tab{$r[catid]}').tabs("div.pns{$r[catid]} > ul");
+$('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
+		{/loop}
+		$('#tag1').tabs("div.tabn1 > ul");
+	})
+</script>
+
+<div class="clr ct idx">
+<div class="clr">
+  <div class="lyt_1">
+   
+     
+  	
+{loop subcat($catid,0,0,$siteid) $r}
+
+	
+    <div class="box3">
+    	<div class="nav">
+			<span class="more"><a href="{$r[url]}" target="_blank">更多>></a></span>
+        	<h5>{$r[catname]}</h5>
+    		
+    	</div>
+      
+
+			<!--本栏目最新视频-->
+			<div class="wp pns{$r[catid]}">
+            <ul class="clr wp col3">
+			 {pc:content action="lists" catid="$r[catid]" num="6" order="id DESC" return="info"}
+			 {loop $info $v}
+			 <!-- 获取视频详细信息 -->
+			 <!-- {php $video_info = get_vid($v[id], $v[catid], $isspecial = 0);}  -->
+                  <li>
+                  <div class="w120">
+                      <div class="imgbox"><span class="tm">{dataformat($video_info['timelen'])}</span>
+					  <a href="{APP_PATH}index.php?m=video&c=index&a=playlist&contentid={$v[id]}&catid={$v[catid]}&title={$v[title]}" class="j" title='{$v[title]}' onclick="toggle(this);return false;" id="abc{random(8)}" catid="{$v[catid]}" contentid="{$v[id]}"></a>
+					  
+					  <a href="{$v[url]}" title="{$v[title]}" target="_blank"><img src="{$v[thumb]}" width="120" height="75"></a></div>
+                      <div class="lh21"><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],30,false)}</a></div>
+                      <div class="sz"><span class="shows">播放数：<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>评论：<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                  </div>
+                </li> 
+			{/loop}
+			{/pc}
+            </ul>
+			<!--本栏目今日热点-->
+            
+			</div>
+			
+      
+    </div>
+	<br/>
+{/loop}	
+	
+	
+    
+</div>

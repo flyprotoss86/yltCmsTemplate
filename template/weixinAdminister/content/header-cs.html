@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title>微网站</title>
+		<link rel="stylesheet" href="{CSS_PATH}1020/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}1020/index.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}1020/header.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}1020/swiper-3.3.1.min.css" />
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="{CSS_PATH}1020/bootstrap.min.js"></script>
+		<script src="{CSS_PATH}1020/swiper-3.3.1.min.js"></script>
+		<script src="{CSS_PATH}1020/index.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!--**头部**-->
+			<header>
+				<span class="col-xs-5"><a href="index.html"><i><img src="{CSS_PATH}1020/logo.png"/></i>互医护通</a></span>
+				<!--<span class="col-xs-3"><i><img src="../img/menu.png"/></i>菜单</span>-->
+				<div class="dropdown">
+					<div type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+							data-toggle="dropdown">
+						主题
+					</div>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation" class="dropdown-header">下拉菜单标题</li>
+						<li role="presentation" >
+							<a role="menuitem" tabindex="-1" href="#">Java</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+						</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">
+								数据通信/网络
+							</a>
+						</li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation" class="dropdown-header">下拉菜单标题</li>
+						<li role="presentation">
+							<a role="menuitem" tabindex="-1" href="#">分离的链接</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<!--<ul class="menu">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="#">合作医院</a></li>
+				<li><a href="#">微商城</a></li>
+				<li><a href="#">就诊须知</a></li>
+			</ul>-->
+			<!--**首页轮播图**-->
+			<div class="swiper-container" style="height: 11.67rem;">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide div1">
+						<img src="{IMG_PATH}1020/lunbo.png" />
+					</div>
+					<div class="swiper-slide div1">
+						<img src="{IMG_PATH}1020/lunbo2.png" />
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/hospital.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/fit.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0524/css/ultimate.css"/>
+		<style>
+			.yp-box h1{text-align: center; font-size:1.5rem;}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="yp-box" style="width: 73%;float: left;margin-left: 3%; margin-top:3%">
+				{$content}
+			</div>
+				<!--右栏-->
+
+				<div class="ite_right">
+				{pc:content action="category" catid="$catid" num="25" siteid="$siteid" order="listorder ASC"}
+					<ul>
+					{loop $data $r}
+						{if $r[catid]== $catid}
+							<li id="li{$r[catid]}" class="action" onclick="selItem({$r[catid]})">
+						{else}
+							<li id="li{$r[catid]}" onclick="selItem({$r[catid]})">
+						{/if}
+							<a>
+								<img src="{$r[image]}"/>
+								<span><h3>{$r[catname]}</h3></span>
+							</a>
+						</li>
+					{/loop}
+
+					</ul>
+					{/pc}
+				</div>
+
+		</div>
+	</body>
+
+	<script type="text/javascript" src="{CSS_PATH}0426/js/jquery-2.1.0.js"></script>
+	<script src="{CSS_PATH}0524/js/cmsapi.js"></script>
+<script>
+
+	function selItem(catid){
+    getcatdbycid(catid,function(data){
+      $('#li'+catid).addClass('action').siblings().removeClass('action')
+      var cnt='<h1>'+data.title+'</h1>'+data.content
+      $('.yp-box').empty().append($(cnt))
+		})
+    // $('#box'+catid).removeClass('hide').siblings().addClass('hide')
+    // $('#li' +catid).addClass('action').siblings().removeClass('action')
+	}
+	$(document).ready(function () {
+	  var cid=GetQueryString('cid')
+		if(!cid){
+      cid = $('ul li:first-child').attr('id').substr(2)
+		}
+		selItem(cid)
+  })
+</script>
+
+
+</html>

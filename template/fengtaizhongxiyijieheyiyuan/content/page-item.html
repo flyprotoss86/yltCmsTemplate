@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/hospital.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0426/css/fit.css"/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="yp-box">
+				<div class="ite_left">
+					<h1>{$title}</h1>
+					{$content}
+				</div>
+				<!--右栏-->
+				
+
+
+				<div class="ite_right">
+				{pc:content action="category" catid="$parentid" num="25" siteid="$siteid" order="listorder ASC"}
+					<ul>
+					{loop $data $r}
+						{if $r[catid]== $catid} 
+							<li  class="action" >
+						{else}
+							<li >
+						{/if}
+							<a href="{$r[url]}">
+								<img src="{$r[image]}"/>
+								<span><h3>{$r[catname]}</h3></span>
+							</a>
+						</li>
+					{/loop}
+						
+					</ul>
+					{/pc}
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

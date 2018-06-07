@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}927/common.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../css/tuwenye.css"/>-->
+		<style type="text/css">
+			header{
+				width: 100%;
+				height: 3.9rem;
+				text-align: center;
+				line-height: 3.9rem;
+				font-size: 1.2rem;
+			}
+			h5{
+				display: none;
+			}
+			.table_form tr th {
+				font-weight: normal;
+				text-align: left;
+				padding-right: 10px;
+				box-sizing: border-box;
+				color: #777;
+				width: 100%;
+				float: left;
+				font-size: 1rem;
+			}
+			.table_form tr td {
+				padding-left: 12px;
+				box-sizing: border-box;
+				width: 100%;
+				float: left;
+				font-size: 1rem;
+			}
+			.table_form tr td label{
+				vertical-align: middle;
+				margin: 1rem 0.8rem;
+				font-size: 0.9rem;
+				line-height: 2rem;
+			}
+			.table_form tr td label input{
+				width: 1rem;
+				height: 1rem;
+				margin: 0.6rem 0;
+			}
+			.table_form tr td .submit input{
+				font-size: 1.1rem;
+				margin: 0 auto;
+				display: block;
+				width: 8rem;
+			}
+			.tw_box p{
+				width: 60%;
+				margin: 0 auto;
+			}
+			.tw_box p.p3{
+				color: #999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="tw_box">
+			<header>{$CATEGORYS[$catid][catname]}</header><br/>
+			<p class="p1">欢迎参加<i style="color: #3191cc;">"医院服务满意度"</i>的调查工作！</p>
+			<p class="p2">感谢您抽出一点时间积极配合我们的调查工作，谢谢您的参与。</P>
+			<p class="p3">说明：本次调查采用匿名形式，我们将严格保密你的信息，你可以放心作答。</P>
+			<br/><br/>
+			<div class="tw_main">
+			 <script language='javascript' src='{APP_PATH}index.php?m=formguide&c=index&a=show&formid=34&action=js&siteid=9'></script>
+			</div>
+		</div>
+	</body>
+
+</html>

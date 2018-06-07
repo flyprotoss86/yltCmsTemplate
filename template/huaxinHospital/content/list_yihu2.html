@@ -1,0 +1,44 @@
+{template "content","header2"}	
+<div class="banner"><img src="{IMG_PATH}726/on-banner.png" /></div>
+		<!--************************-->
+		<div class="hos_main">
+			
+			<!--*****-->
+			<div class="weizhi" style="background: url({IMG_PATH}726/yybj.png) no-repeat;background-size: 100% 100%;width: 100%;">
+				<span style="margin-left: 5rem;"><i>当前位置：</i>{catpos($catid)}</span>
+			</div>
+			<!--*******************************-->
+			<div class="hos_box" style="width: 100%;margin-right: 0;">
+				
+				<div class="hos_content1">
+				
+					
+					<div class="depa louti">
+						
+							{pc:content action="lists" catid="$catid" num="25" order="id ASC" page="$page"}
+							
+						<ul class="depa_list"> 
+							{loop $data $r}
+							<!-- {var_dump($r)} -->
+							<li style="background: #f3f6fb;">
+								<a href="{$r['url']}">
+								
+									<span><img src="{$r['thumb']}"/></span>
+									<p>{$r['title']}</p>
+									
+								</a>
+							</li>
+							{/loop}
+							
+						</ul>
+						{/pc}
+					</div>
+					
+					</div>
+					<!--****特色技术***-->
+					
+				</div>
+			</div>
+		</div>
+		
+{template "content","footer"}	

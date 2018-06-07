@@ -1,0 +1,263 @@
+{template "content","header"}
+
+		<div class="swiper-container" style="height: 13rem;margin-top: 0;">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide div1">
+					<img src="{IMG_PATH}920/youanmen.png" />
+				</div>
+				<div class="swiper-slide div2">
+					<img src="{IMG_PATH}920/youanmen.png" />
+				</div>
+				<div class="swiper-slide div3">
+					<img src="{IMG_PATH}920/youanmen.png" />
+				</div>
+				<div class="swiper-slide div4">
+					<img src="{IMG_PATH}920/youanmen.png" />
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<!--************************-->
+		<div class="on_main">
+			<ul class="on_main_top">
+				<li>
+					<a href="{$CATEGORYS[140][url]}" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img1.png" />
+						<p><span>科室特色</span>/<strong>Department</strong></p>
+					</a>
+				</li>
+				<li>
+					<a href="{$CATEGORYS[138][url]}" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img2.png" />
+						<p><span>医生团队</span>/<strong>Doctor</strong></p>
+					</a>
+				</li>
+				<li>
+					<a href="{$CATEGORYS[144][url]}" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img3.png" />
+						<p><span>医院宣传</span>/<strong>Propaganda</strong></p>
+					</a>
+				</li>
+				<li style="position: relative;">
+					<a href="{$CATEGORYS[143][url]}" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img4.png" />
+						<p><span>相关须知</span>/<strong>Notice</strong></p>
+					</a>
+				</li>
+			</ul>
+			<!--*********科室特色************-->
+			<div class="depas">
+				<div class="news_left_top">
+					<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span>科室特色</div>
+					<a class="more" href="{$CATEGORYS[140][url]}">更多+</a>
+				</div>
+				 {pc:content action="lists" catid="140" num="7" order="id DESC" return="info"}
+					<ul class="depa_list">
+					{loop $info $v}
+						<li> 
+							<a href="{$v['url']}" style="display: block;overflow: hidden;"> 
+								<span><img src="{$v[thumb]}"/></span> 
+								<p>{str_cut($v['title'],40)}</p>
+							</a>
+						</li>
+					
+					
+					{/loop}
+					
+					
+					
+					
+					
+					
+					
+					
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks1.png"/></span> -->
+							<!-- <p>心内科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks2.png"/></span> -->
+							<!-- <p>内分泌科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks6.png"/></span> -->
+							<!-- <p>骨伤科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks7.png"/></span> -->
+							<!-- <p>外科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks8.png"/></span> -->
+							<!-- <p>妇产科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks9.png"/></span> -->
+							<!-- <p>东坝院区儿科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks10.png"/></span> -->
+							<!-- <p>急诊科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+				
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks11.png"/></span> -->
+							<!-- <p>耳鼻喉科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks12.png"/></span> -->
+							<!-- <p>精神心理科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks3.png"/></span> -->
+							<!-- <p>呼吸内科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks13.png"/></span> -->
+							<!-- <p>口腔科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks14.png"/></span> -->
+							<!-- <p>麻醉科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks5.png"/></span> -->
+							<!-- <p>皮肤科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <a href="Department_details.html" style="display: block;overflow: hidden;"> -->
+							<!-- <span><img src="{IMG_PATH}726/ks4.png"/></span> -->
+							<!-- <p>肾内科</p> -->
+						<!-- </a> -->
+					<!-- </li> -->
+				</ul>
+			{/pc}
+			</div>
+			<!--***************-->
+			<!-- <div class="experts"> -->
+				<!-- <div class="news_left_top"> -->
+					<!-- <div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span>专家介绍</div> -->
+					<!-- <a class="more" href="index.php?m=content&c=index&a=lists&catid=83">更多+</a> -->
+				<!-- </div> -->
+				 <!-- {pc:content action="lists" catid="83" num="5" order="id DESC" return="info"} -->
+				<!-- <ul class="expert_list"> -->
+				<!-- {loop $info $v} -->
+					<!-- <li> -->
+						<!-- <div class="exp_left"> -->
+						<!-- <a href="{$v['url']}"> -->
+							<!-- <span><img src="{$v['thumb']}"/></span> -->
+							<!-- <p>{$v['title']}</p> -->
+						<!-- </a> -->
+						<!-- </div> -->
+						<!-- <div class="exp_right"> -->
+							<!-- {str_cut(strip_tags($v[content]),200,'...')} -->
+						<!-- </div> -->
+					<!-- </li> -->
+					<!-- {/loop} -->
+					<!-- <li> -->
+						<!-- <div class="exp_left"> -->
+							<!-- <span><img src="{IMG_PATH}726/zhuanjia.png"/></span> -->
+							<!-- <p>老中医</p> -->
+						<!-- </div> -->
+						<!-- <div class="exp_right"> -->
+							<!-- <ul> -->
+								<!-- <li> -->
+									<!-- <span><i>姓名：</i>李静梅</span> -->
+									<!-- <span><i>性别：</i>女</span> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <span><i>学位：</i>医学博士</span> -->
+									<!-- <span><i>毕业院校：</i>北京医学院</span> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <span><i>专业：</i>心血管 内科</span> -->
+									<!-- <span><i>技术职称：</i>教授 主任医师</span> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <span><i>导师资格：</i>博士研究生导师</span> -->
+								<!-- </li> -->
+							<!-- </ul> -->
+						<!-- </div> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <div class="exp_left"> -->
+							<!-- <span><img src="{IMG_PATH}726/zhuanjia.png"/></span> -->
+							<!-- <p>老中医</p> -->
+						<!-- </div> -->
+						<!-- <div class="exp_right"> -->
+							<!-- <ul> -->
+								<!-- <li> -->
+									<!-- <span><i>姓名：</i>李静梅</span> -->
+									<!-- <span><i>性别：</i>女</span> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <span><i>学位：</i>医学博士</span> -->
+									<!-- <span><i>毕业院校：</i>北京医学院</span> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <span><i>专业：</i>心血管 内科</span> -->
+									<!-- <span><i>技术职称：</i>教授 主任医师</span> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <span><i>导师资格：</i>博士研究生导师</span> -->
+								<!-- </li> -->
+							<!-- </ul> -->
+						<!-- </div> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <div class="exp_left"> -->
+							<!-- <span><img src="{IMG_PATH}726/zhuanjia.png"/></span> -->
+							<!-- <p>老中医</p> -->
+						<!-- </div> -->
+						<!-- <div class="exp_right"> -->
+							<!-- <ul> -->
+								<!-- <li> -->
+									<!-- <span><i>姓名：</i>李静梅</span> -->
+									<!-- <span><i>性别：</i>女</span> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <span><i>学位：</i>医学博士</span> -->
+									<!-- <span><i>毕业院校：</i>北京医学院</span> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <span><i>专业：</i>心血管 内科</span> -->
+									<!-- <span><i>技术职称：</i>教授 主任医师</span> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <span><i>导师资格：</i>博士研究生导师</span> -->
+								<!-- </li> -->
+							<!-- </ul> -->
+						<!-- </div> -->
+					<!-- </li> -->
+				<!-- </ul> -->
+				<!-- {/pc} -->
+			<!-- </div> -->
+			<!-- *************** -->
+		</div>
+{template "content","footer"}	

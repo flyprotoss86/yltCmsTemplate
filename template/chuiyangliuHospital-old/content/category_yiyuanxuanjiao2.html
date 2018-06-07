@@ -1,0 +1,83 @@
+{template "content","header"}	
+		<!--********-->
+		<!--********-->
+		<div class="banner"><img src="{IMG_PATH}726/on-banner.png" /></div>
+		<!--************************-->
+	
+		<div class="hos_main">
+			<div class="left_nav">
+				<div class="list_top" style="background: url({IMG_PATH}726/jiancha_nav.png) no-repeat;">
+					<span><img src="{IMG_PATH}726/jc-heng.png"/></span>医疗宣教
+				</div>
+			
+			
+				<ul>
+				
+				{pc:content action="category" catid="$catid" num="15" siteid="$siteid" order="listorder ASC"}
+					{loop $data $r}
+						<li>
+							
+							<a href="{$r[url]}">{$r[catname]}</a>
+						</li>
+					{/loop}
+				{/pc}
+				
+				</ul>
+			</div>
+			<!--*****-->
+			<div class="weizhi" style="background: url({IMG_PATH}726/yybj.png) no-repeat;background-size: 100% 100%;">
+					
+			</div>
+			<!--*******************************-->
+	
+			<div class="hos_box">
+				<div class="hos_content1">
+					<div class="depa louti">
+						
+				{pc:content action="lists" catid="$catid" num="25" moreinfo="1" order="inputtime DESC" page="$page"}
+					<ul class="hl_box">
+						
+						{loop $data $val}					
+							<li>
+								{if $val['v_static'] == 1}
+
+								<a content="{$val['content']}" title="{$val['title']}" class="aurl_a">
+
+								{else}
+								<a href="{$val['url']}">
+								{/if}
+						
+						
+								
+							
+									<span class="hl_bt">
+										<i><img src="{IMG_PATH}726/biaotou.png"/></i>{$val['title']}
+									</span>
+									<i>{date('Y-m-d',$val[inputtime])}</i>
+								</a>
+							</li>
+						{/loop}
+						
+					</ul>
+				{/pc}
+				
+					</div>
+						<script>
+	
+				$('.aurl_a').each(function(){
+					$(this).click(function(){
+						//alert($(this).attr('content'));
+						var url = $(this).attr('content');
+						var title = $(this).attr('title');
+					　　//调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+					　　//myObj.callAndroid(title,url);
+						Medical.playVideo(title,url);
+						//console.log(title,url);
+					});
+				});
+				</script>
+					<div class="fenye">{$pages}</div>
+				</div>
+			</div>
+		</div>
+{template "content","footer_list_yiliaoxuanjiao"}	

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}726/common.css" />
+		<style type="text/css">
+			.tw_box {
+				width: 100%;
+			}
+			
+			header {
+				width: 100%;
+				height: 3.9rem;
+				line-height: 3.9rem;
+				text-align: center;
+				font-size: 1rem;
+				color: #333333;
+			}
+			
+			.tw_main {
+				width: 93.75%;
+				margin: 0 auto;
+			}
+			.tw_list li{
+				width: 30%;
+				line-height: 3rem;
+				text-align: center;
+				background: #43a0ff;
+				float: left;
+				border-radius: 2rem;
+				margin: 1rem 0.5rem;
+			}
+			.tw_list li a{
+				color: #fff;
+				font-size: 1rem;
+				display: block;
+			    width: 80%;
+			    margin: 0 auto;
+			    overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="tw_box">
+			<header>{$CATEGORYS[$catid][catname]}</header>
+			<div class="tw_main">
+				<ul class="tw_list">
+				{loop subcat($catid) $r}  
+					<li>
+						<a href="{$r[url]}">
+							{$r[catname]}			
+						</a>
+					</li>
+				{/loop}
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

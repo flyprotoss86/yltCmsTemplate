@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}demo121/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}demo121/css/style.css"/>
+		<script src="{CSS_PATH}demo121/js/jquery-2.2.3.min.js"/></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="article-list">
+					{pc:content action="lists" catid="$catid" moreinfo="1" num="50"  return="info"}
+					<ul>
+					{loop $info $v}
+						<li>
+						{if $v['v_static'] == 1}
+							<a content="{$v['content']}" title="{$v['title']}" class="aurl_a">
+						{else}
+							<a href="{$v[url]}">
+						{/if}
+								<span><img src="{CSS_PATH}demo121/img/2018123.png"/></span>
+								<p>{$v[title]}</p>
+								<i>{$date('Y-m-d',$v[inputtime])}</i>
+							</a>
+						</li>
+					{/loop}
+					</ul>
+					{/pc}
+					<script>
+							$('.aurl_a').each(function(){
+								$(this).click(function(){
+									//alert($(this).attr('content'));
+									var url = $(this).attr('content');
+									var title = $(this).attr('title');
+								　　//调用android本地方法 调用对象由Android定义实例化，调用方法由Android提供 (具体对象名和方法待定，可变更)
+								　　//myObj.callAndroid(title,url);
+									Medical.playVideo(title,url);
+									//console.log(title,url);
+								});
+							});
+						</script>
+				</div>
+			</div>
+		</div>
+		{template "content","baidu-footer"}
+	</body>
+</html>

@@ -1,0 +1,193 @@
+.container header{
+  position: relative;
+  margin-bottom: 2rem;
+  box-shadow: 0.25rem 0.25rem 0.9rem #e6e6e6;/*阴影*/
+}
+.container header h1{
+  text-align: center;
+  color: #333333;
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  height:3.5rem;
+}
+
+.container header .back{
+  line-height: 3.5rem;
+  font-size: 1.2rem;
+  color:#666;
+  position: absolute;
+  left: 2rem;
+  cursor: pointer;
+}
+.container header .back::before{
+  content: '';
+  display: block;
+  width:1rem;
+  height: 1rem;
+  border-left: 0.1rem solid #666;
+  border-top: 0.1rem solid #666;
+  transform: rotate(-45deg);
+  position: absolute;
+  top:1.15rem;
+  left:-0.85rem;
+}
+
+
+
+nav{
+  float:left;
+  width:28%;
+}
+ul.project {
+  margin:0 0 0 1.5rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  box-shadow: 0.25rem 0.25rem 0.9rem #e6e6e6;/*阴影*/
+}
+
+ul.project li{
+  line-height: 2.5rem;
+  font-size: 1.2rem
+}
+
+div.chkbox{
+  margin:0 0 0 1.5rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  box-shadow: 0.25rem 0.25rem 0.9rem #e6e6e6;/*阴影*/
+}
+
+ul.chklist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 1rem 1rem 1rem 0.2rem;
+  width:14rem;
+  height: 8rem;
+}
+
+ul.chklist li a{
+  display: block;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 3rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  border: 0.05rem solid #5850a0;
+}
+ul.chklist li.selected a{
+  border: 0.15rem solid #544c9e;
+}
+
+ul.chklist2{
+  padding-left: 1rem;
+
+}
+ul.chklist2 li a{
+  font-size: 1rem;
+  line-height: 2rem;
+  color:#333333;
+}
+ul.chklist2 li.selected a{
+  color:#544c9f;
+  font-weight: bold;
+}
+ul.chklist2 li.selected a{
+  font-weight: bold;
+}
+
+.chkbasic{
+  border: 0.05rem solid #cfcfff;
+  padding: 0.5rem;
+  line-height: 2rem;
+}
+.chkbasic span{
+  margin-right: 2rem;
+}
+
+/*544c9e*/
+
+ul.feetitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+ul.feetitle li{
+  line-height: 2.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+ul.feetitle li:nth-child(2) i,ul.feetitle li:nth-child(3) i{
+  color:#003366
+}
+
+.tabTitle{
+  font-size:0.9rem;
+  font-weight: bold;
+  position: relative;
+  color:#4d4d4d;
+  padding-left: 0.5rem;
+  margin: 0.5rem 0 0.5rem 0
+}
+.tabTitle::before{
+  display: block;
+  content: '';
+  position: absolute;
+  height: 0.9rem;
+  width: 0.15rem;
+  background: #6853ab;
+  left: 0px;
+  top: 0.2rem;
+}
+
+.table thead tr{
+  background: #865fc0;
+  color: #fff;
+}
+.table thead th{
+  border:none;
+  color: #fff;
+  font-weight: normal;
+  white-space: nowrap;
+  padding: 0 0.5rem;
+}
+
+.table td{
+  border-color: #dbdbff;
+  padding: 0.5rem
+}
+
+.table.chkview .imgtd{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.table.chkview .txttd{
+  text-align: left;
+  padding: 0.5rem;
+}
+.table.chkview .txttd h3{
+  font-size: 1.2rem;
+}
+.table.chkview .txttd p{
+  font-size: 1rem
+}
+
+.table.chkview img{
+  height: 6rem;
+  width: auto;
+  margin:0.5rem auto;
+}
+
+.rptDetail .cx-box{
+  display: none;
+  overflow: auto;
+}
+.rptDetail .cx-box.show{
+  display: block;
+}

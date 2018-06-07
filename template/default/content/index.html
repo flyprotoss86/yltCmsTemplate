@@ -1,0 +1,96 @@
+{template "content","header"}
+
+		<div class="swiper-container" style="height: 13rem;margin-top: 0;">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide div1">
+					<img src="{IMG_PATH}726/banner2.png" />
+				</div>
+				<div class="swiper-slide div2">
+					<img src="{IMG_PATH}726/banner2.png" />
+				</div>
+				<div class="swiper-slide div3">
+					<img src="{IMG_PATH}726/banner2.png" />
+				</div>
+				<div class="swiper-slide div4">
+					<img src="{IMG_PATH}726/banner2.png" />
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<!--************************-->
+		<div class="on_main">
+			<ul class="on_main_top">
+				<li>
+					<a href="index.php?m=content&c=index&a=lists&catid=28" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img1.png" />
+						<p><span>科室特色</span>/<strong>Department</strong></p>
+					</a>
+				</li>
+				<li>
+					<a href="index.php?m=content&c=index&a=lists&catid=30" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img2.png" />
+						<p><span>医生团队</span>/<strong>Doctor</strong></p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img3.png" />
+						<p><span>健康教育</span>/<strong>Health</strong></p>
+					</a>
+				</li>
+				<li style="position: relative;">
+					<a href="index.php?m=content&c=index&a=lists&catid=53" style="display: block;overflow: hidden;">
+						<img src="{IMG_PATH}726/img4.png" />
+						<p><span>入院须知</span>/<strong>Notice</strong></p>
+					</a>
+				</li>
+			</ul>
+			<!--*********科室特色************-->
+			<div class="depas">
+				<div class="news_left_top">
+					<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span>科室特色</div>
+					<a class="more" href="index.php?m=content&c=index&a=lists&catid=27">更多+</a>
+				</div>
+				 {pc:content action="lists" catid="27" num="5" order="id DESC" return="info"}
+					<ul class="depa_list">
+					{loop $info $v}
+						<li> 
+							<a href="{$v['url']}" style="display: block;overflow: hidden;"> 
+								<span><img src="{$v[thumb]}"/></span> 
+								<p>{str_cut($v['title'],40)}</p>
+							</a>
+						</li>
+					{/loop}										
+				</ul>
+			{/pc}
+			</div>
+			<!--***************-->
+			<div class="experts">
+				<div class="news_left_top">
+					<div class="left_bt"><span><img src="{IMG_PATH}726/quan.png"/></span>专家介绍</div>
+					<a class="more" href="index.php?m=content&c=index&a=lists&catid=31">更多+</a>
+				</div>
+				 {pc:content action="lists" catid="31" num="5" order="id DESC" return="info"}
+				<ul class="expert_list">
+				{loop $info $v}
+				
+					<li>
+						<div class="exp_left">
+						<a href="{$v['url']}">
+							<span><img src="{$v['thumb']}"/></span>
+							<p>{$v['title']}</p>
+						</a>
+						</div>
+						<div class="exp_right">
+							 {str_cut(strip_tags($v[description]),240,'...')}
+							<!-- {$v[description]} -->
+						</div>
+					</li>
+					{/loop}
+					
+				</ul>
+				{/pc}
+			</div>
+			<!-- *************** -->
+		</div>
+{template "content","footer"}	

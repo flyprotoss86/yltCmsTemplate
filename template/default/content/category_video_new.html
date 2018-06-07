@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>影音娱乐</title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}714/common.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}714/Film.css" />
+	</head>
+
+	<body>
+		<header>
+                {pc:get sql="SELECT * FROM v9_category WHERE catid='9'" cache="3600" return="data"}
+					<div class="top">
+						<span><a href="{siteurl($siteid)}/"><img src="{IMG_PATH}714/back_2.png"/></a>首页</span>
+						<h1>{$data[0]['catname']}</h1>
+					</div>
+                {/pc}
+		</header>
+		 {pc:get sql="SELECT * FROM ceshi_phpcmsv9.v9_category WHERE parentid='93'" cache="3600" return="data"}
+		 <!-- {var_dump($data)} -->
+		 {loop $data $v}
+				<div class="film_list">
+					<span class="nav_img" style="background: url({IMG_PATH}714/dh.png) no-repeat;">{$v[catname]}</span>
+					<div class="content">
+		                            
+						<div class="content_list">
+						<!-- {$v['catid']} -->
+		                     {pc:get sql="SELECT * FROM ceshi_phpcmsv9.v9_news WHERE ceshi_phpcmsv9.v9_news.catid=$v[catid]" cache="3600" return="info"}
+							 <!-- {var_dump($info)} -->
+		                            {loop $info $v}
+		                            <!-- 获取视频详细信息 -->
+		                             
+		                                <div>
+		                                    <a href='{$v[url]}'>
+		                                        <img src="{IMG_PATH}714/dy3.png" />
+		                                        <h1>{str_cut($v[title],30,false)}</h1>
+		                                        
+		                                    </a>
+		                                </div>
+		                            {/loop}
+		                    {/pc}
+						</div>
+					</div>
+				</div>
+			{/loop}
+		 {/pc}
+
+            <!-- {loop subcat($catid,0,0,$siteid) $r}   -->
+				<!-- <div class="film_list"> -->
+					<!-- <span class="nav_img" style="background: url({IMG_PATH}714/dh.png) no-repeat;">{$r[catname]}</span> -->
+					<!-- <div class="content"> -->
+		                            
+						<!-- <div class="content_list"> -->
+		                    <!-- {pc:content action="lists" catid="$r[catid]"  order="id DESC" return="info"} -->
+		                            <!-- {loop $info $v} -->
+		                            <!-- 获取视频详细信息 -->
+		                             
+		                                <!-- <div> -->
+		                                    <!-- <a href='{$v[url]}'> -->
+		                                        <!-- <img src="{IMG_PATH}714/dy3.png" /> -->
+		                                        <!-- <h1>{str_cut($v[title],30,false)}</h1> -->
+		                                        
+		                                    <!-- </a> -->
+		                                <!-- </div> -->
+		                            <!-- {/loop} -->
+		                    <!-- {/pc} -->
+						<!-- </div> -->
+					<!-- </div> -->
+				<!-- </div> -->
+            <!-- {/loop} -->
+	</body>
+
+</html>

@@ -1,0 +1,9 @@
+<?php
+$cid=intval($_GET['cid']);
+$isql="select id,catid,title,thumb,description,url,updatetime from v9_news where catid=".$cid." order by id desc"; ?>
+{pc:get sql="$isql" cache="3600" num="20" return="data"}
+{/pc}
+<?php
+$cnt=json_encode($data);
+header('Content-type: application/json');
+?>aa({$cnt})

@@ -1,0 +1,1005 @@
+.container {
+	height: 100%;
+	background: url(../img/img-bj.png) no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+	overflow-y: auto;
+	position: relative;
+}
+/*
+ 
+ * 
+ * 医普宣教*/
+
+.row {
+	width: 100%;
+	margin-bottom: 0.5rem;
+}
+.back {
+    display: block;
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    text-align: center;
+    float: left;
+    line-height: 3rem;
+    color: #333;
+    margin: 0.5rem 0 0 1rem;
+}
+
+.banner-yp {
+	width: 96%;
+	/*height: 16.25rem;*/
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 1rem auto 0;
+}
+
+.special {
+	width: 96%;
+	margin: 0 auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.special li {
+	width: 23%;
+	height: 9.4rem;
+	background: url(../img/pic1.png) no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.special li i {
+	display: block;
+	width: 2.5rem;
+	height: 1rem;
+	font-size: 16px;
+	text-align: center;
+	line-height: 1rem;
+	color: #fff;
+	background: #9966cc;
+	border-radius: 2rem;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+
+.i-ma {
+	width: 66%;
+	height: 59%;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	border-radius: 0.2rem;
+}
+
+.i-ma h1 {
+	text-align: center;
+	color: #fff;
+	font-size: 1rem;
+	line-height: 3rem;
+}
+
+.i-ma a {
+	display: block;
+	width: 5.4rem;
+	height: 1.4rem;
+	font-size: 16px;
+	border: 1px solid #fff;
+	color: #fff;
+	text-align: center;
+	line-height: 1.4rem;
+	margin: 0 auto;
+	border-radius: 2rem;
+}
+
+.Recommend {
+	width: 96%;
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 0 auto;
+}
+
+.top-bt {
+	width: 100%;
+	height: 2.1rem;
+	font-size: 1rem;
+	color: #666;
+	line-height: 2.1rem;
+}
+
+.top-bt span {
+	display: block;
+	float: left;
+	width: 1.1rem;
+	height: 1.05rem;
+	margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.Recommend ul {
+	width: 97%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.Recommend ul li {
+	width: 19%;
+	height: 9.25rem;
+	float: left;
+	margin: 0 0.25rem 0.5rem 0.25rem;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	background: url(../img/pic1.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.Recommend ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	position: relative;
+}
+
+.Recommend ul li a span {
+	display: block;
+	width: 100%;
+	height: 1.5rem;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-size: 1rem;
+	padding-left: 1rem;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.hot {
+	width: 96%;
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 0 auto;
+}
+
+.top-bt {
+	width: 100%;
+	height: 2.1rem;
+	font-size: 1rem;
+	color: #666;
+	line-height: 2.1rem;
+}
+
+.top-bt span {
+	display: block;
+	float: left;
+	width: 1.1rem;
+	height: 1.05rem;
+	margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.top-bt a {
+	display: block;
+	float: right;
+	line-height: 2.1rem;
+	margin-right: 1rem;
+	color: #999;
+	font-size: 16px;
+}
+
+.hot-box {
+	width: 97%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.hot-left {
+	width: 28.3%;
+	height: 18.9rem;
+	border: 1px solid #ccc;
+	background: url(../img/pic4.png) no-repeat;
+	background-size: 100% 100%;
+	float: left;
+	position: relative;
+	margin-bottom: 0.8rem;
+}
+
+.hot-left a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.hot-left a span {
+	display: block;
+	width: 100%;
+	height: 1.5rem;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-size: 1rem;
+	padding-left: 1rem;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.hot-box ul {
+	width: 70.5%;
+	float: left;
+	margin-left: 0.25rem;
+}
+
+.hot-box ul li {
+	width: 32%;
+	height: 9.2rem;
+	border: 1px solid #ccc;
+	float: left;
+	margin: 0 0.25rem 0.5rem 0.25rem;
+	box-sizing: border-box;
+	background: url(../img/pic1.png) no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.hot-box ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.hot-box ul li a span {
+	display: block;
+	width: 100%;
+	height: 1.5rem;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-size: 1rem;
+	padding-left: 1rem;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.bottom {
+	display: block;
+	width: 55%;
+	height: 3.65rem;
+	margin: 0 auto;
+}
+
+
+/*
+ 
+ * 
+ * 专题页面*/
+
+.Recommend ul li:last-child .i-ma {
+	width: 80%;
+}
+
+.Recommend ul li:last-child .i-ma a {
+	width: 5.4rem;
+	height: 1.4rem;
+}
+
+
+/*
+ 
+ * 
+ * 
+ * 详情页*/
+
+.content {
+	width: 96%;
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 0 auto;
+	overflow: hidden;
+    overflow-y: auto;
+}
+
+.content h1 {
+	text-align: center;
+	line-height: 3.3rem;
+	color: #333;
+	font-size: 1.1rem;
+}
+
+.content p {
+	padding: 1.25rem;
+	box-sizing: border-box;
+}
+
+.content img {
+	display: block;
+	width: 53%;
+	height: auto;
+	margin: 0 auto;
+}
+
+
+/*
+ 
+ * 
+ * 
+ * 
+ * 
+ * 推荐首页*/
+.swiper-container{
+	
+}
+
+.row .nav-list {
+	width: 96%;
+	margin: 0 auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.row .nav-list li {
+	width: 16%;
+	height: 8.9rem;
+	background: url(../img/pic8.png) no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.row .nav-list li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.row .nav-list li a span {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: #a882d5;
+	border-top-left-radius: 50px;
+	font-size: 0.9rem;
+	color: #fff;
+	text-align: right;
+}
+
+.row .nav-list li a span p {
+	padding-right: 0.4rem;
+	box-sizing: border-box;
+}
+
+.row .nav-list li a span p:first-child {
+	margin-top: 0.5rem;
+}
+
+
+/*健康百科*/
+
+.Healthy {
+	width: 96%;
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.Healthy .top-bt {
+	width: 74.5%;
+	height: 2.1rem;
+	font-size: 1rem;
+	color: #666;
+	line-height: 2.1rem;
+}
+
+.Healthy .top-bt span {
+	display: block;
+	float: left;
+	width: 1.1rem;
+	height: 1.05rem;
+	margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.Healthy .top-bt a {
+	display: block;
+	float: right;
+	line-height: 2.1rem;
+	margin-right: 1rem;
+	color: #999;
+	font-size: 16px;
+}
+
+.Healthy .jiankangbaike {
+	width: 74.5%;
+	float: left;
+}
+
+.Healthy .jiankangbaike li {
+	width: 23.7%;
+	float: left;
+	margin: 0 0.25rem 0.5rem 0.25rem;
+	box-sizing: border-box;
+}
+
+.Healthy .jiankangbaike li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
+
+.Healthy .jiankangbaike li a div {
+	width: 100%;
+	height: 8.15rem;
+	border: 1px solid #ccc;
+}
+
+.Healthy .jiankangbaike li a span {
+	display: block;
+	width: 100%;
+	height: 1.5rem;
+	color: #666;
+	font-size: 0.9rem;
+}
+
+.m-food {
+	float: right;
+	width: 25.5%;
+}
+
+.m-food ul {
+	width: 100%;
+}
+
+.m-food ul li {
+	width: 95%;
+	margin: 0.5rem auto;
+}
+
+.m-food ul li:first-child {
+	margin-top: -0.5rem;
+}
+
+.m-food ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.m-food ul li a span {
+	display: block;
+	width: 33%;
+	height: 2.6rem;
+	float: left;
+}
+
+.m-food ul li a p {
+	width: 63%;
+	float: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #333;
+	font-size: 0.9rem;
+}
+
+.m-food ul li a i {
+	width: 63%;
+	float: right;
+	color: #e01d1d;
+	font-size: 0.9rem;
+}
+
+
+/*--医疗健康保险--*/
+
+.Insurance {
+	width: 96%;
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.Insurance .top-bt {
+	width: 74.5%;
+	height: 2.1rem;
+	font-size: 1rem;
+	color: #666;
+	line-height: 2.1rem;
+}
+
+.Insurance .top-bt span {
+	display: block;
+	float: left;
+	width: 1.1rem;
+	height: 1.05rem;
+	margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.Insurance .top-bt a {
+	display: block;
+	float: right;
+	line-height: 2.1rem;
+	margin-right: 1rem;
+	color: #999;
+	font-size: 16px;
+}
+
+.Insurance .baoxian {
+	width: 74.5%;
+	float: left;
+}
+
+.Insurance .baoxian li {
+	width: 23.7%;
+	height: 6.9rem;
+	float: left;
+	margin: 0 0.25rem 0.5rem 0.25rem;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	background: url(../img/pic1.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.Insurance .baoxian li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	position: relative;
+}
+
+.Insurance .baoxian li a span {
+	display: block;
+	width: 100%;
+	height: 1.5rem;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-size: 1rem;
+	padding-left: 1rem;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+
+/*
+ 
+ * 
+ * 
+ * 科室推荐*/
+
+.Department {
+	width: 96%;
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.Department-s {
+	width: 97%;
+	margin: 0 auto;
+}
+
+.Department-s .keshi {
+	width: 100%;
+	margin: 0 auto;
+	/*display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;*/
+}
+
+.Department-s .keshi li {
+	width: 9%;
+	height: 4.5rem;
+	float: left;
+}
+
+.Department-s .keshi li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.Department-s .keshi li a span {
+	display: block;
+	width: 2.5rem;
+	height: 2.5rem;
+	margin: 0 auto;
+}
+
+.Department-s .keshi li a p {
+	text-align: center;
+	color: #666666;
+	font-size: 0.9rem;
+	line-height: 1.5rem;
+}
+
+.Department-s .Doctor {
+	width: 100%;
+	margin: 0 auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.Department-s .Doctor li {
+	width: 14%;
+	margin-bottom: 0.5rem;
+}
+
+.Department-s .Doctor li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.Department-s .Doctor li a div {
+	width: 100%;
+	height: 9.2rem;
+}
+
+.Department-s .Doctor li a p {
+	text-align: center;
+	color: #333333;
+	font-size: 0.8rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 1.3rem;
+}
+/*
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 智慧医院*/
+.hospital{
+	width: 96%;
+	height: 100%;
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 1rem auto 0;
+	overflow: hidden;
+}
+.page1{
+	background: url(../img/pic13.png) no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+.page1 ul{
+	width: 94%;
+	height: 4.5rem;
+	position: absolute;
+	bottom: 3.2rem;
+	left: 3%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+.page1 ul li{
+	width: 23%;
+	height: 100%;
+	background: url(../img/pic14.png) no-repeat;
+	background-size: 100% 100%;
+}
+.page1 ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.page1 ul li a span{
+	display: block;
+	width: 2rem;
+	height: 2.2rem;
+	margin: 1.15rem 1rem 0 2rem;
+	float: left;
+}
+.page1 ul li a p{
+	float: left;
+	line-height: 4.5rem;
+	color: #fff;
+	font-size: 1.2rem;
+}
+.up{
+	width: 7.75rem;
+	height: 2.5rem;
+	position: absolute;
+	bottom: 0.2rem;
+	left: 43%;
+	-webkit-animation-name:'play';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+	-webkit-animation-duration: 1s;/*动画持续时间*/
+	-webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+	-webkit-animation-delay: 0s;/*动画延迟时间*/
+	-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+	-webkit-animation-direction: alternate;/*定义动画方式*/
+	
+}
+/*@keyframes play{
+	from{
+		width: 7rem;
+		height: 2rem;
+	}
+	to{
+		width: 7.8rem
+		height: 2.8rem;
+	}
+}*/
+.pages2{
+	width: 100%;
+	background: #fff;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.banner-a{
+	width: 73%;
+	height: 14rem;
+	float: left;
+}
+.hos-list1{
+	width: 25%;
+	height: 14rem;
+	float: right;
+}
+.hos-list1 li{
+	width: 100%;
+	height: 23%;
+	margin-bottom: 0.35rem;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.hos-list1 li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 3.25rem;
+	text-align: center;
+	color: #fff;
+	font-size: 1.2rem;
+}
+.hos-list2{
+	width: 100%;
+	height: 100%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+.hos-list2 li{
+	width: 15.9%;
+	height: 10rem;
+	position: relative;
+	overflow: hidden;
+}
+.hos-list2 li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.hos-list2 li a span{
+	display: block;
+	background: #b894d7;
+	color: #fff;
+	text-align: center;
+	font-size: 0.8rem;
+	border-radius: 5px;
+	padding: 0.25rem 0.8rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.hos-list2 li a p{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 0.9rem;
+	color: #fff;
+	padding-left: 0.5rem;
+	line-height: 1.5rem;
+	background: rgba(0,0,0,0.5);
+}
+.hos-list2 li a i{
+	display: block;
+	width: 70%;
+	height: 1.4rem;
+	font-size: 0.9rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	color: #fff;
+	background: rgba(0,0,0,0.5);
+	line-height: 1.4rem;
+	text-align: center;
+	border-radius: 10px;
+}
+.hos-list3{
+	width: 100%;
+	height: 100%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+.hos-list3 li{
+	width: 8%;
+	position: relative;
+	margin: 0 0.7rem;
+}
+.hos-list3 li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.hos-list3 li a span{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.hos-list3 li a p{
+	font-size: 1rem;
+	color: #666666;
+	text-align: center;
+	line-height: 2rem;
+}
+/*
+ 
+ * 
+ * 
+ * 科室列表*/
+.keshi-list{
+	width: 96%;
+	/*background: #fff;
+	border: 1px solid #cccccc;*/
+	margin: 1rem auto 0;
+	overflow: hidden;
+}
+.keshi-list ul{
+	width: 100%;
+}
+.keshi-list ul li{
+	width: 30%;
+	height: 2rem;
+	border: 1px solid #cccccc;
+	float: left;
+	margin: 0.5rem 0.5rem;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #fff;
+}
+.keshi-list ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 1rem;
+	color: #666666;
+	line-height: 2rem;
+}
+/*
+ 
+ * 
+ * 
+ * 医生列表*/
+.doctor-list{
+	width: 96%;
+	height: 100%;
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 1rem auto 0;
+	overflow: hidden;
+}
+.doctor-list ul{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.doctor-list ul li{
+	width: 15.6%;
+	height: 10rem;
+	float: left;
+	margin: 0.25rem 0.25rem;
+	position: relative;
+	overflow: hidden;
+}
+.doctor-list ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.doctor-list ul li a span{
+	display: block;
+	background: #b894d7;
+	color: #fff;
+	text-align: center;
+	font-size: 0.8rem;
+	border-radius: 5px;
+	padding: 0.2rem 0.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.doctor-list ul li a p{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 0.9rem;
+	color: #fff;
+	padding-left: 0.5rem;
+	line-height: 1.5rem;
+	background: rgba(0,0,0,0.5);
+}
+/*--医生详情--*/
+.doctor-img{
+	width: 15.6%;
+	height: 10rem;
+	margin: 0.5rem;
+	float: left;
+}
+.doctor-rn{
+	width: 80%;
+	height: 10rem;
+	margin: 0.5rem 0.5rem 0.5rem 0;
+	float: left;
+}
+.doctor-rn h1{
+	font-size: 1.1rem;
+	color: #333333;
+}
+.doctor-rn p{
+	font-size: 0.9rem;
+	color: #666666;
+	line-height: 2.5rem;
+}
+/*
+ 
+ * 
+ * 科室详情*/
+.keshi-xq{
+	width: 96%;
+	height: 100%;
+	background: #fff;
+	border: 1px solid #cccccc;
+	margin: 1rem auto 0;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.keshi-xq h1{
+	width: 100%;
+	line-height: 3rem;
+	font-size: 1.1rem;
+	color: #333;
+	text-align: center;
+}
+.keshi-xq p{
+	font-size: 0.9rem;
+	color: #666666;
+	line-height: 2.5rem;
+	padding: 0 1.25rem;
+	box-sizing: border-box;
+	text-indent: 2rem;
+}

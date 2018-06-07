@@ -1,0 +1,182 @@
+
+.on_main{
+	width: 95.6%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.on_main_top{
+	width: 91%;
+	/* height: 10.2rem; */
+	margin: 1rem auto;
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.on_main_top li{
+	width: 21.5%;
+	height: 100%;
+}
+.on_main_top li img{
+	width: 100%;
+	height: 11.05rem;
+}
+.on_main_top li p{
+	text-align: center;
+	font-size: 1rem;
+	line-height: 2rem;
+	color: #999999;
+}
+.on_main_top li span{
+	color: #999999;
+}
+.on_main_top li strong{
+	font-weight: normal;
+	color: #29a9df;
+}
+
+
+
+
+
+.news_left_top{
+	width: 100%;
+	height: 2.5rem;
+	border-bottom: 0.1rem solid #e2d3cd;
+}
+.left_bt{
+	height: 2.6rem;
+	border-bottom: 0.1rem solid #3ab9f0;
+	position: relative;
+	font-size: 0.8rem;
+	color: #3ab9f0;
+	padding-left: 1.5rem;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 2.5rem;
+	float: left;
+}
+.left_bt span{
+	display: block;
+	width: 0.55rem;
+	height: 0.55rem;
+	position: absolute;
+	top: 1rem;
+	left: 0.85rem;
+}
+.more{
+	display: block;
+	height: 100%;
+	float: right;
+	line-height: 2.5rem;
+	color: #e36b8e;
+	font-size: 1rem;
+}
+
+
+/*--------科室------*/
+.depas{
+	width: 88.8%;
+	float: left;
+	margin: 1.5rem 0 0 6%;
+}
+.depa_list{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.depa_list li{
+	width: 11%;
+	border: 0.05rem solid #e0dcda;
+	float: left;
+	margin: 1.5rem 0 1.5rem 2.7%;
+	background: #f3f6fb;
+}
+.depa_list li span{
+	display: block;
+	width: 62.8%;
+	height: 4.15rem;
+	margin: 20% auto 0;
+}
+.depa_list li p{
+	color: #666666;
+	line-height: 1.75rem;
+	font-size: 0.7rem;
+	text-align: center;
+}
+/*--------专家------*/
+.experts{
+	width: 88.8%;
+	float: left;
+	margin: 1.5rem 0 0 6%;
+}
+.expert_list{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.expert_list li{
+	width: 50%;
+	float: left;
+}
+.exp_left{
+	width: 29%;
+	height: 100%;
+	float: left;
+}
+.exp_left span{
+	display: block;
+	width: 78.8%;
+	height: auto
+	border-radius: 0.5rem;
+	float: right;
+	margin-top: 1.5rem;
+}
+.exp_left p{
+	width: 120%;
+	float: left;
+	color: #666;
+	font-size: 0.8rem;
+	line-height: 2rem;
+	text-align: center;
+}
+.exp_right{
+	width: 71%;
+	height: 100%;
+	float: left;
+	padding-left: 1rem;
+	padding-top: 2.5rem;
+	box-sizing: border-box;
+	font-size: 0.7rem;
+	color: #666666;
+	line-height: 1.5rem;
+}
+.exp_right ul{
+	width: 100%;
+	height: 6.65rem;
+	margin-top: 1.5rem;
+}
+.exp_right ul li{
+	width: 100%;
+	height: 25%;
+	color: #666666;
+	font-size: 0.7rem;
+	overflow: hidden;
+}
+.exp_right ul li span:first-child{
+	display: block;
+	width: 39%;
+	height: 100%;
+	float: left;
+	padding-left: 1rem;
+	box-sizing: border-box;
+}
+.exp_right ul li:nth-child(4) span{
+	display: block;
+	width: 100%;
+	height: 100%;
+	float: left;
+	padding-left: 1rem;
+	box-sizing: border-box;
+}

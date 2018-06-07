@@ -1,0 +1,39 @@
+{template "content","header"}	
+<!--**科室**-->
+			{pc:get sql="select * from v9_category where parentid=214 order by catid asc" return="data"}
+				<ul class="not_btn">
+				{loop $data $r}
+	
+					<li>
+						
+						<a href="{$r['url']}">{$r['catname']}</a>
+					</li>
+				{/loop}
+				</ul>
+			{/pc}
+			<div class="row article">
+				
+				{pc:content action="lists" catid="215" order="id DESC" page="$page"}
+				<ul>
+				{loop $data $r}
+					<li>
+								<a href="{$r['url']}">
+									<span class="hl_bt">
+										<i><img src="{IMG_PATH}726/biaotou.png"/></i>{$r['title']}
+									</span>
+									
+								</a>
+							</li>
+				{/loop}	
+				</ul>
+				{/pc}
+				{$pages}
+			</div>
+			
+			<!--**专家介绍**-->
+			
+			<!--**底部**-->
+			<footer>2017互医护通  版权所有</footer>
+		</div>
+	</body>
+	

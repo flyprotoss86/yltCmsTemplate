@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}424/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}424/css/yipuxuanjiao.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}424/css/fit.css"/>
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}0524/css/ultimate.css"/>
+	</head>
+	<body>
+	<!--@@cnt-->
+		<div class="container">
+			<div class="yp-box">
+				<div class="det_lefe">
+					<div class="det_top">
+						<span><img src="{$thumb}"/></span>
+						<h1>{$title}</h1>
+						<p>{$description}</p>
+					</div>
+					<div class="article">
+						{$content}
+					</div>
+				</div>
+				<!--右栏-->
+				<div class="det_right">
+					<img src="{CSS_PATH}424/img/img-2.png"/>
+					<div class="catalog">
+						<h1>目录</h1>
+						<ul class="left_nav">
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</body>
+	<script src="{CSS_PATH}424/js/jquery-2.1.0.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var title;
+			arr = new Array();//定义一个数组
+			arr2 = []
+			
+			$('.article').find('*').each(function(){
+				
+
+				if($(this).css('font-family')=='黑体'){
+					$(this).addClass('louti');
+					title = $(this).html();
+					arr.push(title);
+					arr2.push($(this).offset().top-$('.article').offset().top)
+					
+				}
+			})
+			console.log(arr);
+			var oUl = $(".left_nav");
+			for (var i=0;i<arr.length;i++) {
+				var Li = "<li>"+ arr[i] +"</li>"
+				oUl.append(Li);
+			}
+
+			
+			
+			$(".left_nav li").on("click",function() {
+				//锚点
+				var index = $(this).index();
+				//var top = $(".louti").eq(index).offset().top;
+				var top = arr2[index]
+				$(".article").animate({
+					"scrollTop": top
+				}, 500);
+			})
+		})
+	</script>
+</html>

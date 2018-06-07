@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title>微网站</title>
+		<link rel="stylesheet" href="{CSS_PATH}1020/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}1020/index.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}1020/header.css" />
+		<link rel="stylesheet" type="text/css" href="{CSS_PATH}1020/swiper-3.3.1.min.css" />
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="{CSS_PATH}1020/bootstrap.min.js"></script>
+		<script src="{CSS_PATH}1020/swiper-3.3.1.min.js"></script>
+		<script src="{CSS_PATH}1020/index.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!--**头部**-->
+			<header>
+				<span class="col-xs-5"><a href="/"><i><img src="{CSS_PATH}1020/logo.png"/></i>医汇联</a></span>
+				<span class="col-xs-3" data-toggle="dropdown"><i><img src="{CSS_PATH}1020/menu.png"/></i>菜单</span>
+			</header>
+			<ul class="menu">
+				<li><a href="http://119.90.88.62:88">首页</a></li>
+				<li><a href="http://119.90.88.62:88">合作医院</a></li>
+				<li><a href="https://weidian.com/?userid=1154968935&wfr=wechatpo_keywords_shop">微商城</a></li>
+				<li><a href="http://119.90.88.62:88/html/jiuzhenxuzhi/">就诊须知</a></li>
+			</ul>
+			<!--**首页轮播图**-->
+			<div class="swiper-container" style="height: 11.67rem;">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide div1">
+						<img src="{IMG_PATH}1020/lunbo.png" />
+					</div>
+					<div class="swiper-slide div1">
+						<img src="{IMG_PATH}1020/lunbo2.png" />
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<script type="text/javascript">
+				var mySwiper = new Swiper('.swiper-container', {
+					effect: 'fade',
+					autoplay: 1500,
+					//  loop: true, 
+
+					// 如果需要分页器
+					pagination: '.swiper-pagination',
+					paginationClickable: true,
+				})
+			</script>
